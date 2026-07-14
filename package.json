@@ -1,0 +1,13 @@
+{
+  "name": "ayvede-site",
+  "version": "4.0.0",
+  "private": true,
+  "description": "Source of truth for ayvede.com: a single-file React SPA compiled with esbuild into one self-contained bundle, embedded full-bleed in a blank Wix shell.",
+  "type": "module",
+  "scripts": {
+    "build": "node build/build.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.24.2"
+  }
+}

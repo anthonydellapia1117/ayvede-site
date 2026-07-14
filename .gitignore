@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+.env
+.env.*
+build/.scratch/
+dist/app-embed.js
+dist/index.html
