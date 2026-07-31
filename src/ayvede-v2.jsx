@@ -619,6 +619,12 @@ const CSS = `
 .insPill:hover{color:#e8ecf1;border-color:rgba(199,162,107,.45)}
 .insPill.on{color:#2ec4a8;border-color:rgba(46,196,168,.45);background:rgba(46,196,168,.06)}
 .insSearch{max-width:280px;flex:1 1 210px}
+/* The briefing grid is the one grid whose item count changes at runtime, so it
+   uses auto-fill rather than the shared .g3 auto-fit. auto-fit collapses empty
+   tracks, which let a single filter result stretch to the full row width; a card
+   must stay the same size at 1 results or 30. Track sizing is identical to .g3,
+   so the unfiltered view is unchanged. The fixed-count grids keep .g3. */
+.insGrid{grid-template-columns:repeat(auto-fill,minmax(min(100%,252px),1fr))}
 .insCard{cursor:pointer;display:flex;flex-direction:column}
 .insCard:focus-visible{outline:2px solid #2ec4a8;outline-offset:2px}
 .insCard .insMotif{margin:calc(clamp(18px,2.6vw,26px)*-1) calc(clamp(18px,2.6vw,26px)*-1) 16px}
@@ -1917,7 +1923,7 @@ function InsightsPage({ go }) {
               <input className="input insSearch" placeholder="Search briefings" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search briefings" />
             </div>
 
-            <div className="grid g3 rv">
+            <div className="grid insGrid rv">
               {list.map((a) => (
                 <article
                   key={a.slug}

@@ -12,9 +12,9 @@ Read this before touching anything:
 
 ## Current live version
 
-**v6** (deployed 2026-07-30). A nine-route SPA behind six top-level nav items: Home, Solutions (dropdown: Advisory, Programs, Platform, Innovation Lab), Tools, Insights, Vision, plus Connect as the nav button. Carries the 38-tool Spend Diagnostic, the Insights hub with 16 briefings, and background form submission. See [CHANGELOG.md](CHANGELOG.md) for every bundle URL and checksum.
+**v7** (deployed 2026-07-31). A nine-route SPA behind six top-level nav items: Home, Solutions (dropdown: Advisory, Programs, Platform, Innovation Lab), Tools, Insights, Vision, plus Connect as the nav button. Carries the 38-tool Spend Diagnostic, the Insights hub with 30 briefings, and background form submission. See [CHANGELOG.md](CHANGELOG.md) for every bundle URL and checksum.
 
-**Open item at v6:** the three Formspree endpoints in `src/ayvede-v2.jsx` (lines 22-24) still carry `YOUR_*_ID` placeholders. Until real form IDs are pasted and the bundle rebuilt, form submissions resolve to the on-page error state with an email fallback and capture nothing.
+**Open item at v7:** the three Formspree endpoints in `src/ayvede-v2.jsx` (lines 22-24) still carry `YOUR_*_ID` placeholders. Until real form IDs are pasted and the bundle rebuilt, form submissions resolve to the on-page error state with an email fallback and capture nothing.
 
 ## Quickstart
 
@@ -30,7 +30,7 @@ Output lands in `dist/`:
 - `dist/app-embed.js` is the deployable bundle (CSS self-injecting, for the Wix embed).
 - `dist/index.html` is a self-contained local preview (React from CDN). Serve it with `python3 -m http.server` from `dist/` and open it in a browser.
 
-A correct build of the current source produces a bundle whose sha256 matches the v6 entry in [CHANGELOG.md](CHANGELOG.md) exactly (`f169b144...`, 198,531 bytes). If it does not match, something drifted; stop and find out what before deploying anything. esbuild is pinned at 0.24.2 because a different version changes output bytes.
+A correct build of the current source produces a bundle whose sha256 matches the v7 entry in [CHANGELOG.md](CHANGELOG.md) exactly (`319303cc...`, 251,452 bytes). If it does not match, something drifted; stop and find out what before deploying anything. esbuild is pinned at 0.24.2 because a different version changes output bytes.
 
 ## Repository map
 
@@ -40,8 +40,8 @@ A correct build of the current source produces a bundle whose sha256 matches the
 | `build/build.mjs` | The build script (the proven method, asserted at every step). |
 | `build/header.jsx` | Inline lucide icon components, spliced in at build time. Any new icon used in the JSX import block must also be defined here. |
 | `build/insights-data.js` | Generated Insights data module (see `docs/INSIGHTS-PIPELINE.md`). Committed as-built for reproducibility. |
-| `dist/ayvede-app-v6.txt` | The exact bytes live on ayvede.com right now. Recovery record. |
-| `dist/ayvede-app-v2..v5.txt` | Every prior published bundle, for rollback. See the bundle policy in CHANGELOG.md. |
+| `dist/ayvede-app-v7.txt` | The exact bytes live on ayvede.com right now. Recovery record. |
+| `dist/ayvede-app-v2..v6.txt` | Every prior published bundle, for rollback. See the bundle policy in CHANGELOG.md. |
 | `docs/Ayvede-Master-Design-Directive-v1.1.md` | The canonical design system and architecture directive. Read before touching any visual choice. |
 | `docs/` | Also: the July 2026 audit, design tokens, insights pipeline, and the original Wix runbook. |
 | `scripts/pull-insights.mjs` | Parser that regenerates `insights-data.js` from Drive-exported newsletter markdown. |

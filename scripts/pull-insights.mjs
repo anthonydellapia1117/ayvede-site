@@ -38,10 +38,19 @@ const CATEGORIES = ["Data Governance", "ERP", "Legal", "Healthcare", "Finance", 
 const LABELS = ["TITLE", "TEASER", "CATEGORY", "PHOTO DIRECTION", "DATE", "ARTICLE"];
 
 function extractFields(text) {
-  const re = new RegExp("^(" + LABELS.join("|") + "):", "gm");
+  // Labels usually start their own line, but the content engine sometimes emits
+  // the entire header block on ONE line:
+  //   "TITLE: ... TEASER: ... CATEGORY: ... DATE: 2026-07-28 ARTICLE:"
+  // Anchoring to ^ dropped those Docs silently (every field after TITLE went
+  // missing). Accept a label at a line start OR after whitespace so both shapes
+  // parse. The ARTICLE cutoff below still stops body text from being read as a
+  // field, which is what keeps the looser match safe.
+  const re = new RegExp("(^|\\s)(" + LABELS.join("|") + "):", "gm");
   let marks = [];
   let m;
-  while ((m = re.exec(text))) marks.push({ label: m[1], start: m.index, contentStart: m.index + m[0].length });
+  while ((m = re.exec(text))) {
+    marks.push({ label: m[2], start: m.index + m[1].length, contentStart: m.index + m[0].length });
+  }
   // Fields must appear before the body. Any label-shaped line at or after the
   // first ARTICLE mark is article CONTENT, never a field or a field boundary —
   // otherwise an embedded "DATE: ..." sentence would truncate the body or

@@ -1,12 +1,12 @@
 # DEPLOY.md - The Ayvede deploy runbook
 
 This is the only approved path to production. It is the method that has shipped every
-version of ayvede.com to date, most recently v6 on 2026-07-30. Follow it in order.
+version of ayvede.com to date, most recently v7 on 2026-07-31. Follow it in order.
 If any step forces you off this path, stop and present options to the owner instead
 of improvising.
 
-**Current live:** v6, `f169b144...`, 198,531 bytes. **Rollback target:** v5,
-`https://ffe7597e-b66e-40a7-aad2-50f680f4c11a.usrfiles.com/ugd/ffe759_0dfab2b190c44cc5aaff3eab005604e5.txt`.
+**Current live:** v7, `319303cc...`, 251,452 bytes. **Rollback target:** v6,
+`https://ffe7597e-b66e-40a7-aad2-50f680f4c11a.usrfiles.com/ugd/ffe759_f4257b2ed3374e25889fd5eedc2d6988.txt`.
 Full history with every hash is in [CHANGELOG.md](CHANGELOG.md).
 
 **Note on the source path:** the working copy lives at `~/Desktop/2 | Ayvede/ayvede-v2.jsx`.

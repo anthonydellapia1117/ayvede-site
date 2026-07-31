@@ -9,7 +9,40 @@ Every published bundle is archived in `dist/` as `ayvede-app-vN.txt` except v1, 
 bytes live only at its hosted URL. The regenerated build outputs (`dist/app-embed.js`,
 `dist/index.html`) are deliberately not tracked; see "Bundle policy" at the bottom.
 
-## v6 - 2026-07-30 (LIVE)
+## v7 - 2026-07-31 (LIVE)
+
+- **Bundle URL:** https://ffe7597e-b66e-40a7-aad2-50f680f4c11a.usrfiles.com/ugd/ffe759_d63c523f044143d4a17e9ce18327740b.txt
+- **sha256:** `319303cc04e7d2bec0a4d7a7f7ffe27bd4d3ce3440ef6880a9d22fad74a1c00d`
+- **Size:** 251,452 bytes
+- **Briefings:** 30 (up from 16)
+- **Archived:** `dist/ayvede-app-v7.txt`
+- **Changes:**
+  - **Insights refresh, 16 to 30 briefings.** 14 new Docs dated 2026-07-23 through
+    2026-07-31 pulled read-only from the Drive Newsletters folder.
+  - **Parser fix, permanent.** Two of the new Docs emit the whole header block on a
+    single line (`TITLE: ... TEASER: ... CATEGORY: ... DATE: ... ARTICLE:`) rather than
+    one field per line. `scripts/pull-insights.mjs` anchored labels to line starts, so
+    it found only TITLE and dropped both Docs as malformed; the run produced 28 of 30
+    cards with two briefings silently missing. The label match changed from
+    `^(LABELS):` to `(^|\s)(LABELS):`, accepting a label at a line start or after
+    whitespace. The existing ARTICLE cutoff still prevents body text from being read as
+    a field, which is what keeps the looser match safe. Both header shapes now parse.
+  - **Insights grid fix.** The briefing grid shared `.g3`, which uses
+    `repeat(auto-fit, ...)`. `auto-fit` collapses empty tracks, so a single filter
+    result stretched from 260px to 739px. The grid now uses a dedicated
+    `.insGrid` class with `auto-fill` and identical `minmax` sizing, holding the card
+    at a constant width and left alignment at 1, 2, 3, 4, or 30 results. `.g3` is
+    unchanged, because it is shared by five fixed-count grids (Home risks and services,
+    Advisory tiers, Vision philosophy, Tools registry) whose 3-item rows are designed to
+    span the full row; switching them to `auto-fill` would have left gaps on four pages.
+    Verified by A/B test that the unfiltered view is pixel-identical under both rules.
+- **Note on bundle weight:** usrfiles serves this file uncompressed (no
+  `content-encoding` on the response), so the full 251 KB crosses the wire. Gzipped it
+  would be 76 KB. At roughly 3.5 KB per briefing and two briefings a week, plan the
+  recency window or progressive reveal before the bundle doubles again.
+- **Deploy method:** Wix REST API, embed PATCH revision 6 to 7, then site publish.
+
+## v6 - 2026-07-30 (superseded)
 
 - **Bundle URL:** https://ffe7597e-b66e-40a7-aad2-50f680f4c11a.usrfiles.com/ugd/ffe759_f4257b2ed3374e25889fd5eedc2d6988.txt
 - **sha256:** `f169b1441cb54c398bb0937d0e8986ae44abe174527e1eaeeba344d9c9e426f3`
