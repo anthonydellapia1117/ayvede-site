@@ -14,6 +14,47 @@ const EMAIL = "anthonydellapia@gmail.com";
 const PHONE = "+1 (215) 384-8335";
 const PHONE_TEL = "+12153848335";
 
+//  Formspree endpoints. Create three forms at formspree.io (Free plan:
+//  unlimited forms, 50 submissions per month across the account), then replace
+//  the YOUR_*_ID placeholders with the real form IDs. Nothing else changes.
+//  Until real IDs are pasted, submits resolve to the on-page error state,
+//  which offers the direct email fallback. No form navigates or opens mail.
+const FORMSPREE_SUBSCRIBE = "https://formspree.io/f/YOUR_SUBSCRIBE_ID";
+const FORMSPREE_CONTACT = "https://formspree.io/f/YOUR_CONTACT_ID";
+const FORMSPREE_TOOLS = "https://formspree.io/f/YOUR_TOOLS_ID";
+
+const EMAIL_OK = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v).trim());
+
+async function formspreePost(endpoint, data) {
+  const res = await fetch(endpoint, {
+    method: "POST",
+    headers: { Accept: "application/json", "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  if (!res.ok) throw new Error("formspree " + res.status);
+}
+
+//  Shared form-state message blocks, styled from existing tokens only.
+function FormNote({ kind, children }) {
+  const teal = kind === "ok";
+  return (
+    <p
+      className="small"
+      role={teal ? "status" : "alert"}
+      style={{
+        color: teal ? "#2ec4a8" : "#ef4444",
+        border: `1px solid ${teal ? "rgba(46,196,168,.45)" : "rgba(239,68,68,.45)"}`,
+        background: teal ? "rgba(46,196,168,.06)" : "rgba(239,68,68,.06)",
+        borderRadius: 4,
+        padding: "10px 12px",
+        flex: "1 1 100%",
+      }}
+    >
+      {children}
+    </p>
+  );
+}
+
 //  Six top-level destinations. The four service-side pages live one level
 //  down under the Solutions menu — nothing deleted, everything one click away.
 const NAV = [
@@ -503,7 +544,7 @@ const CSS = `
 .sub{color:#7a8ba3;font-size:clamp(13.5px,1.5vw,16.5px);line-height:1.65;max-width:660px}
 .body{color:#a8b4c6;font-size:clamp(13px,1.4vw,14.5px);line-height:1.65}
 .small{font-size:clamp(11.5px,1.2vw,13px);color:#7a8ba3;line-height:1.6}
-.dim{color:#4a5568}.gold{color:#c7a26b}.tealTx{color:#2ec4a8}
+.dim{color:#7a8ba3}.gold{color:#c7a26b}.tealTx{color:#2ec4a8}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:4px;font-weight:600;font-size:clamp(12px,1.3vw,13.5px);letter-spacing:.02em;padding:12px 20px;border:1px solid transparent;cursor:pointer;transition:all .18s ease;text-decoration:none}
 .btn.primary{background:#2ec4a8;color:#07131f}
 .btn.primary:hover{background:#3ad4b7;transform:translateY(-1px)}
@@ -601,7 +642,7 @@ const CSS = `
 .tcMark{width:14px;height:14px;flex:none;border:1px solid #1e2d44;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;background:#161f30;transition:all .15s ease}
 .tcRow.on .tcMark{background:#2ec4a8;border-color:#2ec4a8;color:#07131f}
 .tcName{flex:1;min-width:0}
-.tcNote{display:block;font-size:10.5px;color:#4a5568;margin-top:1px}
+.tcNote{display:block;font-size:10.5px;color:#7a8ba3;margin-top:1px}
 .tcPrice{font-family:'JetBrains Mono',monospace;font-size:11px;color:#7a8ba3;white-space:nowrap}
 .tcRow.on .tcPrice{color:#2ec4a8}
 .tcCtl{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:9px 12px;border:1px solid rgba(46,196,168,.28);border-top:0;border-radius:0 0 4px 4px;background:#0d1424;margin-top:-6px}
@@ -684,7 +725,7 @@ function Hero({ kick, title, sub, chips, actions, decor = "net", kickTeal }) {
             <div className="rv" style={{ marginTop: 22 }}>
               <hr className="goldRule" style={{ width: 56, marginBottom: 14, marginLeft: 0 }} />
               <div className="chips">
-                {chips.map((c) => <span key={c} className="mono" style={{ fontSize: 10.5, letterSpacing: ".1em", color: "#c7a26b" }}>{c}</span>).reduce((acc, el, i) => acc.length ? [...acc, <span key={`s${i}`} className="dim mono" style={{ fontSize: 10.5 }}>·</span>, el] : [el], [])}
+                {chips.map((c) => <span key={c} className="mono" style={{ fontSize: 10.5, letterSpacing: ".1em", color: "#c7a26b" }}>{c}</span>).reduce((acc, el, i) => acc.length ? [...acc, <span key={`s${i}`} className="mono" style={{ fontSize: 10.5, color: "#4a5568" }} aria-hidden="true">·</span>, el] : [el], [])}
               </div>
             </div>
           )}
@@ -788,10 +829,20 @@ function CtaBand({ kick, title, sub, label, target, go }) {
 
 function SubscribeBand() {
   const [email, setEmail] = useState("");
-  const sub = () => {
-    const s = encodeURIComponent("Subscribe — The Ayvede Briefing");
-    const b = encodeURIComponent(`Please add me to The Ayvede Briefing.\n\nEmail: ${email}`);
-    window.location.href = `mailto:${EMAIL}?subject=${s}&body=${b}`;
+  const [st, setSt] = useState("idle");
+  const sub = async () => {
+    if (!EMAIL_OK(email)) { setSt("invalid"); return; }
+    setSt("sending");
+    try {
+      await formspreePost(FORMSPREE_SUBSCRIBE, {
+        email: email.trim(),
+        form: "subscribe",
+        _subject: "Subscribe - The Ayvede Briefing",
+      });
+      setSt("ok");
+    } catch {
+      setSt("err");
+    }
   };
   return (
     <section className="band sec tight">
@@ -801,10 +852,31 @@ function SubscribeBand() {
           <h3 className="h3" style={{ marginBottom: 8 }}>Governance-grade AI intelligence for decision-makers.</h3>
           <p className="small">Twice a month. Zero noise. Unsubscribe anytime.</p>
         </div>
-        <div className="rv" style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-          <input className="input" style={{ flex: "1 1 220px" }} type="email" placeholder="Work email" value={email} onChange={(e) => setEmail(e.target.value)} aria-label="Work email" />
-          <button className="btn primary" onClick={sub}>Subscribe</button>
-        </div>
+        {st === "ok" ? (
+          <div className="rv"><FormNote kind="ok">You&#39;re on the list. The next briefing lands in your inbox.</FormNote></div>
+        ) : (
+          <div className="rv" style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+            <input
+              className="input"
+              style={{ flex: "1 1 220px" }}
+              type="email"
+              placeholder="Work email"
+              value={email}
+              disabled={st === "sending"}
+              onChange={(e) => { setEmail(e.target.value); if (st === "invalid" || st === "err") setSt("idle"); }}
+              aria-label="Work email"
+            />
+            <button className="btn primary" disabled={st === "sending"} style={st === "sending" ? { opacity: .6, cursor: "default" } : undefined} onClick={sub}>
+              {st === "sending" ? "Subscribing..." : "Subscribe"}
+            </button>
+            {st === "invalid" && <FormNote kind="err">Enter a valid email address.</FormNote>}
+            {st === "err" && (
+              <FormNote kind="err">
+                That did not go through. Try again, or email <a href={`mailto:${EMAIL}`} style={{ color: "#ef4444", fontWeight: 600 }}>{EMAIL}</a> and say subscribe.
+              </FormNote>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );
@@ -832,11 +904,6 @@ function Footer({ go }) {
             <a className="fLink" href={`mailto:${EMAIL}`} style={{ display: "flex", alignItems: "center", gap: 8, textDecoration: "none" }}><Mail size={13} color="#2ec4a8" /> {EMAIL}</a>
             <a className="fLink" href={`tel:${PHONE_TEL}`} style={{ display: "flex", alignItems: "center", gap: 8, textDecoration: "none" }}><Phone size={13} color="#2ec4a8" /> {PHONE}</a>
             <span className="fLink" style={{ display: "flex", alignItems: "center", gap: 8, cursor: "default" }}><MapPin size={13} color="#2ec4a8" /> Philadelphia, PA</span>
-            <div style={{ display: "flex", gap: 14, marginTop: 14, flexWrap: "wrap" }}>
-              {["LinkedIn", "X", "YouTube", "Instagram"].map((s) => (
-                <span key={s} className="mono" style={{ fontSize: 10, letterSpacing: ".14em", textTransform: "uppercase", color: "#4a5568", cursor: "pointer" }}>{s}</span>
-              ))}
-            </div>
           </div>
         </div>
         <hr className="rule" style={{ margin: "clamp(26px,4vw,40px) 0 18px" }} />
@@ -1373,6 +1440,9 @@ function ToolsPage({ go }) {
   const [sel, setSel] = useState({});
   const [custom, setCustom] = useState([]);
   const [cf, setCf] = useState({ name: "", price: "", seats: "" });
+  const [tEmail, setTEmail] = useState("");
+  const [tSt, setTSt] = useState("idle");
+  const [results, setResults] = useState(null);
 
   const toggle = (t) => setSel((s) => {
     const n = { ...s };
@@ -1407,21 +1477,43 @@ function ToolsPage({ go }) {
     setCf({ name: "", price: "", seats: "" });
   };
 
-  const sendResults = () => {
-    const lines = [
+  const buildResults = () => ({
+    lines: [
       ...picked.map((t) => t.unit === "spend"
         ? `- ${t.name}: ${usd(sel[t.id])}/mo (usage-based)`
         : t.unit === "flat"
           ? `- ${t.name}: ${usd(t.price)}/mo flat`
           : `- ${t.name}: ${sel[t.id]} seats x $${t.price % 1 ? t.price.toFixed(2) : t.price} = ${usd(t.price * sel[t.id])}/mo`),
       ...custom.map((c) => `- ${c.name}: ${c.seats} seats x $${c.price} = ${usd(c.price * c.seats)}/mo (self-reported)`),
-    ];
-    const flagLines = flags.map((f) => `- ${f.names.length} tools cover ${CAP_LABELS[f.cap]}: ${f.names.join(", ")}`);
-    const s = encodeURIComponent(`Spend Diagnostic - ${usd(annual)} per year`);
-    const b = encodeURIComponent(
-      `My AI & SaaS Spend Diagnostic (ayvede.com, Tools)\n\nMonthly: ${usd(monthly)}\nAnnual: ${usd(annual)}\nStranded-license estimate: ${usd(waste)}/yr at the 36% unused-license benchmark (Zylo 2026 SaaS Management Index)\n\nStack:\n${lines.join("\n")}\n\nOverlap flags:\n${flagLines.length ? flagLines.join("\n") : "- none detected"}\n\nList prices as of ${PRICING_ASOF}, annual-billing basis.\n\nName:\nFirm:\nWhat prompted this:\n`
-    );
-    window.location.href = `mailto:${EMAIL}?subject=${s}&body=${b}`;
+    ],
+    flagLines: flags.map((f) => `- ${f.names.length} tools cover ${CAP_LABELS[f.cap]}: ${f.names.join(", ")}`),
+    monthly,
+    annual,
+    waste,
+  });
+  //  The on-page result is the deliverable; the email is the follow-up.
+  //  Results render immediately on submit, whatever the network does.
+  const sendResults = async () => {
+    if (!EMAIL_OK(tEmail)) { setTSt("invalid"); return; }
+    const r = buildResults();
+    setResults(r);
+    setTSt("sending");
+    try {
+      await formspreePost(FORMSPREE_TOOLS, {
+        email: tEmail.trim(),
+        form: "tools",
+        _subject: `Spend Diagnostic - ${usd(r.annual)} per year`,
+        monthly: usd(r.monthly),
+        annual: usd(r.annual),
+        strandedEstimate: `${usd(r.waste)}/yr at the 36% unused-license benchmark (Zylo 2026 SaaS Management Index)`,
+        stack: r.lines.join("\n"),
+        overlapFlags: r.flagLines.length ? r.flagLines.join("\n") : "none detected",
+        pricingAsOf: PRICING_ASOF,
+      });
+      setTSt("ok");
+    } catch {
+      setTSt("err");
+    }
   };
 
   const activeAnnual = Math.max(annual - waste, 0);
@@ -1573,10 +1665,45 @@ function ToolsPage({ go }) {
                       <button className="btn primary" style={{ width: "100%" }} onClick={() => go("connect", { interest: "AI & SaaS Spend Diagnostic" })}>
                         Book a Scoping Call <ArrowRight size={15} />
                       </button>
-                      <button className="btn line" style={{ width: "100%" }} onClick={sendResults}>
-                        <Mail size={14} /> Send My Results to Ayvede
-                      </button>
+                      <div className="lbl" style={{ margin: "8px 0 0" }}>Get Your Results</div>
+                      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                        <input
+                          className="input"
+                          style={{ flex: "1 1 150px" }}
+                          type="email"
+                          placeholder="Work email"
+                          value={tEmail}
+                          disabled={tSt === "sending"}
+                          onChange={(e) => { setTEmail(e.target.value); if (tSt === "invalid" || tSt === "err") setTSt("idle"); }}
+                          aria-label="Work email for your results"
+                        />
+                        <button className="btn line" disabled={tSt === "sending"} style={tSt === "sending" ? { opacity: .6, cursor: "default" } : undefined} onClick={sendResults}>
+                          <Mail size={14} /> {tSt === "sending" ? "Sending..." : "Send My Results"}
+                        </button>
+                      </div>
+                      {tSt === "invalid" && <FormNote kind="err">Enter a valid email to get your copy.</FormNote>}
+                      {tSt === "ok" && <FormNote kind="ok">Your results are below. A copy is on its way to your inbox.</FormNote>}
+                      {tSt === "err" && (
+                        <FormNote kind="err">
+                          The email did not go through. Your results are below; the direct address is <a href={`mailto:${EMAIL}`} style={{ color: "#ef4444", fontWeight: 600 }}>{EMAIL}</a>.
+                        </FormNote>
+                      )}
                     </div>
+                    {results && (
+                      <div style={{ marginTop: 12, background: "#0d1424", border: "1px solid #1e2d44", borderRadius: 4, padding: "12px 14px" }}>
+                        <div className="kick teal" style={{ marginBottom: 8 }}>Your Results</div>
+                        {results.lines.map((l) => (
+                          <p key={l} className="mono" style={{ fontSize: 11, color: "#a8b4c6", lineHeight: 1.7 }}>{l}</p>
+                        ))}
+                        <hr className="rule" style={{ margin: "10px 0" }} />
+                        <p className="mono" style={{ fontSize: 11.5, color: "#c7a26b", lineHeight: 1.8 }}>Monthly: {usd(results.monthly)} · Annual: {usd(results.annual)}</p>
+                        <p className="mono" style={{ fontSize: 11, color: "#ef4444", lineHeight: 1.7 }}>Stranded estimate: {usd(results.waste)}/yr at the 36% benchmark</p>
+                        {results.flagLines.map((l) => (
+                          <p key={l} className="mono" style={{ fontSize: 11, color: "#a8b4c6", lineHeight: 1.7 }}>{l}</p>
+                        ))}
+                        <p className="small dim" style={{ marginTop: 8 }}>List prices as of {PRICING_ASOF}. Keep this for your records.</p>
+                      </div>
+                    )}
                   </>
                 )}
                 <hr className="rule" style={{ margin: "16px 0 12px" }} />
@@ -1875,13 +2002,25 @@ function InsightsPage({ go }) {
 
 function ConnectPage({ preset }) {
   const [f, setF] = useState({ first: "", last: "", email: "", firm: "", interest: preset || "Executive AI Briefing", message: "" });
-  const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
-  const send = () => {
-    const s = encodeURIComponent(`Ayvede Inquiry — ${f.interest}`);
-    const b = encodeURIComponent(
-      `Name: ${f.first} ${f.last}\nEmail: ${f.email}\nFirm: ${f.firm}\nExploring: ${f.interest}\n\n${f.message}`
-    );
-    window.location.href = `mailto:${EMAIL}?subject=${s}&body=${b}`;
+  const [st, setSt] = useState("idle");
+  const set = (k) => (e) => { setF({ ...f, [k]: e.target.value }); if (st === "invalid" || st === "err") setSt("idle"); };
+  const send = async () => {
+    if (!f.first.trim() || !f.last.trim() || !EMAIL_OK(f.email)) { setSt("invalid"); return; }
+    setSt("sending");
+    try {
+      await formspreePost(FORMSPREE_CONTACT, {
+        name: `${f.first.trim()} ${f.last.trim()}`,
+        email: f.email.trim(),
+        firm: f.firm.trim(),
+        interest: f.interest,
+        message: f.message.trim(),
+        form: "connect",
+        _subject: `Ayvede Inquiry - ${f.interest}`,
+      });
+      setSt("ok");
+    } catch {
+      setSt("err");
+    }
   };
   const NEXT = [
     { n: "01", t: "Response within one business day", d: "Directly from Anthony. No intake team, no ticket queue." },
@@ -1899,7 +2038,14 @@ function ConnectPage({ preset }) {
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap" style={{ display: "grid", gap: "clamp(22px,3.5vw,40px)", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,330px),1fr))", alignItems: "start" }}>
           <div className="card rv" style={{ borderTop: "2px solid #2ec4a8" }}>
-            <div style={{ display: "grid", gap: 16 }}>
+            {st === "ok" ? (
+              <div style={{ display: "grid", gap: 10, padding: "10px 0" }}>
+                <div className="kick teal">Received</div>
+                <h3 className="h3">Your inquiry is in.</h3>
+                <p className="body">Anthony reads every inquiry personally. Expect a reply within one business day.</p>
+              </div>
+            ) : (
+            <fieldset disabled={st === "sending"} style={{ border: 0, padding: 0, margin: 0, display: "grid", gap: 16, opacity: st === "sending" ? .6 : 1 }}>
               <div style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,140px),1fr))" }}>
                 <div>
                   <label className="lbl" htmlFor="first">First name *</label>
@@ -1930,9 +2076,18 @@ function ConnectPage({ preset }) {
                 <label className="lbl" htmlFor="msg">Message</label>
                 <textarea id="msg" className="ta" value={f.message} onChange={set("message")} />
               </div>
-              <button className="btn primary" style={{ width: "100%" }} onClick={send}>Send Inquiry <ArrowRight size={15} /></button>
-              <p className="small dim" style={{ textAlign: "center" }}>Opens your email client, addressed to {EMAIL}.</p>
-            </div>
+              <button className="btn primary" style={{ width: "100%" }} onClick={send}>
+                {st === "sending" ? "Sending..." : <>Send Inquiry <ArrowRight size={15} /></>}
+              </button>
+              {st === "invalid" && <FormNote kind="err">Add your first and last name and a valid email.</FormNote>}
+              {st === "err" && (
+                <FormNote kind="err">
+                  That did not go through. Try again, or email <a href={`mailto:${EMAIL}`} style={{ color: "#ef4444", fontWeight: 600 }}>{EMAIL}</a> directly.
+                </FormNote>
+              )}
+              <p className="small dim" style={{ textAlign: "center" }}>Goes straight to Anthony. Confidential by default.</p>
+            </fieldset>
+            )}
           </div>
 
           <div style={{ display: "grid", gap: 16 }}>

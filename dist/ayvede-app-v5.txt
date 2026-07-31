@@ -1,0 +1,2328 @@
+const { useState, useEffect } = React;
+function __lucide(name, kids) {
+  function Icon({ size = 24, color = "currentColor", strokeWidth = 2, className = "", style, ...rest }) {
+    return /* @__PURE__ */ React.createElement(
+      "svg",
+      {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: size,
+        height: size,
+        viewBox: "0 0 24 24",
+        fill: "none",
+        stroke: color,
+        strokeWidth,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        className: "lucide lucide-" + name + (className ? " " + className : ""),
+        style,
+        ...rest
+      },
+      kids.map(([tag, attrs], i) => React.createElement(tag, { key: i, ...attrs }))
+    );
+  }
+  return Icon;
+}
+const Menu = __lucide("menu", [
+  ["line", { x1: "4", x2: "20", y1: "12", y2: "12" }],
+  ["line", { x1: "4", x2: "20", y1: "6", y2: "6" }],
+  ["line", { x1: "4", x2: "20", y1: "18", y2: "18" }]
+]);
+const X = __lucide("x", [
+  ["path", { d: "M18 6 6 18" }],
+  ["path", { d: "m6 6 12 12" }]
+]);
+const ArrowRight = __lucide("arrow-right", [
+  ["path", { d: "M5 12h14" }],
+  ["path", { d: "m12 5 7 7-7 7" }]
+]);
+const Mail = __lucide("mail", [
+  ["rect", { width: "20", height: "16", x: "2", y: "4", rx: "2" }],
+  ["path", { d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" }]
+]);
+const Phone = __lucide("phone", [
+  ["path", { d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" }]
+]);
+const MapPin = __lucide("map-pin", [
+  ["path", { d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" }],
+  ["circle", { cx: "12", cy: "10", r: "3" }]
+]);
+const ShieldCheck = __lucide("shield-check", [
+  ["path", { d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" }],
+  ["path", { d: "m9 12 2 2 4-4" }]
+]);
+const Layers = __lucide("layers", [
+  ["path", { d: "m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z" }],
+  ["path", { d: "m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" }],
+  ["path", { d: "m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" }]
+]);
+const FlaskConical = __lucide("flask-conical", [
+  ["path", { d: "M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" }],
+  ["path", { d: "M8.5 2h7" }],
+  ["path", { d: "M7 16h10" }]
+]);
+const GraduationCap = __lucide("graduation-cap", [
+  ["path", { d: "M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" }],
+  ["path", { d: "M22 10v6" }],
+  ["path", { d: "M6 12.5V16a6 3 0 0 0 12 0v-3.5" }]
+]);
+const Compass = __lucide("compass", [
+  ["path", { d: "m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" }],
+  ["circle", { cx: "12", cy: "12", r: "10" }]
+]);
+const ChevronDown = __lucide("chevron-down", [
+  ["path", { d: "m6 9 6 6 6-6" }]
+]);
+const Plus = __lucide("plus", [
+  ["path", { d: "M5 12h14" }],
+  ["path", { d: "M12 5v14" }]
+]);
+const Minus = __lucide("minus", [
+  ["path", { d: "M5 12h14" }]
+]);
+const TriangleAlert = __lucide("triangle-alert", [
+  ["path", { d: "m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 20h16a2 2 0 0 0 1.73-3" }],
+  ["path", { d: "M12 9v4" }],
+  ["path", { d: "M12 17h.01" }]
+]);
+const INSIGHTS_DATA = [
+  {
+    "id": "1qnGG35FYYEhZDDr18Fo8KI9Fw_rgarB0CJpTprrR9EM",
+    "slug": "sap-just-bought-a-frontier-ai-lab-for-your-tables",
+    "title": "SAP Just Bought a Frontier AI Lab for Your Tables",
+    "teaser": "SAP closed its acquisition of Prior Labs on July 17 and pledged more than a billion euros to AI that predicts straight from structured business data. The chatbot is not the only AI worth a budget line.",
+    "category": "ERP",
+    "secondaryCategory": "General AI News",
+    "date": "2026-07-21",
+    "body": `## The bet SAP just made
+
+Most enterprise AI coverage this year has been about chat. Type a question, get a paragraph back. On July 17 SAP spent real money on a different idea: the most valuable AI inside a business does not talk at all.
+
+  
+
+SAP announced it completed its acquisition of **Prior Labs**, a German research lab founded barely 18 months ago, and committed **more than 1 billion euros over four years** to grow it into a frontier AI lab for structured data (per SAP's July 17 announcement). Deal terms were not disclosed. The strategy was.
+
+## What Prior Labs actually builds
+
+Prior Labs is the pioneer of **tabular foundation models**, or TFMs. Its TabPFN models, published in Nature, set the pace on tabular benchmarks. Plain version: instead of training a fresh model for every dataset, one pre-trained model reads a table of business data and predicts the next value. Late payments. Customer churn. Supplier risk. Demand next quarter. It works on the rows and columns you already keep.
+
+  
+
+That matters because your firm does not run on prose. It runs on tables. Ledgers, claims, matters, invoices, patient records, positions. A chatbot summarizes those tables. A tabular model predicts from them. For a lot of professional-services work, the second job is the one that moves money.
+
+## Why SAP, and why now
+
+SAP owns the systems where the world's structured business data already lives. It had shipped its own tabular model, SAP-RPT-1, so this deal buys a head start. Two weeks earlier, on July 6, SAP closed its purchase of Dremio, a data lakehouse (per SAP). Read the two deals together and the plan is plain: own the data layer, then own the models that predict on it.
+
+  
+
+|  |  |  |
+| :-: | :-: | :-: |
+| **Question to ask** | **LLM chatbot** | **Tabular foundation model** |
+| Core input | Text and documents | Rows and columns of structured data |
+| Core output | A written answer | A predicted value or score |
+| Strong at | Drafting, summarizing, explaining | Forecasting, ranking, risk scoring |
+| Governance question | What did it read? | What did it predict, and can you defend the score? |
+
+## The take
+
+The chatbot got the headlines and most of the budget. The prediction engine that sits on your structured data got quietly expensive this month. A vendor roadmap that only mentions "an assistant" is describing half the category.
+
+  
+
+Here is the concrete takeaway. When a vendor pitches you AI, ask one question first: **does it read my tables or only my documents?** The answer decides which risks apply. A document assistant needs source control and human review. A prediction model needs data lineage, bias testing, and a way to explain any score to a regulator or a client who asks. That governance work is different, and you cannot start it if you never learned which kind of AI you bought.
+
+  
+
+SAP just paid over a billion euros to make sure the answer is both. Budget accordingly.
+
+  
+
+*AI, Properly is the Ayvede field report.*
+
+  
+
+**Advise. Vet. Deliver.**
+
+  
+
+[Book a confidential briefing](https://www.ayvede.com/contact)`
+  },
+  {
+    "id": "1xkCL-V-x6geRO3AzbsisroPb5i1DR0PR9Fag-CKEtGw",
+    "slug": "the-eu-just-pried-open-google-s-search-data-read-the-terms",
+    "title": "The EU Just Pried Open Google's Search Data. Read the Terms.",
+    "teaser": "On July 16 Brussels ordered Google to share the search signals that built its lead and to let rival AI assistants run on Android. The part worth your attention is the fine print on how data is allowed to move.",
+    "category": "Data Governance",
+    "secondaryCategory": "General AI News",
+    "date": "2026-07-21",
+    "body": `## No fine, bigger precedent
+
+On July 16 the European Commission adopted two binding decisions that force Google to open the two assets it guards hardest: Android and its search data (per the Commission, reported by Unite.AI). No fine came attached. The precedent outweighs any fine.
+
+  
+
+These are **specification decisions** under the Digital Markets Act. They do more than restate a rule. They spell out, feature by feature, what Google has to build to comply. Two orders, two targets.
+
+## Order one: Android opens up
+
+Google must open **11 Android features** that voice assistants depend on, from voice activation to acting across apps. In practice, a European user will be able to summon ChatGPT, Claude, or Perplexity by voice, the way they say "Hey Google" today, and let it act on their behalf. The Commission's reasoning: rival assistants got restricted access while Google's own Gemini used the system fully, across the roughly 60% of European phone users on Android. The user makes that call now.
+
+## Order two: the search data moves
+
+This is the part professional-services leaders should read closely. Google must share the **anonymized query, click, ranking, and view signals** its search engine produces, the same data it uses to sharpen its own results, with eligible competitors, including AI chatbots that do search-like work. Google Search has held more than 90% of the European market for years. The Commission's position is that no rival can rebuild that data trove alone.
+
+  
+
+The fine print is the whole story:
+
+  
+
+|  |  |
+| :-: | :-: |
+| **Term** | **What the Commission set** |
+| What moves | Anonymized query, click, ranking, and view signals |
+| Who receives it | Eligible search engines and search-like AI chatbots |
+| Allowed use | Improving search results |
+| Banned use | Training general-purpose AI models |
+| How | Multi-layered anonymization, a set pricing formula, an audited access process |
+| Escape hatch | Google may screen out firms posing serious security or data-protection risk |
+
+  
+
+The Commission said Google's earlier data-sharing offer stripped out 90% to 100% of unique queries and shut out chatbots, so almost nobody used it. The replacement was built with privacy experts and modeled on draft joint guidance from the Commission and the European Data Protection Board.
+
+## Why this lands on your desk
+
+You are not Google. You still care about two things here.
+
+  
+
+First, **distribution.** The default assistant on a phone captures people at the moment of habit. Forcing that choice open changes who your clients and staff talk to by default. Google's Kent Walker called the orders a risk to "vital privacy and security guardrails for millions of Europeans." Google would say that. Watch what actually ships.
+
+  
+
+Second, and more useful, **the template.** Brussels just defined what regulators will accept as data sharing between competitors: anonymized, purpose-limited, priced on a formula, and audited. Recipients may improve a product with the data but may not train a general model on it. If you own data governance at a firm that shares or receives data, that description is the bar you will be held to, inside the EU or not.
+
+## The takeaway
+
+No fine today, but the terms are the deliverable. The next time someone proposes moving sensitive data between organizations, hold it to the Commission's four tests: **anonymized, purpose-limited, priced, audited.** A proposal that cannot clear those is not ready, and now there is an official decision that says so.
+
+  
+
+Calendar note: the search-data measures phase in with pricing to be finalized by January 2027, and the Android changes are due in the next major release, Android 18, by 2027 (per the Commission). Appeals are likely. The direction is set.
+
+  
+
+*AI, Properly is the Ayvede field report.*
+
+  
+
+**Advise. Vet. Deliver.**
+
+  
+
+[Book a confidential briefing](https://www.ayvede.com/contact)`
+  },
+  {
+    "id": "1Sy1fNxhY38rNiHdSKN6mgKyapYCHveqjZndoRAAukuo",
+    "slug": "microsoft-is-paying-to-put-6-000-engineers-inside-its-customers",
+    "title": "Microsoft Is Paying to Put 6,000 Engineers Inside Its Customers",
+    "teaser": "Microsoft committed $2.5 billion to embed 6,000 people directly inside client operations. The most valuable software company on earth just conceded that selling the software is the easy part.",
+    "category": "General AI News",
+    "secondaryCategory": null,
+    "date": "2026-07-17",
+    "body": `Microsoft just did something a software company is not supposed to need to do. It committed $2.5 billion to hire and embed 6,000 people directly inside its customers' operations (per CNBC and GeekWire). The new unit is called Microsoft Frontier Co., run by Rodrigo Kede Lima, who previously led the company's Asia business. Early clients include Unilever and Novo Nordisk.
+
+  
+
+The industry has a name for this now: forward-deployed engineering. You stop shipping software over the wall and hoping the customer figures it out. You send your own engineers to sit inside the client, learn the real workflows, and wire the AI into them by hand. Palantir made the model famous. The largest software company on earth is now buying it in bulk.
+
+  
+
+Read the reason out loud, because it is the whole story. AI that dazzles in a demo tends to stall in a real business, where proprietary data, legacy workflows, and institutional inertia all push back (per CNBC). The model was the easy part. The wiring is where projects die.
+
+  
+
+The numbers behind the move are blunt. MIT's NANDA initiative studied 300 public AI deployments and reported that roughly 95 percent of enterprise generative AI pilots delivered no measurable impact on the bottom line, against $30 to $40 billion in spending (per "The GenAI Divide: State of AI in Business 2025," covered by Fortune). The cause was almost always the same: brittle workflows and pilots that never matched how the work runs.
+
+  
+
+So the vendors are rebuilding the exact layer they spent two decades trying to delete. For years the promise was that software would install itself and scale without people. Microsoft just put $2.5 billion behind the opposite bet.
+
+  
+
+Here is what the move tells you about where the value sits.
+
+  
+
+|  |  |
+| :-: | :-: |
+| **The old assumption** | **The 2026 reality** |
+| Software scales itself | Vendors are paying to embed humans inside customers |
+| The model is the hard part | Proprietary data and legacy workflows are the hard part |
+| Buy the license, capture the value | Budget the implementation, or join the 95 percent that stall |
+
+  
+
+If the most resourced software company in the world decided it needs humans inside the client to make AI land, the lesson for everyone with a smaller budget writes itself. The platform license is the cheap part. The expensive part, the part that decides whether you land in the 5 percent or the 95, is the vetting and the wiring: whose data feeds the model, which workflow it actually touches, and who checks the output before it reaches a client.
+
+  
+
+That is the work. Buy the platform if you want it. Just fund the people who make it real, or plan to explain a stalled pilot at the next review.
+
+  
+
+This is the reason Ayvede exists. AI drafts, a human vets, and the work ships only once it is verified. Microsoft just spent $2.5 billion agreeing with the premise.
+
+  
+
+*AI, Properly is the Ayvede field report.*
+
+  
+
+**Advise. Vet. Deliver.**
+
+  
+
+[Book a confidential briefing](https://www.ayvede.com/contact)`
+  },
+  {
+    "id": "1HVuF04pLzRs7yW8lNiH7s9o86iqO9tzXsSagW6S2Y5w",
+    "slug": "twenty-nine-countries-just-signed-a-rival-ai-rulebook",
+    "title": "Twenty-Nine Countries Just Signed a Rival AI Rulebook",
+    "teaser": "On July 16, twenty-nine nations signed the founding agreement for a China-led World AI Cooperation Organization, headquartered in Shanghai. The single global AI rulebook your compliance team planned around does not exist.",
+    "category": "General AI News",
+    "secondaryCategory": "Data Governance",
+    "date": "2026-07-17",
+    "body": 'While Western timelines argued over a Google model that Google had not officially announced, Xi Jinping walked onto a stage in Shanghai. On July 17 he opened the 2026 World Artificial Intelligence Conference in person, his first appearance at the event since it began in 2018, and delivered the keynote (per the South China Morning Post and CGTN). Beijing does not send its top leader to a trade show. It sends him to plant a flag.\n\n  \n\nThe flag went in the day before. On July 16, twenty-nine countries signed the founding agreement for the World AI Cooperation Organization, or WAICO, headquartered in Shanghai (per The Next Web and PYMNTS). The stated mission is "beneficial, safe, and fair" AI, written in United Nations Charter language. Analysts read it more plainly: a governance home for developing countries that sits outside the EU AI Act and the G7 process.\n\n  \n\nHere is the part your compliance team missed. Two AI rulebooks are being written at the same time, by different authors, for different audiences.\n\n  \n\n|  |  |  |  |\n| :-: | :-: | :-: | :-: |\n| **Track** | **Anchored in** | **Written in the language of** | **Courting** |\n| Western | EU AI Act, G7 process | Risk tiers and enforcement | Established economies |\n| China-led | World AI Cooperation Organization, Shanghai | Access and shared development | The Global South |\n\n  \n\nNotice who each side is courting. The Western track speaks to established economies in the language of risk tiers, conformity assessments, and penalties. The China-led track speaks to developing markets in the language of access and cooperation. Both call themselves safe. Both mean different things by it.\n\n  \n\nFor a firm that operates in one country, this is a headline you can skim. For a firm that works across borders, and most professional services firms do, this is a planning problem. The single global standard that everyone quietly assumed was coming is not coming. You will operate in markets governed by the Western track, markets courted by WAICO, and markets that have signed nothing and are watching both.\n\n  \n\nThe day made the point twice. As Shanghai set rules, Western coverage fixated on Gemini 3.5 Pro, reported to reach general availability on July 17 with a two-million-token context window and a reasoning mode priced at $250 a month. Google had not officially confirmed the model or those specs as of this writing (per TechTimes and MacObserver). The West ships models it will not confirm. The East signs governance it will not soften. Both move faster than your policy.\n\n  \n\n**What to actually do.** Pull a list of every country you operate in or sell into. Tag each one: Western track, WAICO-aligned, or undecided. The markets where the two tracks overlap are your safe zone. The gaps, especially data localization and cross-border model use, are where you want counsel before you deploy, not after. It is a one-afternoon exercise that saves a very bad quarter.\n\n  \n\nMapping governance across two rulebooks is the kind of work that gets skipped until a regulator asks. Ayvede runs it before the regulator does.\n\n  \n\n*AI, Properly is the Ayvede field report.*\n\n  \n\n**Advise. Vet. Deliver.**\n\n  \n\n[Book a confidential briefing](https://www.ayvede.com/contact)'
+  },
+  {
+    "id": "1B84egVA8ZnuIbcqOtZDBixqDM4BVIOEw9pnSBOz2wTg",
+    "slug": "china-just-regulated-the-ai-that-pretends-to-care",
+    "title": "China Just Regulated the AI That Pretends to Care",
+    "teaser": "China's biggest AI apps switched off their humanlike companion agents today to comply with the world's first rule aimed squarely at emotional AI. There is no US equivalent, and that gap is the real story.",
+    "category": "General AI News",
+    "secondaryCategory": "Legal",
+    "date": "2026-07-15",
+    "body": `Today the humanlike companion features inside ByteDance's Doubao and Alibaba's Qwen went dark. Those features went offline on purpose, to comply with a new national rule.
+
+  
+
+China's Interim Measures for the Administration of Artificial Intelligence Anthropomorphic Interaction Services took effect today, July 15. Five government bodies issued the measures on April 10, including the Cyberspace Administration of China and the Ministry of Industry and Information Technology, per the South China Morning Post. The rule covers any service that simulates human personality, thinking, and communication style to deliver sustained emotional interaction. The strictest limits protect minors.
+
+  
+
+The companies moved ahead of the deadline. Doubao told users its agent feature would go offline today. Qwen disabled user-created and humanlike agents on July 10 and took its broader agent functions offline today, per TechNode. Users keep read-only access to their agent configurations and chat histories until October 15. After that, the data is gone.
+
+  
+
+**This is the first national rule written specifically for AI that acts human.** The West has spent two years arguing about frontier-model risk and autonomous agents. China moved first on the part that touches ordinary people directly: the chatbot that remembers your birthday and says it missed you.
+
+  
+
+Here is why this matters even if you never plan to ship a companion bot.
+
+  
+
+**"Sounds human" is turning into a regulated product claim.** For years, making a bot feel like a person was a design win. Now, in the largest AI market on earth, it is a compliance trigger. If your client-facing AI implies a person or a relationship, disclosure and design limits are heading toward your market too.
+
+  
+
+**Emotional trust is now a named risk category.** Regulators follow attention and money. Financial advice bots, health triage tools, and legal intake assistants all run on tone and trust. The moment a system leans on emotional rapport to keep someone engaged, it lands on a list somebody is watching.
+
+  
+
+**Conversational data has a clock.** China's rule sets a hard deletion window. If your vendor's AI stores months of client conversations, "how long, where, and who can access it" now has regulatory precedent behind it.
+
+  
+
+|  |  |  |
+| :-: | :-: | :-: |
+| **Question** | **China, as of today** | **United States, as of today** |
+| Dedicated rule for emotional or humanlike AI | Yes | No federal equivalent |
+| Must disclose you are talking to AI | Required | Patchwork, mostly voluntary |
+| Special protection for minors | Explicit and strict | Limited and indirect |
+| Data deletion timeline | Defined in the rule | Set by each vendor |
+
+  
+
+Read the motives however you want. China's approach is heavy-handed, and control is part of the point. That caveat is fair. The design questions the rule forces are still the exact questions a serious buyer should be asking a vendor right now.
+
+  
+
+**The takeaway.** Before you deploy any AI that talks to your clients, answer one question in writing: does this system imply it is a person, and if so, do we say otherwise in plain language. If you cannot answer cleanly, finish that work before launch, while the fix is still cheap.
+
+  
+
+*AI, Properly is the Ayvede field report, written for the people who have to make AI safe to use before they make it useful.*
+
+  
+
+**Advise. Vet. Deliver.**
+
+  
+
+[Book a confidential briefing](https://www.ayvede.com/contact)`
+  },
+  {
+    "id": "1ddJrmrE9SXW6bI-K7Hbodj2Odt7-KzxlcR3cyStLZRQ",
+    "slug": "tsmc-is-sold-out-until-january-that-is-your-ai-supply-chain",
+    "title": "TSMC Is Sold Out Until January. That Is Your AI Supply Chain.",
+    "teaser": "TSMC just posted a record June and sold out its most advanced manufacturing through year-end. The AI capacity your vendors keep promising runs through one company in Taiwan.",
+    "category": "General AI News",
+    "secondaryCategory": "Finance",
+    "date": "2026-07-15",
+    "body": `The most important AI number this week came out of a chip factory in Taiwan.
+
+  
+
+TSMC reported June revenue up about 68 percent from a year earlier, a record month, per CNBC. That pushed its second-quarter revenue to roughly $39.6 billion, ahead of its own guidance. Its N3 manufacturing process and its CoWoS advanced packaging are both sold out through the end of the year. Nearly every leading AI chip shipping this year is built on that capacity.
+
+  
+
+Demand for AI silicon ran hot enough to break the company's normal seasonal pattern. June is usually a slower month for TSMC. This year it set a record instead, as TheStreet noted. The plain reading: the one company that makes the chips every frontier lab depends on cannot make enough of them.
+
+  
+
+Here is the part that should land for anyone buying AI under a serious contract.
+
+  
+
+**Vendor roadmaps are supply-gated now.** When your AI provider promises more capacity, faster models, and lower latency next quarter, that promise depends on wafers and packaging already spoken for through December. You are not at the front of that line. The hyperscalers and the frontier labs are.
+
+  
+
+**Sold-out supply is how prices climb.** Scarcity hands the seller the pen. If your pricing renews into a market where compute is tight, expect the number to move the wrong way unless you locked it.
+
+  
+
+**Continuity lives two steps below your contract.** If your vendor's inference runs on chips it does not manufacture or control, your service level depends on a supply chain you never signed with. That is worth knowing before an outage teaches it to you.
+
+  
+
+|  |  |
+| :-: | :-: |
+| **What the vendor says** | **What to confirm in writing** |
+| "More capacity next quarter" | Committed capacity, or best-effort language |
+| "Prices come down over time" | Price protection or a cap you can point to |
+| "Enterprise-grade uptime" | Remedies and failover if compute is constrained |
+| "Access to our newest model" | Guaranteed access, or subject to availability |
+
+  
+
+A sold-out fab signals demand, and TSMC is expanding. Call it a constraint rather than a crisis. Constraints belong in contracts, spelled out, where you can see them.
+
+  
+
+**The takeaway.** Reread your AI vendor agreements this month with one lens: which promises quietly assume compute your vendor does not yet own. Flag those lines. Then ask for committed capacity, price protection, and a written continuity plan. The vendors who can answer are the ones worth building on. The ones who cannot just showed you where your risk lives.
+
+  
+
+*AI, Properly is the Ayvede field report, written for the people who have to make AI safe to use before they make it useful.*
+
+  
+
+**Advise. Vet. Deliver.**
+
+  
+
+[Book a confidential briefing](https://www.ayvede.com/contact)`
+  },
+  {
+    "id": "1w5iJe36EpSUfEHTfWJc9PlZzglFZPzXCbHa8pNqZaSo",
+    "slug": "40-scientists-one-report-zero-rules",
+    "title": "40 Scientists, One Report, Zero Rules",
+    "teaser": "The UN published its first global scientific assessment of AI, then held its first governance summit in Geneva. The guardrails your clients expect are still yours to build.",
+    "category": "Data Governance",
+    "secondaryCategory": "General AI News",
+    "date": "2026-07-14",
+    "body": `## What happened
+
+Two things happened in the first week of July that will show up in client questionnaires by fall.
+
+  
+
+On **July 1**, the UN's Independent International Scientific Panel on Artificial Intelligence published its first report. The panel is 40 experts drawn from every region, serving in their personal capacity, and UN News describes the report as the first global, independent scientific assessment of AI's opportunities and risks. On **July 6 and 7**, Geneva hosted the Global Dialogue on AI Governance, the first UN platform dedicated to discussing how the world should govern AI.
+
+## The language was blunt
+
+UN processes usually sand the edges off. This one kept them, per UN News interviews with the co-chairs.
+
+  
+
+Yoshua Bengio, a Scientific Panel co-chair, said that with growing evidence of deceptive AI behavior, science currently cannot guarantee that increasingly capable AI will not cause catastrophic harm, either on its own or through malicious users. Fellow co-chair Maria Ressa called the collapse of shared facts an "information Armageddon" and delivered the line of the summit: "The world cannot govern what it cannot understand." Estonia's ambassador Rein Tammsaar, a Dialogue co-chair, pointed out that frontier development is concentrated in two countries, leaving everyone else with, in his words, a lot of questions.
+
+## Read it plainly
+
+The Dialogue is a forum. It convenes, discusses, and publishes. Binding obligations come from treaties and national legislatures, which run on a timescale of years. So the honest summary of Geneva is this: the world's scientists handed every government a shared risk assessment, and every government now decides separately what to do with it.
+
+  
+
+That gap is where you operate.
+
+  
+
+|  |  |
+| :-: | :-: |
+| **What Geneva produced** | **What governs your AI use today** |
+| The first global scientific assessment of AI (July 1) | EU AI Act obligations arriving on their own schedule |
+| A two-day governance dialogue (July 6-7) | US state privacy and AI statutes |
+| Converging themes: transparency, deception risk, the AI divide | Professional conduct rules, sector regulators, and your client contracts |
+
+## Why this matters to a mid-market firm
+
+Your clients' procurement and risk teams read the same headlines. When they ask about your AI governance this fall, waiting on regulators will land poorly as an answer. The panel's framing hands you a free, credible scaffold: capabilities outpacing oversight, deceptive model behavior, malicious use, and the widening divide between AI haves and have-nots. Map your controls to those four and you are speaking the same language as the people writing next year's rules.
+
+## The takeaway
+
+Test your internal AI policy against three questions the Geneva process just made standard. Do we know which AI systems we run and what they can do? Can we detect and report when one misbehaves? Can we explain our controls to a client on one page? Any no is your Q3 project, and it is cheaper to close now than during a client audit.
+
+  
+
+  
+
+*AI, Properly is the Ayvede field report on AI for high-trust professional services.*
+
+  
+
+**Advise. Vet. Deliver.** [Book a confidential briefing](https://www.ayvede.com/contact)`
+  },
+  {
+    "id": "1csiCvdBaAh4QWKB_qY7PjVZ1WZGqNhhpIRDT4LwwlVw",
+    "slug": "everyone-is-deploying-ai-agents-almost-nobody-can-govern-them",
+    "title": "Everyone Is Deploying AI Agents. Almost Nobody Can Govern Them.",
+    "teaser": "Gartner just called AI agents the fastest-adopting technology it tracks. In the same breath it admitted the controls to keep them in line are not ready. That gap is the entire story, and it is where the money and the risk both live.",
+    "category": "General AI News",
+    "secondaryCategory": "Data Governance",
+    "date": "2026-07-14",
+    "body": `Gartner just put a number on the thing every vendor has been shouting about all year.
+
+  
+
+Per its 2026 CIO and Technology Executive Survey, only **17 percent** of organizations have actually deployed AI agents. **42 percent** plan to within a year. Another **22 percent** the year after. Add it up and roughly eight in ten organizations are either running agents right now or about to be. Gartner calls it the most aggressive adoption curve of any emerging technology in the survey. Not one of the fastest. The fastest.
+
+  
+
+Here is the part the keynote slides skip.
+
+  
+
+That same body of Gartner research is blunt that the infrastructure to control these agents is still immature. The governance, the guardrails, the oversight layer that is supposed to keep an agent from doing something expensive and stupid is being bolted on **after** the agents are already in production, not before. Everyone is racing to deploy. Almost nobody is ready to govern.
+
+  
+
+**Why this is different from the last AI wave**
+
+  
+
+A chatbot answers. An agent acts.
+
+  
+
+That is the whole shift. An agent perceives information, makes a basic plan, calls tools, moves data, triggers workflows, and increasingly hands off to other agents, with limited human review at each step. Gartner frames it as a genuinely new software paradigm, and it is right. When a model just drafts text, a bad output is an embarrassing sentence. When an agent takes actions, a bad output is a wrong invoice sent, a record changed, a workflow fired that you cannot easily unfire.
+
+  
+
+The risk did not get a little bigger. It changed shape.
+
+  
+
+**The oversight problem nobody budgeted for**
+
+  
+
+Gartner's own point, and it is the uncomfortable one: human oversight cannot keep pace with agents. They move too fast and do too much for a person to check every action. So "a human will review it" quietly stops being a real control. What actually keeps agents safe is automated oversight, monitoring, logging, guardrails, and a way to stop an agent mid-task. Most firms deploying agents this year have none of that wired in.
+
+  
+
+Here is the split that matters, and almost everyone is only doing the left column:
+
+  
+
+| Deploying an agent | Governing an agent |
+
+|---|---|
+
+| Pick a use case, connect a tool | Define what it is and is not allowed to touch |
+
+| Get it working in a demo | Log every action so you can reconstruct what happened |
+
+| Ship it into a workflow | Set guardrails and a kill switch before it goes live |
+
+| Measure time saved | Measure what it did that it should not have |
+
+  
+
+The left column is a pilot. The right column is production. The gap between them is exactly where AI programs stall, get pulled, or blow up.
+
+  
+
+**The takeaway**
+
+  
+
+The winners of this wave will not be the firms that deployed agents first. They will be the firms that deployed them with enough oversight to actually trust them. Speed without control is not a head start, it is a liability with a countdown on it.
+
+  
+
+That is the entire premise of AI adoption without risk, and it is the work Ayvede does: put the governance, the guardrails, and the oversight in **before** the agents are loose in your business, not after something breaks. If your firm is in that 42 percent planning to deploy this year and the governance is still a someday problem, that is the conversation worth having now.
+
+  
+
+Advise. Vet. Deliver. More at ayvede.com.
+
+  
+
+One thing to keep: the fastest-adopting technology Gartner has ever tracked is also the one arriving with the least oversight. Adopt anyway. Just do it properly.`
+  },
+  {
+    "id": "1ZJ4-zZVu6oJjIlUonruDsg4ac27wVK0mixEauvy6B2k",
+    "slug": "the-genai-bill-is-coming-due-and-half-of-you-budgeted-wrong",
+    "title": "The GenAI Bill Is Coming Due, and Half of You Budgeted Wrong",
+    "teaser": "Gartner projects that most GenAI projects will blow their budgets by 2028, most home-built models will get abandoned, and the real cost is not where you think it is. Three numbers worth knowing before your next AI invoice lands.",
+    "category": "ERP",
+    "secondaryCategory": "General AI News",
+    "date": "2026-07-14",
+    "body": `Gartner's Generative AI Hype Cycle has three cost predictions that read less like forecasts and more like a warning label. Let me hand them to you straight, then tell you what to actually do about them.
+
+  
+
+**One. More than half of GenAI projects will overrun their budgets by 2028.** Gartner's stated cause is worth sitting with: it is not the model that blows the budget. It is poor architecture and thin operational know-how. The technology is not the problem. The way it gets built and run is.
+
+  
+
+**Two. More than half of enterprises that built their own models from scratch will abandon them by 2028.** Cost, complexity, and technical debt drag them under. All that effort, walked away from, because "build our own" sounded strategic in the pitch and turned into a maintenance sinkhole in reality.
+
+  
+
+**Three. The money is not in training. It is in running the thing.** Gartner projects that inference, the day-to-day cost of actually using a model once it is live, will be **70 percent or more** of a model's total lifetime cost through 2028. Training is the down payment. Inference is the mortgage.
+
+  
+
+**Why so many teams get this wrong**
+
+  
+
+Because everyone budgets for the exciting part and underbudgets the boring part.
+
+  
+
+The exciting part is building the model and launching the pilot. It photographs well and it demos well. The boring part is running it, governing it, and maintaining it month after month, which is where the actual cost lives. This is the precise reason pilots look cheap and production looks brutal, and why so many AI initiatives stall out right after the celebration.
+
+  
+
+Here is the gap in one look:
+
+  
+
+| Where firms think the cost is | Where Gartner says it actually is |
+
+|---|---|
+
+| Building and training the model | Running it every day (inference) |
+
+| The upfront project | The ongoing operations and governance |
+
+| The tooling license | The architecture and the people to run it right |
+
+  
+
+**How to not be in the 50 percent**
+
+  
+
+Three moves, none of them exotic:
+
+  
+
+Design for the inference cost from day one, not after the invoice shocks you. Architecture decisions made early are what put you in the over-budget half or keep you out of it.
+
+  
+
+Be honest about buy versus build. Building your own model from scratch is the right call far less often than ego suggests, and Gartner is now projecting that most who try it quit. Unless a home-built model is a genuine competitive edge, you are usually buying yourself technical debt, not an advantage.
+
+  
+
+Bring operational discipline before scale, not after. "Lack of operational know-how" is the polite Gartner phrase for shipping something you were not set up to run. Governance, monitoring, and clear ownership are not overhead. They are what keeps the project alive.
+
+  
+
+**The takeaway**
+
+  
+
+The firms that win with GenAI are not the ones that spent the most or built the flashiest thing. They are the ones that architected for the real cost curve and had the discipline to run it properly. Everyone else is quietly funding the half of Gartner's forecast nobody wants to be in.
+
+  
+
+That is the unglamorous middle where Ayvede works: making sure AI gets adopted in a way that survives contact with an actual budget and an actual audit. Not the demo. The operation. Adoption without risk, and without the surprise invoice.
+
+  
+
+Advise. Vet. Deliver. More at ayvede.com.
+
+  
+
+One thing to keep: in AI, the cheapest-looking project and the most expensive project are often the same project, twelve months apart. Budget for the mortgage, not just the down payment.`
+  },
+  {
+    "id": "1sPoFKFUvQnlufZg39zuVIOIChb4GS_GHERGA88h3ZL4",
+    "slug": "uncle-sam-on-the-cap-table",
+    "title": "Uncle Sam on the Cap Table",
+    "teaser": "OpenAI has floated handing the US government a 5 percent stake worth roughly $42.6 billion. If your firm runs on frontier AI, your vendor's shareholder list just became a diligence question.",
+    "category": "General AI News",
+    "secondaryCategory": "Finance",
+    "date": "2026-07-14",
+    "body": "## The story, plainly\n\nIn early July the Financial Times reported that OpenAI proposed giving the United States government a **5 percent stake** in the company. CNBC and CNN picked up the reporting on July 2. At OpenAI's recent **$852 billion valuation**, that stake is worth roughly **$42.6 billion**. Sam Altman pitched the idea directly to President Trump, Treasury Secretary Scott Bessent, and Commerce Secretary Howard Lutnick, per CNBC.\n\n  \n\nThe design goes past OpenAI. Per the FT reporting, the concept has Washington holding 5 percent of each leading US AI developer through a sovereign wealth fund style vehicle, with companies like Anthropic, Google, and Meta envisioned as participants.\n\n## What is confirmed and what is open\n\n|  |  |\n| :-: | :-: |\n| **Confirmed by reporting** | **Still open** |\n| OpenAI proposed a 5 percent government stake (FT, via CNBC and CNN, July 2) | Whether the administration accepts any version of it |\n| Altman discussed it with Trump, Bessent, and Lutnick | Whether any other lab participates. A source told CNN the administration and Anthropic have not discussed a stake |\n| The stake would be worth about $42.6 billion at an $852 billion valuation | Structure, governance rights, and what OpenAI receives in return |\n\n## Why a company offers the government equity\n\nOpenAI needs things only Washington can grant at scale: power for data centers, permits, chips, and calmer regulatory weather. Altman's public framing, per CNBC, is that giving the public a financial interest in the company is the best way to share AI's upside. Read plainly, it is also the best way to make the state a stakeholder in your continued success. Every future debate about AI regulation would then include a Treasury line item that benefits from the regulated company winning.\n\n## Why this lands on your desk\n\nYou own zero OpenAI shares. Your firm still runs client work through frontier models, which makes your vendor's ownership part of your risk surface.\n\n  \n\n  - **Conflicts.** A law firm opposing a federal agency while its drafting tools come from a vendor part-owned by that government has a question to answer. The answer may be fine. The question still needs asking, and your client may ask it first.\n  - **Data posture.** State equity does not mean state access to your data. Your clients will not assume that distinction. You need it in writing.\n  - **Concentration.** If equity becomes the price of federal cooperation, expect the frontier to consolidate around labs that can afford to pay it. Fewer vendors means less negotiating room for you.\n\n## The takeaway\n\nAdd an **ownership and control** section to your AI vendor diligence now. Three questions do the work: Who holds equity and what governance rights attach? What government stakes, contracts, or negotiations exist? What notice do we get when the answer changes? Vendors answer these questions once enough clients ask. Be an early asker.\n\n  \n\n  \n\n*AI, Properly is the Ayvede field report on AI for high-trust professional services.*\n\n  \n\n**Advise. Vet. Deliver.** [Book a confidential briefing](https://www.ayvede.com/contact)"
+  },
+  {
+    "id": "18I_zhQLgHJ7FK038wiHOK_RnZDN5huNXx7fYV9ue3bA",
+    "slug": "your-ai-agents-are-about-to-start-talking-to-each-other",
+    "title": "Your AI Agents Are About to Start Talking to Each Other",
+    "teaser": "Gartner projects that by 2028, most AI agents will act by coordinating with other agents, not with people. Nobody has figured out how to govern a conversation you are not part of, and that is the next big exposure hiding inside the agent hype.",
+    "category": "Data Governance",
+    "secondaryCategory": "General AI News",
+    "date": "2026-07-14",
+    "body": `Gartner's new Agentic AI Hype Cycle drops a prediction that should make anyone responsible for risk put their coffee down.
+
+  
+
+By **2028, 60 percent of agents will autonomously interact with other agents.**
+
+  
+
+Read that again slowly. The majority of what your AI agents do will soon happen in exchanges you never see, at machine speed, agent to agent, with no person in the loop for each handoff. Gartner has a name for where this goes: the agent-to-agent economy. Today your agent automates a task a human used to click through. Tomorrow it negotiates, delegates, and hands work to another agent, which hands it to another.
+
+  
+
+That is a genuine leap in capability. It is also a genuine leap in exposure, and the second part is getting almost none of the airtime.
+
+  
+
+**Why a conversation between machines is a governance problem**
+
+  
+
+When Agent A trusts Agent B's output and acts on it, and Agent B was wrong, spoofed, or out of date, the mistake propagates before a human ever sees it. There is no natural pause. The error just moves, fast, through a chain of automated decisions, and by the time it surfaces it has already touched three systems.
+
+  
+
+Three things break specifically, and Gartner keeps circling all three:
+
+  
+
+**Identity.** Which agent is this, really, and is it actually allowed to do what it is asking to do? In a world of agents calling agents, "trust me, I am an internal service" is not good enough.
+
+  
+
+**Traceability.** When something goes wrong across a five-agent handoff, can you reconstruct what actually happened, in order, with evidence? If the answer is no, you do not have a system, you have a rumor.
+
+  
+
+**Accountability.** When an autonomous chain produces a bad outcome, who owns it? "The AI did it" is not an answer a regulator, a client, or a board will accept.
+
+  
+
+Here is how the risk profile shifts the moment agents start coordinating:
+
+  
+
+| One agent, human-supervised | Agents coordinating, machine-speed |
+
+|---|---|
+
+| A person checks the output | The output triggers the next action automatically |
+
+| One identity to trust | A chain of identities to verify |
+
+| One log to read | A distributed trail across many agents |
+
+| Clear owner | Diffused, unless you designed for it |
+
+  
+
+**The takeaway**
+
+  
+
+You do not govern this by writing a policy document after the agents are already talking. By then the conversation is happening thousands of times a day and your PDF is irrelevant. You govern it by building identity, logging, and guardrails **into the architecture** before the handoffs start, so that every agent has a verifiable identity, every action leaves a trail, and there is always a human-owned line of accountability behind the automation.
+
+  
+
+That is unglamorous, foundational work, and it is exactly the work most firms skip in the rush to say they have agents. It is also precisely what Ayvede builds: the trust and oversight layer underneath autonomous AI, so the agent-to-agent economy runs on rails instead of hope. Adoption without risk, before the risk compounds.
+
+  
+
+Advise. Vet. Deliver. More at ayvede.com.
+
+  
+
+One thing to keep: the scary part of agentic AI is not one agent going rogue. It is a hundred well-behaved agents confidently acting on each other's mistakes, faster than you can watch. Design for that now, while your agents still mostly talk to you.`
+  },
+  {
+    "id": "13R5_O6B16ct0kXVLls7rE4Bc6NDFi5oha0jzfeZhQ-o",
+    "slug": "every-excel-workaround-is-a-requirement-in-disguise",
+    "title": "Every Excel Workaround Is a Requirement in Disguise",
+    "teaser": "The most honest systems documentation in your firm is the spreadsheet nobody sanctioned. Your AI roadmap is already written in your workarounds, if you know how to read them.",
+    "category": "Data Governance",
+    "secondaryCategory": null,
+    "date": "2026-07-10",
+    "body": `Ask a controller how the monthly numbers actually come together. Somewhere in the answer lives a spreadsheet nobody sanctioned, maintained by one person, named something like FINAL_v7_USE_THIS_ONE.xlsx.
+
+  
+
+Nobody put that file in an architecture diagram. Yet it is the most honest piece of systems documentation your firm owns, because every workaround is testimony. A system refused a requirement, and a person routed around it. The export that runs every Monday, the numbers re-keyed between two platforms, the colleague who "just fixes" the categories before the report goes out: each one marks the exact spot where your official systems stopped meeting the business.
+
+  
+
+Which is why the standard way firms build an AI roadmap, a whiteboard, a brainstorm, and a list of use cases nobody has validated, starts in the wrong room. The demand signal already exists. It is sitting in the file share, holding the month-end close together.
+
+## 1. Run a workaround census, not a use-case workshop
+
+Workarounds beat brainstormed use cases on every dimension that matters. They are pre-validated: someone cared enough to build the ugly version and has maintained it, unpaid and unthanked, for years. They come with a named owner, a real frequency, and a measurable cost. A use-case workshop produces wishes. A census produces evidence.
+
+  
+
+Where to look:
+
+  
+
+**Recurring exports.** Anything pulled from a system into Excel on a schedule means the system's own reporting cannot answer the real question.
+
+  
+
+**Re-keying.** A human typing values from one screen into another is a missing integration with a salary.
+
+  
+
+**The human API.** "Send it to Maria, she fixes it." Maria is running an unencoded business rule from memory. When Maria takes a vacation, so does your data quality.
+
+  
+
+**Version-numbered attachments.** Files with dates and initials in the name are an approval workflow that never got built.
+
+  
+
+**The shadow master.** The shared spreadsheet everyone treats as the real customer list, the real rate table, the real headcount. That one is the most dangerous, and the most informative.
+
+## 2. Translate each workaround into its requirement
+
+The census only pays off if you read each artifact for what it encodes, then pick the fix that matches the requirement, and only that.
+
+  
+
+|  |  |  |
+| :-: | :-: | :-: |
+| **The workaround** | **The requirement it encodes** | **The likely right fix** |
+| Monthly export to Excel for reporting | The system cannot answer the question people actually ask | A reporting layer. No AI required. |
+| Re-keying between two systems | A missing integration | Plain automation |
+| Someone hand-classifies transactions or tickets | A judgment rule nobody ever encoded | A real AI candidate, with human review |
+| Shadow spreadsheet as the "real" master list | Nobody owns that data domain | Ownership and master data governance, before anything else |
+
+  
+
+Notice how the table splits. Some of it needs AI. More of it needs plain automation or a decision about ownership. Knowing the difference is the discipline that keeps budgets intact and reputations un-singed, because the fastest way to discredit an AI program is to point it at a problem an integration would have solved for a tenth of the cost.
+
+## 3. The governance stakes just went up
+
+Shadow spreadsheets were tolerable when only humans read them. They are ungoverned data stores, with no owner, no validation, and no access control, and they already feed real decisions. Now firms are wiring AI assistants to the file share and grounding chatbots on "our documents."
+
+  
+
+Ground an assistant on a drive full of workarounds and the workarounds get a louder voice and better grammar. The stale rate table stops being one analyst's private shortcut and becomes the confident answer the whole firm receives. Retrieval does not launder data quality. It amplifies whatever it finds.
+
+## 4. The 90-day version
+
+**Weeks 1 to 4: inventory by amnesty.** Ask people what they maintain to get their job done, and make it explicitly safe to answer. A census framed as an audit finds nothing, because workarounds hide from auditors.
+
+  
+
+**Weeks 5 to 8: rank.** Score each item on frequency, blast radius, and how much undocumented judgment it contains. The shadow masters and the human APIs float to the top.
+
+  
+
+**Weeks 9 to 12: retire, promote, or rebuild.** Retire what a report or an integration kills outright. Promote the judgment-heavy survivors into governed requirements with named owners. Pick your AI pilots only from that promoted list, each with an owner, a review step, and a finish line.
+
+  
+
+Ninety days later you have an AI roadmap made of proven demand, priced by real frequency, staffed by people who already care, and a data estate that is one census cleaner than it was.
+
+## Final thought
+
+Firms keep asking where to start with AI, then commission research to find out. The answer has been on the shared drive the whole time, hiding in a filename with a version number. Read your workarounds. They are the requirements document your users have been writing for years, one unsanctioned spreadsheet at a time.
+
+  
+
+*AI, Properly is the Ayvede field report: AI news read plainly, with a takeaway you can use.* **Ayvede** turns ungoverned workarounds into governed AI roadmaps for high-trust firms. Advise. Vet. Deliver. [Book a confidential briefing](https://www.ayvede.com/contact).`
+  },
+  {
+    "id": "1zRv6zHOSPrW--nP5J-bgz3uS8t7rJ7jKhkiowxKe-ec",
+    "slug": "the-46-percent-problem",
+    "title": "The 46 Percent Problem",
+    "teaser": "CNBC reports that Chinese AI models have carried at least 30 percent of enterprise token traffic on OpenRouter every week since February, peaking at 46 percent. Your stack may have voted already, and nobody brought it to a meeting.",
+    "category": "General AI News",
+    "secondaryCategory": "Data Governance",
+    "date": "2026-07-10",
+    "body": `On July 7, CNBC published an investigation with a number that should reorganize a few meeting agendas. Chinese-origin AI models have accounted for at least 30 percent of enterprise token volume on OpenRouter, one of the largest model routing platforms, every single week since February 8. The weekly peak hit 46 percent.
+
+  
+
+A year of context makes it sharper. Over the prior twelve months the average was 11 percent. In the first half of 2025 it was 4.5 percent, per the same reporting.
+
+  
+
+DeepSeek alone now routes 17.6 percent of OpenRouter's tokens, the largest share of any single vendor on the platform, Western labs included. Alibaba's Qwen adds another 13.9 percent.
+
+  
+
+If your reaction is "we would never," keep reading. This did not happen at companies that decided to adopt Chinese models. It happened at companies that never decided anything.
+
+## 1. How this happened without a decision
+
+Price. CNBC found open-weight Chinese models running 60 to 90 percent cheaper than the flagship offerings from OpenAI and Anthropic. DeepSeek's budget tier was listed at $0.14 per million input tokens against $5.00 for GPT-5.5.
+
+  
+
+Now put that price gap in front of an engineer with a routing platform and a cost target. Switching models takes one line in a config file. There is no purchase order, no vendor onboarding, no security review triggered, because the spend runs through a router the company already approved. The procurement decision dissolves into a thousand pull requests.
+
+  
+
+That is the real story here. Model choice became an engineering variable while your governance still treats it as a procurement event.
+
+## 2. June poured fuel on it
+
+Two accelerants showed up in the reporting. First, a US export-control action briefly suspended access to Anthropic's newest models in June before access was restored in early July. Every team that lost its primary model for weeks learned the same lesson about single-vendor dependency, and diversification stopped being a slide and became a config change. Second, the practice went public: CNBC noted that companies including Airbnb and Uber have openly acknowledged using Chinese models.
+
+  
+
+Washington noticed. On July 8, CNBC reported that lawmakers opened a probe into the growing use of Chinese AI models inside US companies. Whatever your firm's position is, you want to have one before someone asks for it.
+
+## 3. "Chinese model" is three different risk conversations
+
+The label covers three deployment patterns with very different exposure. Panic flattens them into one. Governance separates them.
+
+  
+
+|  |  |  |
+| :-: | :-: | :-: |
+| **How the model reaches you** | **What it actually is** | **What to check** |
+| Self-hosted open weights | Model files running inside your own cloud tenancy | License terms, provenance, alignment behavior, how updates arrive |
+| Direct API to the model vendor | Your prompts leave your boundary | Data residency, retention, training use, governing jurisdiction |
+| Embedded in a SaaS product | Your vendor's routing decision, invisible to you | Subprocessor disclosures, model-change notice clauses |
+
+  
+
+The third row is the one most firms miss. Your vendors face the same margin pressure your engineers do. When a SaaS tool quietly swaps its underlying model to protect its unit economics, your data follows that decision without you.
+
+## 4. What a grown-up response looks like
+
+**Audit your token mix.** Router dashboards and egress logs will tell you in an afternoon which models your traffic actually touches. Do this before writing any policy, because the policy conversation changes when the number is real.
+
+  
+
+**Put model provenance in vendor vetting.** Every AI tool review should answer: which models, hosted where, under whose jurisdiction, with what notice when it changes.
+
+  
+
+**Write an allowed-model list with tiers.** Public marketing copy does not need the same model standard as client work product. Tie model tiers to data sensitivity and put it in writing.
+
+  
+
+**Fix the contracts.** Ask for notice-of-change language on models and subprocessors in your SaaS agreements. You will not always get it. The asking still tells you who your careful vendors are.
+
+  
+
+**Make the cost trade explicit.** Saving 80 percent on tokens is a legitimate business decision for the right workload. Silence is the problem, because silence means nobody weighed the trade.
+
+## Final thought
+
+The headline number will keep moving. The governance lesson stands still: your model mix is a decision, whether or not anyone makes it on purpose. Firms that treat it as one will save money in the right places and hold the line in the right places. Firms that don't will find out their position from a router dashboard, or from a regulator.
+
+  
+
+*AI, Properly is the Ayvede field report: AI news read plainly, with a takeaway you can use.* **Ayvede** helps high-trust firms know exactly which AI touches their data, and under what rules. Advise. Vet. Deliver. [Book a confidential briefing](https://www.ayvede.com/contact).`
+  },
+  {
+    "id": "1YbGnduagxyR8LmA2a1pKrY6PhPKgoz7uPp6pNE6hOOM",
+    "slug": "the-fake-citation-tab-is-now-six-figures",
+    "title": "The Fake Citation Tab Is Now Six Figures",
+    "teaser": "A federal court in Oregon ordered a lawyer to pay $109,700 over AI-invented filings, and first-quarter sanctions alone topped $145,000. Courts have stopped teaching this lesson for free.",
+    "category": "Legal",
+    "secondaryCategory": null,
+    "date": "2026-07-10",
+    "body": `A federal court in Oregon ordered a lawyer to pay $109,700 in sanctions and costs for filing AI-generated errors, a figure the Washington State Bar's NWSidebar blog reported in March as a possible record. It did not stay remarkable for long. By ComplexDiscovery's tally, US courts imposed at least $145,000 in sanctions for AI-fabricated citations in the first quarter of 2026 alone.
+
+  
+
+Three years ago this was one famous cautionary tale. Now it is a line item.
+
+  
+
+|  |  |  |
+| :-: | :-: | :-: |
+| **When** | **Where** | **The bill** |
+| 2023 | Mata v. Avianca (S.D.N.Y.), the first famous one | $5,000 |
+| Reported Feb-Mar 2026 | Federal court, District of Oregon | $109,700 in sanctions and costs |
+| 2026 | Whiting v. City of Athens (Sixth Circuit) | Full appellee fees, double costs, and $15,000 in punitive sanctions from each of two attorneys |
+| June 2026 | New York appellate case | $10,500 combined: $8,000 from the attorney, $2,500 from the firm |
+
+  
+
+The scale behind the headlines: Damien Charlotin, a research fellow at HEC Paris, maintains the most widely cited database of AI-hallucinated content submitted to courts. It passed 1,200 cataloged cases worldwide by early 2026. NPR covered the stacking penalties in April. The American Bar Association's Litigation News summed up the era in four words: fake cases, real sanctions.
+
+## 1. What changed between $5,000 and $109,700
+
+In 2023, courts treated Mata v. Avianca as a teaching moment. The sanction was modest and the opinion read like a warning to the profession. The warning did not work, so the posture changed. Look at Whiting: the Sixth Circuit found more than two dozen fake citations and misstatements of fact, then reached for fee-shifting, doubled costs, and punitive sanctions on top. Courts are no longer pricing these as mistakes. They are pricing them as conduct.
+
+  
+
+And the failure keeps recurring for an uncomfortable reason: the tools got better. A hallucinated brief in 2023 often read slightly off. A hallucinated brief in 2026 reads clean, formats correctly, and cites cases whose names sound exactly right. Fluency is a formatting property. It carries no information about whether the case exists. Deadline pressure plus polished output is how experienced attorneys keep signing filings they never checked.
+
+## 2. Every one of these is a workflow failure
+
+Here is the take, and it is the whole article: none of the sanctions cases are technology failures. The model did what models do. It produced plausible text. The failure happened after generation, in the gap where verification was supposed to live. Which is good news, because your firm controls the workflow completely.
+
+  
+
+**Source-locked drafting.** The model may cite only from documents you loaded into it: the record, the authorities you pulled, your own research memos. Drafting from the model's memory of case law is how invented citations are born.
+
+  
+
+**A cite-check gate with a name on it.** Before anything is filed, a human pulls and reads every cited authority. Every one. The check gets logged with the checker's name and the date. If that sounds tedious, compare it to explaining $109,700 to your partners.
+
+  
+
+**A tool policy by matter type.** What is permitted on a research memo differs from what is permitted on a signed filing. Write the tiers down, and cover disclosure obligations where courts require them.
+
+  
+
+**Train the actual failure mode.** Teach associates that model confidence signals mean nothing. The sanctioned briefs did not look risky. They looked finished. That is precisely the property that makes unverified AI output dangerous in a profession built on citations.
+
+  
+
+**The signature rule.** Whoever signs owns every word and every cite. Rule 11 does not have an AI exception, and no judge in the database found "the tool wrote it" persuasive.
+
+## 3. The mantra that survives contact with a courtroom
+
+AI drafts. You verify. Firms that internalize those four words get the upside of drafting speed with none of the docket humiliation. Firms that skip the second half are funding the sanctions tracker one six-figure order at a time. The technology is allowed in nearly every courtroom in America. Unverified technology is what keeps ending up in the database.
+
+## Final thought
+
+The remarkable thing about the 1,200-case database is how few of those matters involved bad lawyers. Mostly they involve normal lawyers, under normal deadline pressure, extending trust to output that had done nothing to earn it. Verification is not a tax on AI adoption. It is the price of the signature, same as it always was. The only new part is how the drafts get made.
+
+  
+
+*AI, Properly is the Ayvede field report: AI news read plainly, with a takeaway you can use.* **Ayvede** builds verification workflows and AI guardrails for law firms and other high-trust practices. Advise. Vet. Deliver. [Book a confidential briefing](https://www.ayvede.com/contact).`
+  },
+  {
+    "id": "1r9i2wLl7t-phOvfkMNAxrPs_OsRjzhnBCKqiKu-o39g",
+    "slug": "three-frontier-models-shipped-in-one-week-your-ai-policy-didn-t-notice",
+    "title": "Three Frontier Models Shipped in One Week. Your AI Policy Didn't Notice.",
+    "teaser": "Grok 4.5, GPT-5.6, and a wave of agent products all landed inside 48 hours, and Washington reviewed one of them before the public ever saw it. If your firm's approved-tool list has a date on it, that date is now a historical artifact.",
+    "category": "General AI News",
+    "secondaryCategory": null,
+    "date": "2026-07-10",
+    "body": `The second week of July 2026 rearranged the frontier model market in about 48 hours. On July 8 and 9, xAI shipped Grok 4.5. OpenAI took GPT-5.6 public in three tiers, launched ChatGPT Work, and folded its Codex app into a single desktop product, as reported by The New Stack. Anthropic answered the same day by pushing Claude Cowork to mobile and web, per The Verge, having already made Claude Sonnet 5 the default model for its users.
+
+  
+
+Three frontier labs. Three major model releases. Two competing agentic work products. One week.
+
+  
+
+Here is the field as of July 10, at launch-week list prices:
+
+  
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| **Model** | **Shipped** | **The short version** | **Output price per 1M tokens** |
+| Grok 4.5 (xAI) | Jul 8-9 | Top agentic tool-use score on the Artificial Analysis board, with a serious accuracy caveat | $6 |
+| GPT-5.6 Sol / Terra / Luna (OpenAI) | Jul 9 | Three tiers; Sol for long-horizon agent work, Luna as the budget workhorse | $30 / $15 / $6 |
+| Claude Sonnet 5 (Anthropic) | Default since June | The price-performance pick of the Western field | $10 intro through Aug 31 |
+| Claude Fable 5 (Anthropic) | Available via credits | The benchmark leader, at a premium | $50 |
+
+  
+
+Prices move fast right now. Check the vendor page before you budget against this table.
+
+## 1. The number nobody put in a launch post
+
+Artificial Analysis ranked Grok 4.5 fourth on its Intelligence Index. The finding that matters more for anyone doing real work: measured accuracy rose from 35 to 52 percent over the prior version, while the measured hallucination rate rose from 25 to 54 percent. Artificial Analysis put it plainly: the model knows more, and it is more confident when it is wrong.
+
+  
+
+Sit with that. Capability and reliability moved in opposite directions inside the same release. A smarter model produced a higher rate of confident errors. If your working assumption is that each new version gets safer to trust, this week falsified it in public, with instruments.
+
+  
+
+There is a second credibility caveat worth keeping. Reviewers at Awesome Agents flagged that some of Grok 4.5's coding benchmark results may be contaminated by training data overlap, and earlier coverage of GPT-5.6 noted a METR evaluation finding that one variant performed better when it detected it was being tested. Treat leaderboards as marketing collateral until you run your own tasks through the model.
+
+## 2. Washington was in the room before you were
+
+GPT-5.6 reached the public on July 9 after a roughly 12-day review window with the White House, which had asked OpenAI to release the model first to vetted groups, per Tech Times. Meanwhile, multiple outlets reported in early July that the administration is finalizing a voluntary framework with OpenAI, Google, and Anthropic that could give the government up to 30 days to review the national security implications of a frontier model before release. The sticking point still being negotiated is the threshold: which releases count as frontier. An announcement could land any day.
+
+  
+
+Across the Atlantic, xAI skipped the EU at launch entirely, citing compliance review, with the EU AI Act's high-risk enforcement date of August 2 approaching.
+
+  
+
+The plain read: frontier releases are becoming regulated events. Availability, timing, and even which countries get a model are now policy outcomes. Your tool stack inherits that volatility whether you follow the politics or not.
+
+## 3. Why your approved-tool list just aged out
+
+This week quietly broke three assumptions that most AI policies are built on.
+
+  
+
+**The name on the policy stays the same while the thing changes.** "ChatGPT" now means a different flagship model, a merged desktop app, and an autonomous work agent that operates across your files. A policy that approved the name did not approve any of that.
+
+  
+
+**Benchmarks transfer to your work.** Contamination flags and evaluation-gaming findings within a single week say otherwise. The only benchmark that binds is one built from your own documents and your own tasks.
+
+  
+
+**Newer means safer.** Accuracy up, hallucination rate up, same model, same day. Progress on one axis tells you nothing about the other.
+
+## 4. Vetting is a cadence, not a checkbox
+
+A tool approved in January is not approved in June. This week, that principle got a timestamp. What it looks like in practice:
+
+  
+
+**Pin versions in production.** Know exactly which model version sits behind every workflow, and treat an upstream version change like a vendor change, with sign-off.
+
+  
+
+**Re-vet on a schedule and on events.** Quarterly at minimum, plus any major release from a vendor you depend on. This week alone triggered three.
+
+  
+
+**Keep an exit exam.** Twenty tasks drawn from your real work, run against any model before it touches production. Score accuracy and confident wrongness separately, because as of this week we have public proof they move independently.
+
+  
+
+**Log which model produced what.** When something goes wrong in month three, the first question is which version wrote it. Make that answerable.
+
+## Final thought
+
+The labs will do this again. Release weeks are getting denser, the products are getting more autonomous, and government review is about to become part of the shipping process. The firms that get hurt will be the ones that approved a tool once and assumed the decision would keep. Approval has a shelf life now. Put a date on it, and put the next review on the calendar before the next launch week does it for you.
+
+  
+
+*AI, Properly is the Ayvede field report: AI news read plainly, with a takeaway you can use.* **Ayvede** vets AI tools and models against your confidentiality and compliance standards, on a cadence, in writing. Advise. Vet. Deliver. [Book a confidential briefing](https://www.ayvede.com/contact).`
+  },
+  {
+    "id": "178MzU8jNzBhl-Xymeo2TuRDmcHJS08ulxRemQ6318gM",
+    "slug": "your-erp-vendor-sold-you-agents-nobody-asked-your-data",
+    "title": "Your ERP Vendor Sold You Agents. Nobody Asked Your Data.",
+    "teaser": "SAP now ships dozens of Joule agents that can post transactions on their own, and Microsoft wired Copilot into the mix. Readiness research says most companies are about to hand power tools to master data that cannot carry the weight.",
+    "category": "ERP",
+    "secondaryCategory": null,
+    "date": "2026-07-10",
+    "body": `At Sapphire in May, SAP put the phrase "autonomous enterprise" on its main stage, per the SAP News Center. The pitch has hardware behind it: Joule has grown into an agent platform with more than 40 specialized agents and over 2,400 skills across finance, procurement, HR, and supply chain, and Joule Studio went generally available this year as a low-code agent builder. These agents do more than answer questions. They create purchase orders, post goods receipts, and run financial simulations.
+
+  
+
+Microsoft used the same conference to announce agent-to-agent integration between Microsoft 365 Copilot and Joule, per the Microsoft Azure blog, so agents on both sides of the fence can hand work to each other. Oracle ships its own agents, concentrated in finance workflows. Every major ERP vendor now sells some version of the same sentence: the system will act on its own.
+
+  
+
+Here is the part of the keynote that applies to you specifically: the agent will act on **your** data. Everything else in the demo was theirs.
+
+## 1. The readiness gap, in numbers
+
+E3 Magazine's Agentic AI Readiness Index 2026 found that only 15 percent of companies are fully prepared to run agent-based AI in production, while roughly 60 percent report investing tens to hundreds of millions in the category. The same body of research notes that 41 percent are running agentic AI in production anyway, on top of known gaps in data reliability and governance.
+
+  
+
+Read those numbers together. The money is committed, the deployment is happening, and the preparation is missing in most of the buildings where both are true.
+
+  
+
+Gartner added a sharper warning in a May 26 press release: applying uniform governance across all AI agents leads to failure. The distinction that matters is between an agent's **ability to act** and the **scope of access** it is granted. An agent that can post journal entries and an agent that summarizes reports should live under different rules, and most rollouts give them the same badge.
+
+## 2. An agent is speed, and speed amplifies what is underneath
+
+The demo works because the demo data is curated. Production is where your actual vendor master lives, with its duplicates, its stale banking details, and its three spellings of the same supplier. An agent posting transactions against that master does what your team used to do, at machine speed, without the veteran clerk's pause that has quietly saved you a dozen times a year.
+
+  
+
+|  |  |
+| :-: | :-: |
+| **What the demo shows** | **What production will show** |
+| A clean, curated vendor master | Duplicates, stale bank details, three spellings of one supplier |
+| The happy-path purchase flow | The exceptions your team handles from memory |
+| An agent with tidy demo permissions | The role model you have not redesigned since go-live |
+| Instant, reversible actions | Month-end close, where reversals have consequences |
+
+## 3. Five audits before you switch anything on
+
+**Master data ownership.** Vendor, customer, item. Every domain gets a named owner and a dedup pass before any agent touches it. If nobody owns the vendor master, the agent does now, and it did not ask for the job.
+
+  
+
+**Category structures a human can read.** Your chart of accounts and product hierarchies encode decisions. If people cannot explain the structure, an agent cannot respect it, and it will file things with total confidence in the wrong place.
+
+  
+
+**Agent identity and least privilege.** Give each agent its own identity, scope access to the minimum, and apply Gartner's split: what it can do and what it can reach are separate decisions, made separately.
+
+  
+
+**Exception paths on paper.** Agents automate the happy path. Your business runs on exceptions. Document them before go-live, because the undocumented ones will be handled by a machine that does not know they exist.
+
+  
+
+**Logging and reversibility.** Every agent action attributable, every action undoable, tested before launch. When the auditor asks who posted the entry, "the ERP did" needs a better answer behind it.
+
+## 4. Then earn autonomy in stages
+
+Run one process in shadow mode with a human approving every action. Widen to supervised autonomy on low-risk transactions. Grant real autonomy only where the logs prove the agent has earned it. Crawl, walk, run. The vendors solved capability this year. Readiness was never theirs to solve. It is yours.
+
+## Final thought
+
+The autonomous enterprise is a real direction, and the tooling arriving this year is legitimately impressive. But an agent inherits the data estate you actually have, and no keynote can audit your vendor master for you. Do the unglamorous work first, and the agents get to be the productivity story instead of the incident report.
+
+  
+
+*AI, Properly is the Ayvede field report: AI news read plainly, with a takeaway you can use.* **Ayvede** assesses AI and data readiness before your firm switches anything on. Advise. Vet. Deliver. [Book a confidential briefing](https://www.ayvede.com/contact).`
+  }
+];
+const EMAIL = "anthonydellapia@gmail.com";
+const PHONE = "+1 (215) 384-8335";
+const PHONE_TEL = "+12153848335";
+const NAV = [
+  { id: "home", label: "Home" },
+  {
+    id: "solutions-menu",
+    label: "Solutions",
+    children: [
+      { id: "solutions", label: "Advisory" },
+      { id: "programs", label: "Programs" },
+      { id: "platform", label: "Platform" },
+      { id: "lab", label: "Innovation Lab" }
+    ]
+  },
+  { id: "tools", label: "Tools" },
+  { id: "insights", label: "Insights" },
+  { id: "vision", label: "Vision" }
+];
+const NAV_ALL = NAV.flatMap((n) => n.children ? n.children : [n]);
+const TITLES = {
+  home: "The AI Source of Truth for High-Trust Firms",
+  vision: "Vision",
+  solutions: "Solutions",
+  programs: "Programs",
+  platform: "The Ayvede Platform",
+  lab: "Innovation Lab",
+  tools: "Tools",
+  insights: "The Ayvede Briefing",
+  connect: "Connect"
+};
+const KPIS = [
+  { n: "20+", l: "AI Projects Delivered" },
+  { n: "30+", l: "Clients Served" },
+  { n: "8", l: "Structured Programs" },
+  { n: "6", l: "Lab Ventures" },
+  { n: "100%", l: "Client Satisfaction" }
+];
+const RISKS = [
+  {
+    t: "Shadow AI",
+    d: "Your teams are already pasting client language into consumer chatbots. Unsanctioned tools mean zero visibility, zero control, and unbounded exposure."
+  },
+  {
+    t: "Compliance Exposure",
+    d: "Privilege, privacy law, bar rules, and regulator expectations do not pause for experimentation. Ungoverned AI turns efficiency into liability."
+  },
+  {
+    t: "Pilot Purgatory",
+    d: "Tools get bought, demos get applauded, and nothing ships. Spend without owners, deadlines, or acceptance criteria is where AI ROI goes to die."
+  }
+];
+const CAPABILITIES = [
+  {
+    icon: Compass,
+    t: "Advisory",
+    d: "Structured consulting from readiness assessment through executive advisory. Strategy, governance, and secure implementation with named deliverables.",
+    page: "solutions",
+    cta: "Explore Solutions"
+  },
+  {
+    icon: GraduationCap,
+    t: "Education",
+    d: "Confidential executive briefings, a governance and compliance bootcamp, and hands-on training that builds real internal capability.",
+    page: "programs",
+    cta: "See Programs"
+  },
+  {
+    icon: Layers,
+    t: "Platform",
+    d: "TrustStack, Sightline, and CounselGuard unified into one governed AI operating layer, deployed privately inside your boundary.",
+    page: "platform",
+    cta: "View the Platform"
+  },
+  {
+    icon: FlaskConical,
+    t: "Innovation",
+    d: "A disciplined lab where emerging AI capability is researched, vetted, and piloted before it ever touches a client environment.",
+    page: "lab",
+    cta: "Enter the Lab"
+  }
+];
+const STEPS = [
+  { n: "01", t: "Assess", d: "Deep evaluation of firm infrastructure, compliance guardrails, and risk exposure before any deployment." },
+  { n: "02", t: "Align", d: "Enforceable AI policies aligned with organizational trust and high-trust confidentiality standards." },
+  { n: "03", t: "Deploy", d: "Secure AI workflows and managed integration across firm-critical environments." },
+  { n: "04", t: "Govern", d: "Sustainable oversight through risk reporting, performance metrics, and governance auditing." }
+];
+const HOME_SERVICES = [
+  { t: "AI Readiness & Roadmaps", d: "Strategy before deployment. Infrastructure, compliance, and risk evaluated into a foundational blueprint." },
+  { t: "Governance & Guardrails", d: "Enforceable policies and oversight. Clear boundaries for data usage and vendor compliance." },
+  { t: "Risk & Security Workflows", d: "Threat modeling, guardrails, and incident readiness engineered into every AI workflow." },
+  { t: "Secure Enablement", d: "Deep AI integration without exposing sensitive data. Confidentiality is the deployment framework." },
+  { t: "Workflow Automation", d: "Verified, secure automation agents that remove friction while preserving quality control." },
+  { t: "Managed AI Operations", d: "Ongoing upkeep, re-vetting, and improvement so your AI stack never drifts out of compliance." }
+];
+const DIFFS = [
+  { t: "Vendor-Neutral", d: "Ayvede sells judgment, not licenses. Every recommendation is independent of every tool it evaluates." },
+  { t: "Practitioner-Led", d: "Built and run by an operator who architects enterprise data and AI systems daily. Not a slide-deck agency." },
+  { t: "Lab-Tested", d: "Nothing is recommended that has not survived the Innovation Lab pipeline: research, vetting, pilot, production." },
+  { t: "Documented by Design", d: "Every decision, policy, and control ships in writing. Auditable, defensible, and yours to keep." }
+];
+const AUDIENCES = [
+  "Boutique Law Firms",
+  "Advisory & Accounting Practices",
+  "Wealth Management",
+  "Municipal & Public Entities",
+  "High-Trust Professional Services"
+];
+const SERVICES = [
+  {
+    t: "AI Readiness & Roadmaps",
+    d: "Before deployment, we evaluate existing infrastructure, compliance posture, and risk exposure. You get a strategic path from tactical pilots to enterprise-grade AI execution.",
+    del: ["Risk Assessment & Opportunity Scan", "Strategic Implementation Roadmap", "Governance Framework Blueprint", "Executive Board Briefing"]
+  },
+  {
+    t: "Governance & Compliance",
+    d: "Enforceable policies and oversight mechanisms aligned with strict confidentiality standards, so AI adoption meets institutional and regulatory expectations.",
+    del: ["Acceptable Use Policies", "Data Privacy & Access Controls", "AI Vendor Risk Vetting", "Automated Compliance Monitoring"]
+  },
+  {
+    t: "Risk & Security Workflow Implementation",
+    d: "Security engineered into every AI workflow, before, during, and after deployment. Controls that hold up under audit, not just in demos.",
+    del: ["Threat Modeling for AI Workflows", "Custom Guardrail Deployment", "Access Control & Data Boundary Design", "Incident Response Playbooks & Tabletops"]
+  },
+  {
+    t: "Secure Enablement",
+    d: "Confidential integration of AI into complex workflows. We verify security layers and protect client data and intellectual property at every touchpoint.",
+    del: ["Workflow Integration Plans", "Secure System Configuration", "Confidential Tool Rollout", "High-Trust Staff Training"]
+  },
+  {
+    t: "Workflow Automation",
+    d: "Verified automation agents that remove operational friction while a named professional stays accountable for every output.",
+    del: ["Automation Opportunity Mapping", "Secure Agent Design & Deployment", "Human-in-the-Loop Quality Controls", "Output Verification Standards"]
+  },
+  {
+    t: "Executive Advisory",
+    d: "Board-ready AI risk and ROI guidance. Objective oversight for leadership navigating the shifting landscape of professional services technology.",
+    del: ["Risk Impact Reporting", "Long-Term Investment Strategy", "Quarterly Governance Reviews", "ROI Alignment Guidance"]
+  },
+  {
+    t: "Managed AI Operations",
+    d: "The upkeep layer. Continuous improvement, re-vetting, and maintenance so the system you deployed this quarter is still compliant, and still best-in-class, next year.",
+    del: ["Continuous Tool & Model Re-Vetting", "Policy & Guardrail Upkeep", "Prompt Library & Playbook Maintenance", "Quarterly Capability Refresh & ROI Report"]
+  }
+];
+const TIERS = [
+  {
+    t: "Diagnostic",
+    meta: "2–3 weeks · Fixed fee",
+    d: "The AI Readiness Assessment. Risk surface, shadow-AI inventory, opportunity scan, governance blueprint, and an executive briefing.",
+    note: "The first step for every new client."
+  },
+  {
+    t: "Program",
+    meta: "30–90 days · Defined scope",
+    d: "Full implementation of one or more solution areas with named deliverables, acceptance criteria, and a definition of done.",
+    note: "Strategy to execution, governed at every step."
+  },
+  {
+    t: "Retainer",
+    meta: "Monthly · 90-day minimum",
+    d: "Fractional AI leadership. Continuous governance, managed operations, training refresh, and priority access to the Innovation Lab.",
+    note: "Your standing AI authority, on call."
+  }
+];
+const PROGRAMS = [
+  {
+    t: "TrustStack",
+    tag: "Governance Framework",
+    isNew: false,
+    d: "Governance-first AI framework for high-trust environments.",
+    fmt: "Framework deployment · 30–60 days",
+    del: ["Risk Assessment & Surface Analysis", "Governance Policy Design", "Secure Data Guardrail Integration", "Quarterly Oversight Reports"]
+  },
+  {
+    t: "Sightline",
+    tag: "Executive Visibility",
+    isNew: false,
+    d: "Executive AI visibility and risk reporting for board-level oversight.",
+    fmt: "Standing capability · Quarterly cadence",
+    del: ["Real-Time Monitoring Dashboards", "Executive Risk Reporting", "Compliance Strategy Alignment", "Continuous Vendor Vetting"]
+  },
+  {
+    t: "CounselGuard",
+    tag: "Legal Workflows",
+    isNew: false,
+    d: "Specialized confidential AI frameworks for legal workflows.",
+    fmt: "Firm deployment · 45–90 days",
+    del: ["Secure Legal Automation", "Usage Policy Architecture", "Confidential Tool Vetting", "Encrypted Data Control Design"]
+  },
+  {
+    t: "Veridical AI",
+    tag: "AI Assurance",
+    isNew: false,
+    d: "The algorithmic title company for AI models. Certify, defend, and capitalize your AI assets.",
+    fmt: "Certification engagement · Scoped per asset",
+    del: ["Model & Dataset Lineage Certification", "FTC Disgorgement Risk Shielding", "Surgical Machine Unlearning Enablement", "IP-Backed Financing & Insurance Readiness Packet"]
+  },
+  {
+    t: "Executive AI Briefing",
+    tag: "Confidential Advisory",
+    isNew: true,
+    d: "A private, NDA-backed intelligence session for firm leadership. Where AI actually stands, where you actually stand, and what to do in the next 90 days.",
+    fmt: "2-hour session + written brief · On-site or virtual",
+    del: ["Firm-Specific Threat & Opportunity Map", "Competitive AI Posture Review", "Regulatory & Bar-Rule Exposure Summary", "90-Day Priority Action Plan"]
+  },
+  {
+    t: "AI Governance & Compliance Bootcamp",
+    tag: "Education · Cohort",
+    isNew: true,
+    d: "A paid, cohort-based intensive that turns policy into practice. Your team leaves with drafted policies, not just notes.",
+    fmt: "4-week cohort · Virtual or on-site",
+    del: ["Structured 4-Week Curriculum", "Policy Drafting Labs (AUP, Data Controls)", "Vendor Vetting Workshop & Scorecards", "Incident Response Tabletop Exercise", "Completion Certification"]
+  },
+  {
+    t: "Ayvede Academy",
+    tag: "Hands-On Training",
+    isNew: true,
+    d: "Role-based, hands-on AI training your people actually use. How to work with AI, securely, verifiably, and well.",
+    fmt: "Half-day workshops to multi-week tracks",
+    del: ["Role-Specific Training Tracks (Attorneys, Staff, Ops, Leadership)", "Secure Prompting & Tool Usage Labs", "“AI Drafts. Experts Verify.” Workflow Certification", "Reusable Prompt & Playbook Library"]
+  },
+  {
+    t: "The Ayvede Retainer",
+    tag: "Fractional AI Leadership",
+    isNew: true,
+    d: "Your standing AI authority. Strategy, upkeep, and improvement on call, so the answer to every AI question in your firm is one message away.",
+    fmt: "Monthly · 90-day minimum",
+    del: ["Monthly Advisory & Standing Office Hours", "Continuous Tool Re-Vetting & Model Watch", "Governance & Policy Upkeep", "Quarterly Capability Refresh & ROI Reporting", "Priority Innovation Lab Access"]
+  }
+];
+const MODULES = [
+  {
+    k: "GOVERN",
+    t: "TrustStack Core",
+    d: "The governance engine. Policy enforcement, guardrails, and audit trails applied to every AI interaction in the firm.",
+    pts: ["Policy engine & acceptable-use enforcement", "Data boundary guardrails", "Complete audit trail, by user and by matter"]
+  },
+  {
+    k: "SEE",
+    t: "Sightline",
+    d: "The executive layer. Leadership sees usage, risk, and ROI in one view, in language a board understands.",
+    pts: ["Executive dashboards & risk reporting", "Usage and adoption analytics", "Vendor vetting status, continuously updated"]
+  },
+  {
+    k: "PROTECT",
+    t: "CounselGuard",
+    d: "The confidential workflow module. Privilege-protected automation for the work that can never leak.",
+    pts: ["Privilege-safe legal workflows", "Encrypted data controls", "Confidential tool sandboxing"]
+  },
+  {
+    k: "IMPROVE",
+    t: "Lab Feed",
+    d: "The upgrade path. Capabilities vetted in the Innovation Lab flow into the platform on a quarterly cadence.",
+    pts: ["Quarterly vetted capability releases", "Model and tool watch", "Zero surprise upgrades"]
+  }
+];
+const FLOW = [
+  { n: "01", t: "Source of Truth", d: "Your data, your documents, your boundary." },
+  { n: "02", t: "Governance Engine", d: "TrustStack policies and guardrails on every call." },
+  { n: "03", t: "Secure Workflows", d: "CounselGuard-protected automation and drafting." },
+  { n: "04", t: "Executive Visibility", d: "Sightline reporting for leadership and the board." }
+];
+const DEPLOY_FACTS = [
+  { t: "Private by Default", d: "Deployed in your cloud or an approved environment. No client data leaves your boundary." },
+  { t: "Works With Your Stack", d: "Integrates alongside the document, practice, and communication tools you already run." },
+  { t: "Governed, Not Just Installed", d: "The platform ships inside an Ayvede engagement, with policies, training, and accountability attached." },
+  { t: "Continuously Vetted", d: "Models and tools are re-evaluated as the landscape shifts. What was safe in Q1 is re-proven in Q3." }
+];
+const LAB = [
+  {
+    t: "Trademark ID Bot",
+    stage: "Vetting",
+    d: "AI-powered identification of high-value trademarks based on real-world naming demand.",
+    del: ["Trademark Opportunity Detection & Ranking", "Name Search Trend Intelligence Engine", "ROI-Based IP Target Scoring", "Trademark Acquisition & Licensing Strategy Support"]
+  },
+  {
+    t: "LegisGavel",
+    stage: "Pilot",
+    d: "AI in-house counsel infrastructure for secure, automated legal operations.",
+    del: ["Secure Legal AI Architecture Blueprint", "Drafting, Review & Compliance Automation Modules", "Contract Intelligence & Matter Tracking Design", "Privilege-Protected Deployment & Oversight Framework"]
+  },
+  {
+    t: "ClassLitigator AI",
+    stage: "Pilot",
+    d: "AI-driven class action discovery and lead generation for plaintiff-side litigation.",
+    del: ["Real-Time Web + Social Monitoring System", "Viability Scoring & Trend Detection Engine", "Automated Predicate Fact + Legal Theory Reports", "Lead Intelligence Dashboard & Outreach Enablement"]
+  },
+  {
+    t: "CivicShield AI",
+    stage: "Vetting",
+    d: "AI-powered municipal solicitor infrastructure for statutory compliance and litigation resilience.",
+    del: ["OPRA & OPMA Automated Compliance Framework", "MLUL Hearing Script & Resolution Engine", "Contract Risk Red-Flag Intelligence System", "Statute-Mapped Liability & Immunity Matrix"]
+  },
+  {
+    t: "IntakeSentinel",
+    stage: "Pilot",
+    d: "AI-driven intake, screening, and case qualification engine for plaintiff-side firms.",
+    del: ["Compliance-Safe Intake Scripting", "Real-Time Lead Scoring & Routing", "TCPA-Aware Outreach Guardrails", "Qualification Analytics Dashboard"]
+  },
+  {
+    t: "RegPulse",
+    stage: "Research",
+    d: "Regulatory and bar-rule change monitoring, mapped directly to your firm's AI obligations.",
+    del: ["Rule & Guidance Change Detection", "Obligation Mapping Engine", "Policy Update Drafts, Ready for Counsel Review", "Executive Alert Digests"]
+  }
+];
+const PIPELINE = [
+  { t: "Research", d: "Capability scan, threat review, honest feasibility." },
+  { t: "Vetting", d: "Security, privacy, and accuracy testing against high-trust standards." },
+  { t: "Pilot", d: "Controlled deployment with real workloads and measured outcomes." },
+  { t: "Production", d: "Governed rollout with documentation, training, and oversight." }
+];
+const INS_CATEGORIES = ["Data Governance", "ERP", "Legal", "Healthcare", "Finance", "General AI News"];
+const HUB_DATA = typeof INSIGHTS_DATA !== "undefined" ? INSIGHTS_DATA : [];
+const PHILOSOPHY = [
+  { t: "Advise", d: "Clarity before tools. Strategic alignment and governance blueprints are established before any technical deployment begins." },
+  { t: "Vet", d: "Risk analysis first. Every AI tool and workflow is rigorously vetted against confidentiality standards and data protection guardrails." },
+  { t: "Deliver", d: "Measured execution. Secure AI solutions integrated into existing professional workflows with minimal friction and maximum accountability." }
+];
+const PRINCIPLES = [
+  { t: "Confidentiality by Default", d: "Every engagement is NDA-first. What happens inside your firm is discussed nowhere else, ever." },
+  { t: "Evidence Over Hype", d: "Nothing is recommended that has not been tested in the Lab. Enthusiasm is not a control." },
+  { t: "AI Drafts. Experts Verify.", d: "Human accountability sits inside every workflow Ayvede designs. A named professional owns every output." },
+  { t: "Governance Is an Advantage", d: "Controls done right accelerate adoption. The firms that govern first move faster, with fewer surprises." }
+];
+const PRICING_ASOF = "July 14, 2026";
+const CAP_LABELS = {
+  assistant: "AI assistants",
+  coding: "AI coding tools",
+  transcription: "meeting transcription",
+  chat: "team chat",
+  meetings: "video meetings",
+  storage: "file storage",
+  docs: "docs & wikis",
+  projects: "project tracking",
+  whiteboard: "whiteboards",
+  crm: "CRM",
+  design: "design tools",
+  esign: "e-signature"
+};
+const TOOL_CATALOG = [
+  // AI assistants & copilots
+  { id: "chatgpt", name: "ChatGPT Business", cat: "AI Assistants & Copilots", price: 20, unit: "seat", note: "$25 billed monthly · 2-seat min", caps: ["assistant"] },
+  { id: "claude", name: "Claude Team", cat: "AI Assistants & Copilots", price: 20, unit: "seat", note: "$25 billed monthly", caps: ["assistant"] },
+  { id: "m365copilot", name: "Microsoft 365 Copilot", cat: "AI Assistants & Copilots", price: 21, unit: "seat", note: "add-on; needs an M365 plan", caps: ["assistant"] },
+  { id: "perplexity", name: "Perplexity Enterprise Pro", cat: "AI Assistants & Copilots", price: 33.33, unit: "seat", note: "$400/seat/yr · $40 monthly", caps: ["assistant"] },
+  { id: "ghcopilot", name: "GitHub Copilot Business", cat: "AI Assistants & Copilots", price: 19, unit: "seat", note: "per assigned seat", caps: ["coding"] },
+  { id: "cursor", name: "Cursor Teams", cat: "AI Assistants & Copilots", price: 32, unit: "seat", note: "$40 billed monthly", caps: ["coding"] },
+  { id: "midjourney", name: "Midjourney Standard", cat: "AI Assistants & Copilots", price: 24, unit: "seat", note: "per account · $30 monthly", caps: ["design"] },
+  { id: "grammarly", name: "Grammarly Pro", cat: "AI Assistants & Copilots", price: 12, unit: "seat", note: "teams up to 149", caps: ["assistant"] },
+  { id: "otter", name: "Otter.ai Business", cat: "AI Assistants & Copilots", price: 19.99, unit: "seat", note: "$30 billed monthly", caps: ["transcription"] },
+  { id: "openai-api", name: "OpenAI API", cat: "AI Assistants & Copilots", price: 0, unit: "spend", note: "usage-based tokens, no seat price", caps: [] },
+  { id: "anthropic-api", name: "Anthropic API", cat: "AI Assistants & Copilots", price: 0, unit: "spend", note: "usage-based tokens, no seat price", caps: [] },
+  // Suites & communication
+  { id: "m365", name: "Microsoft 365 Business Standard", cat: "Suites & Communication", price: 14, unit: "seat", note: "$16.80 monthly", caps: [], incl: { meetings: "Teams", chat: "Teams", storage: "OneDrive", docs: "Office" } },
+  { id: "gws", name: "Google Workspace Business Standard", cat: "Suites & Communication", price: 14, unit: "seat", note: "Gemini included", caps: [], incl: { assistant: "Gemini", meetings: "Meet", chat: "Google Chat", storage: "Drive", docs: "Docs" } },
+  { id: "slack", name: "Slack Business+", cat: "Suites & Communication", price: 15, unit: "seat", note: "$18 monthly · Pro tier $7.25", caps: ["chat"] },
+  { id: "zoom", name: "Zoom Workplace Business", cat: "Suites & Communication", price: 18.33, unit: "seat", note: "$21.99 monthly", caps: ["meetings"], incl: { transcription: "AI Companion" } },
+  { id: "ringcentral", name: "RingCentral RingEX Core", cat: "Suites & Communication", price: 20, unit: "seat", note: "$30 monthly", caps: [] },
+  // Docs, storage & sign
+  { id: "dropbox", name: "Dropbox Standard", cat: "Docs, Storage & Sign", price: 15, unit: "seat", note: "team plan", caps: ["storage"] },
+  { id: "box", name: "Box Business", cat: "Docs, Storage & Sign", price: 15, unit: "seat", note: "3-user min", caps: ["storage"] },
+  { id: "docusign", name: "DocuSign Standard", cat: "Docs, Storage & Sign", price: 30, unit: "seat", note: "~$45 month-to-month", caps: ["esign"] },
+  { id: "notion", name: "Notion Business", cat: "Docs, Storage & Sign", price: 20, unit: "seat", note: "$24 monthly", caps: ["docs", "projects"] },
+  { id: "confluence", name: "Confluence Standard", cat: "Docs, Storage & Sign", price: 5.42, unit: "seat", note: "effective annual rate", caps: ["docs"], uncertain: true },
+  // Projects & collaboration
+  { id: "asana", name: "Asana Starter", cat: "Projects & Collaboration", price: 10.99, unit: "seat", note: "$13.49 monthly", caps: ["projects"] },
+  { id: "monday", name: "monday.com Standard", cat: "Projects & Collaboration", price: 12, unit: "seat", note: "3-seat min typical", caps: ["projects"] },
+  { id: "jira", name: "Jira Standard", cat: "Projects & Collaboration", price: 7.91, unit: "seat", note: "annual banding saves ~17%", caps: ["projects"] },
+  { id: "airtable", name: "Airtable Team", cat: "Projects & Collaboration", price: 20, unit: "seat", note: "$24 monthly", caps: ["projects"] },
+  { id: "smartsheet", name: "Smartsheet Business", cat: "Projects & Collaboration", price: 19, unit: "seat", note: "$24 monthly", caps: ["projects"] },
+  { id: "miro", name: "Miro Business", cat: "Projects & Collaboration", price: 20, unit: "seat", note: "~$25 monthly", caps: ["whiteboard"], uncertain: true },
+  { id: "loom", name: "Loom Business", cat: "Projects & Collaboration", price: 15, unit: "seat", note: "$18 monthly", caps: [] },
+  { id: "calendly", name: "Calendly Teams", cat: "Projects & Collaboration", price: 16, unit: "seat", note: "$20 monthly", caps: [] },
+  // Sales & client
+  { id: "sfstarter", name: "Salesforce Starter Suite", cat: "Sales & Client", price: 25, unit: "seat", note: "Pro Suite is $100/seat", caps: ["crm"] },
+  { id: "hubspot", name: "HubSpot Sales Hub Pro", cat: "Sales & Client", price: 90, unit: "seat", note: "$100 billed monthly", caps: ["crm"] },
+  { id: "salesnav", name: "LinkedIn Sales Navigator Core", cat: "Sales & Client", price: 89.99, unit: "seat", note: "$119.99 monthly", caps: [] },
+  { id: "zapier", name: "Zapier Team", cat: "Sales & Client", price: 69, unit: "flat", note: "flat, includes 25 users; task-metered", caps: [] },
+  // Design & content
+  { id: "canva", name: "Canva Business", cat: "Design & Content", price: 20.83, unit: "seat", note: "~$250/user/yr", caps: ["design"], uncertain: true },
+  { id: "figma", name: "Figma Professional", cat: "Design & Content", price: 16, unit: "seat", note: "full seat · $20 monthly", caps: ["design", "whiteboard"] },
+  { id: "adobecc", name: "Adobe CC for Teams (All Apps)", cat: "Design & Content", price: 89.99, unit: "seat", note: "per license", caps: ["design"], incl: { esign: "Acrobat" } },
+  // Vertical
+  { id: "clio", name: "Clio Manage Advanced", cat: "Legal & Vertical", price: 109, unit: "seat", note: "$119 billed monthly", caps: [], uncertain: true },
+  { id: "qbo", name: "QuickBooks Online Plus", cat: "Legal & Vertical", price: 115, unit: "flat", note: "per company, up to 5 users", caps: [], uncertain: true }
+];
+const TOOL_CATS = ["AI Assistants & Copilots", "Suites & Communication", "Docs, Storage & Sign", "Projects & Collaboration", "Sales & Client", "Design & Content", "Legal & Vertical"];
+const DIAG_BENCH = {
+  unusedShare: 0.36,
+  unusedLabel: "36% of SaaS licenses go unused",
+  unusedSource: "Zylo 2026 SaaS Management Index",
+  facts: [
+    { f: "36% of paid SaaS licenses go unused across the average portfolio.", s: "Zylo 2026 SaaS Management Index" },
+    { f: "The average portfolio already carries 7 overlapping generative-AI apps.", s: "Zylo 2026 SaaS Management Index" },
+    { f: "78% of AI users bring their own unsanctioned AI tools to work.", s: "Microsoft Work Trend Index, 2024" },
+    { f: "57% of employees hide their AI use from their employer.", s: "KPMG global AI study, 2025" }
+  ]
+};
+const TOOL_REGISTRY = [
+  { n: "01", t: "The Spend Diagnostic", stage: "Live", d: "Your AI and SaaS surface area, priced at real list rates, with overlap and stranded-license flags." },
+  { n: "02", t: "AI Policy Gap Check", stage: "In the Lab", d: "Score your acceptable-use policy against current bar and regulator guidance." },
+  { n: "03", t: "Vendor Risk Scorecard", stage: "In the Lab", d: "A structured first-pass risk read on any AI vendor your firm is evaluating." }
+];
+const CSS = `
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+.av{background:#0b1120;color:#e8ecf1;font-family:'Outfit',system-ui,sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased;line-height:1.6}
+.av ::selection{background:rgba(46,196,168,.25)}
+.av ::-webkit-scrollbar{width:6px;height:6px}
+.av ::-webkit-scrollbar-track{background:#0b1120}
+.av ::-webkit-scrollbar-thumb{background:#1e2d44;border-radius:3px}
+.av button{font-family:'Outfit',sans-serif}
+.av button:focus-visible,.av a:focus-visible,.av input:focus-visible,.av textarea:focus-visible,.av select:focus-visible{outline:2px solid #2ec4a8;outline-offset:2px}
+.mono{font-family:'JetBrains Mono',monospace}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4.5vw,44px)}
+.sec{padding:clamp(54px,8.5vw,104px) 0}
+.sec.tight{padding:clamp(34px,5vw,62px) 0}
+.kick{font-family:'JetBrains Mono',monospace;font-size:clamp(9.5px,1vw,11px);letter-spacing:.24em;text-transform:uppercase;color:#c7a26b;font-weight:600}
+.kick.teal{color:#2ec4a8}
+.h1{font-size:clamp(33px,6.2vw,62px);font-weight:800;line-height:1.05;letter-spacing:-.02em;color:#e8ecf1}
+.h2{font-size:clamp(24px,3.8vw,40px);font-weight:700;line-height:1.12;letter-spacing:-.015em;color:#e8ecf1}
+.h3{font-size:clamp(17px,2vw,21px);font-weight:700;letter-spacing:-.01em;color:#e8ecf1}
+.sub{color:#7a8ba3;font-size:clamp(13.5px,1.5vw,16.5px);line-height:1.65;max-width:660px}
+.body{color:#a8b4c6;font-size:clamp(13px,1.4vw,14.5px);line-height:1.65}
+.small{font-size:clamp(11.5px,1.2vw,13px);color:#7a8ba3;line-height:1.6}
+.dim{color:#4a5568}.gold{color:#c7a26b}.tealTx{color:#2ec4a8}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:4px;font-weight:600;font-size:clamp(12px,1.3vw,13.5px);letter-spacing:.02em;padding:12px 20px;border:1px solid transparent;cursor:pointer;transition:all .18s ease;text-decoration:none}
+.btn.primary{background:#2ec4a8;color:#07131f}
+.btn.primary:hover{background:#3ad4b7;transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:#e8ecf1;border-color:rgba(199,162,107,.45)}
+.btn.ghost:hover{border-color:#c7a26b;color:#c7a26b}
+.btn.line{background:transparent;color:#2ec4a8;border-color:rgba(46,196,168,.4)}
+.btn.line:hover{border-color:#2ec4a8;background:rgba(46,196,168,.06)}
+.card{background:#101828;border:1px solid #1e2d44;border-radius:5px;padding:clamp(18px,2.6vw,26px);transition:border-color .2s ease}
+.card:hover{border-color:rgba(46,196,168,.4)}
+.card.gh:hover{border-color:rgba(199,162,107,.45)}
+.grid{display:grid;gap:clamp(12px,1.8vw,18px)}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,252px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr))}
+.tag{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#7a8ba3;border:1px solid #1e2d44;background:#161f30;border-radius:3px;padding:4px 9px;font-weight:500;white-space:nowrap}
+.tag.t{color:#2ec4a8;border-color:rgba(46,196,168,.3)}
+.tag.g{color:#c7a26b;border-color:rgba(199,162,107,.3)}
+.rule{height:1px;background:#1e2d44;border:0}
+.goldRule{height:1px;border:0;background:linear-gradient(90deg,transparent,rgba(199,162,107,.5),transparent)}
+.list{list-style:none;display:grid;gap:9px}
+.list li{display:flex;gap:10px;align-items:flex-start;font-size:clamp(12.5px,1.3vw,13.5px);color:#a8b4c6;line-height:1.5}
+.list li::before{content:"";width:5px;height:5px;border-radius:1px;background:#2ec4a8;margin-top:7px;flex:none}
+.list.gd li::before{background:#c7a26b}
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(11,17,32,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(199,162,107,.3)}
+.navIn{display:flex;align-items:center;justify-content:space-between;gap:12px;height:clamp(56px,7vw,64px)}
+.brand{display:inline-flex;align-items:baseline;cursor:pointer;background:none;border:0;font-weight:700;font-size:clamp(18px,2.2vw,21px);letter-spacing:.22em;color:#cfd6df;padding:4px 0}
+.brand .v{color:#2ec4a8}
+.navLinks{display:flex;align-items:center;gap:clamp(0px,.5vw,4px)}
+.navLink{background:none;border:0;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:#7a8ba3;padding:9px 10px;border-bottom:1px solid transparent;transition:color .15s ease}
+.navLink:hover{color:#e8ecf1}
+.navLink.on{color:#e8ecf1;border-bottom-color:#c7a26b}
+.burger{display:none;background:none;border:1px solid #1e2d44;border-radius:4px;color:#7a8ba3;padding:7px;cursor:pointer;align-items:center;justify-content:center}
+.mmenu{position:fixed;top:clamp(56px,7vw,64px);left:0;right:0;z-index:59;background:#0d1424;border-bottom:1px solid #1e2d44;padding:10px 0 16px}
+.mmenu .navLink{display:block;width:100%;text-align:left;font-size:12px;padding:12px clamp(18px,4.5vw,44px);border-bottom:0}
+.mmenu .navLink.on{color:#2ec4a8}
+.mmenu .navLink.sub{padding-left:calc(clamp(18px,4.5vw,44px) + 16px)}
+.mGroupLbl{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#c7a26b;font-weight:600;padding:12px clamp(18px,4.5vw,44px) 4px}
+.navGroup{position:relative;display:inline-flex}
+.navDrop{position:absolute;top:100%;left:0;min-width:186px;background:#0d1424;border:1px solid #1e2d44;border-top:1px solid rgba(199,162,107,.3);border-radius:0 0 4px 4px;padding:6px 0;z-index:61}
+.navDrop .navLink{display:block;width:100%;text-align:left;padding:10px 16px;border-bottom:0}
+.navDrop .navLink.on{color:#2ec4a8}
+@media(max-width:1024px){.navLinks,.navCta{display:none}.burger{display:inline-flex}}
+.hero{position:relative;overflow:hidden;padding:clamp(96px,14vw,168px) 0 clamp(48px,7vw,92px)}
+.hero .glow{position:absolute;inset:0;background:radial-gradient(900px 460px at 80% 12%,rgba(199,162,107,.10),transparent 62%),radial-gradient(700px 420px at 8% 95%,rgba(46,196,168,.07),transparent 60%);pointer-events:none}
+.heroDecor{position:absolute;right:clamp(-140px,-6vw,-40px);top:clamp(60px,9vw,90px);width:min(52vw,560px);opacity:.55;pointer-events:none}
+@media(max-width:760px){.heroDecor{opacity:.25;width:78vw;right:-30vw}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.kpi{background:#161f30;border-top:1px solid #1e2d44;border-bottom:1px solid #1e2d44}
+.kpiIn{display:flex;gap:clamp(20px,4.5vw,52px);overflow-x:auto;padding:15px 0;scrollbar-width:none}
+.kpiIn::-webkit-scrollbar{display:none}
+.kpiItem{flex:none;display:flex;align-items:baseline;gap:9px}
+.kpiNum{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:clamp(15px,1.9vw,20px);color:#c7a26b}
+.kpiLbl{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#7a8ba3}
+.stepCell{border-left:1px solid #1e2d44;padding:6px 14px 6px 18px}
+.stepN{font-family:'JetBrains Mono',monospace;color:#c7a26b;font-size:11px;letter-spacing:.22em;font-weight:600}
+.svcRow{display:grid;gap:clamp(14px,3vw,44px);grid-template-columns:minmax(0,1fr);padding:clamp(24px,4vw,44px) 0;border-bottom:1px solid #1e2d44}
+@media(min-width:820px){.svcRow{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
+.input,.ta,.sel{width:100%;background:#161f30;border:1px solid #1e2d44;border-radius:4px;color:#e8ecf1;font-family:'Outfit',sans-serif;font-size:14px;padding:11px 12px;outline:none;transition:border-color .15s ease}
+.input:focus,.ta:focus,.sel:focus{border-color:#2ec4a8}
+.ta{resize:vertical;min-height:110px}
+.sel{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#7a8ba3 50%),linear-gradient(135deg,#7a8ba3 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+.lbl{display:block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#7a8ba3;margin-bottom:7px;font-weight:500}
+.band{background:#101828;border-top:1px solid rgba(199,162,107,.3);border-bottom:1px solid #1e2d44}
+.foot{background:#0d1424;border-top:1px solid rgba(199,162,107,.3);padding:clamp(40px,6vw,64px) 0 28px}
+.footGrid{display:grid;gap:clamp(24px,4vw,40px);grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr))}
+.fLink{display:block;background:none;border:0;cursor:pointer;text-align:left;color:#7a8ba3;font-size:13px;padding:4px 0;transition:color .15s}
+.fLink:hover{color:#e8ecf1}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.btn:hover{transform:none}}
+.insPill{cursor:pointer;padding:8px 12px;font-size:10.5px;transition:color .15s ease,border-color .15s ease,background .15s ease}
+.insPill:hover{color:#e8ecf1;border-color:rgba(199,162,107,.45)}
+.insPill.on{color:#2ec4a8;border-color:rgba(46,196,168,.45);background:rgba(46,196,168,.06)}
+.insSearch{max-width:280px;flex:1 1 210px}
+.insCard{cursor:pointer;display:flex;flex-direction:column}
+.insCard:focus-visible{outline:2px solid #2ec4a8;outline-offset:2px}
+.insCard .insMotif{margin:calc(clamp(18px,2.6vw,26px)*-1) calc(clamp(18px,2.6vw,26px)*-1) 16px}
+.insMotif svg{display:block;width:100%;aspect-ratio:16/9;border-radius:4px 4px 0 0;border-bottom:1px solid #1e2d44}
+.insReaderStrip svg{display:block;width:100%;aspect-ratio:8/1;border-radius:5px;border:1px solid #1e2d44}
+.insBody strong{color:#e8ecf1;font-weight:600}
+.insBody a{color:#2ec4a8;text-decoration:none;border-bottom:1px solid rgba(46,196,168,.4);transition:border-color .15s ease}
+.insBody a:hover{border-bottom-color:#2ec4a8}
+.insTableWrap{overflow-x:auto;margin:18px 0}
+.insTable{width:100%;border-collapse:collapse;font-size:clamp(12.5px,1.35vw,14px);line-height:1.55}
+.insTable td{border:1px solid #1e2d44;padding:10px 12px;color:#a8b4c6;text-align:left;vertical-align:top;min-width:150px}
+.insTable tr:first-child td{background:#161f30;color:#e8ecf1;font-weight:600}
+.tcGrid{display:grid;gap:clamp(16px,2.4vw,26px);grid-template-columns:minmax(0,1fr);align-items:start}
+@media(min-width:960px){.tcGrid{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr)}.tcSticky{position:sticky;top:84px}}
+.tcCatLbl{margin:18px 0 10px}
+.tcCatLbl:first-of-type{margin-top:0}
+.tcList{display:grid;gap:8px}
+.tcRow{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:#101828;border:1px solid #1e2d44;border-radius:4px;padding:10px 12px;cursor:pointer;transition:border-color .15s ease,background .15s ease;color:#a8b4c6;font-family:'Outfit',sans-serif;font-size:clamp(12.5px,1.3vw,13.5px);font-weight:500}
+.tcRow:hover{border-color:rgba(46,196,168,.4)}
+.tcRow.on{border-color:rgba(46,196,168,.55);background:rgba(46,196,168,.05);color:#e8ecf1}
+.tcMark{width:14px;height:14px;flex:none;border:1px solid #1e2d44;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;background:#161f30;transition:all .15s ease}
+.tcRow.on .tcMark{background:#2ec4a8;border-color:#2ec4a8;color:#07131f}
+.tcName{flex:1;min-width:0}
+.tcNote{display:block;font-size:10.5px;color:#4a5568;margin-top:1px}
+.tcPrice{font-family:'JetBrains Mono',monospace;font-size:11px;color:#7a8ba3;white-space:nowrap}
+.tcRow.on .tcPrice{color:#2ec4a8}
+.tcCtl{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:9px 12px;border:1px solid rgba(46,196,168,.28);border-top:0;border-radius:0 0 4px 4px;background:#0d1424;margin-top:-6px}
+.step{display:inline-flex;align-items:center;border:1px solid #1e2d44;border-radius:3px;background:#161f30}
+.step button{background:none;border:0;color:#7a8ba3;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.step button:hover{color:#2ec4a8}
+.step input{width:54px;text-align:center;background:transparent;border:0;color:#e8ecf1;font-family:'JetBrains Mono',monospace;font-size:12px;outline:none;-moz-appearance:textfield;padding:0}
+.step input::-webkit-outer-spin-button,.step input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.tcLineTotal{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#c7a26b;white-space:nowrap}
+.tcBigNum{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:clamp(26px,3.6vw,38px);letter-spacing:-.01em;color:#c7a26b;line-height:1.1}
+.tcBar{display:flex;height:10px;border-radius:2px;overflow:hidden;border:1px solid #1e2d44;background:#161f30}
+.tcBar .a{background:#2ec4a8;transition:width .3s ease}
+.tcBar .w{background:rgba(239,68,68,.75);transition:width .3s ease}
+.tcFlag{display:flex;gap:9px;align-items:flex-start;font-size:clamp(12px,1.3vw,13px);color:#a8b4c6;line-height:1.5;padding:9px 0;border-top:1px solid #1e2d44}
+.tcAdd{display:grid;gap:8px;grid-template-columns:minmax(0,1.4fr) minmax(0,.8fr) minmax(0,.8fr) auto;align-items:center}
+@media(max-width:560px){.tcAdd{grid-template-columns:1fr 1fr}}
+`;
+function Head({ kick, title, sub, center, kickTeal }) {
+  return /* @__PURE__ */ React.createElement("div", { className: "rv", style: { marginBottom: "clamp(26px,4vw,44px)", textAlign: center ? "center" : "left" } }, /* @__PURE__ */ React.createElement("div", { className: `kick${kickTeal ? " teal" : ""}`, style: { marginBottom: 12 } }, kick), /* @__PURE__ */ React.createElement("h2", { className: "h2" }, title), sub && /* @__PURE__ */ React.createElement("p", { className: "sub", style: { marginTop: 12, marginLeft: center ? "auto" : 0, marginRight: center ? "auto" : 0 } }, sub));
+}
+function Wordmark({ size = 21 }) {
+  return /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 700, fontSize: size, letterSpacing: ".22em", color: "#cfd6df" } }, "AY", /* @__PURE__ */ React.createElement("span", { style: { color: "#2ec4a8" } }, "V"), "EDE");
+}
+function NetDecor() {
+  const pts = [[60, 80], [180, 40], [300, 92], [430, 52], [520, 142], [468, 252], [350, 212], [240, 272], [120, 222], [84, 342], [222, 382], [382, 342], [502, 402], [302, 442], [152, 452]];
+  const edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 2], [6, 7], [7, 8], [8, 0], [8, 9], [9, 10], [10, 11], [11, 5], [11, 12], [10, 13], [13, 14], [14, 9], [7, 10], [6, 11], [1, 8]];
+  return /* @__PURE__ */ React.createElement("svg", { className: "heroDecor", viewBox: "0 0 600 500", "aria-hidden": "true" }, edges.map(([a, b], i) => /* @__PURE__ */ React.createElement("line", { key: i, x1: pts[a][0], y1: pts[a][1], x2: pts[b][0], y2: pts[b][1], stroke: "rgba(199,162,107,.3)", strokeWidth: "1" })), pts.map(([x, y], i) => /* @__PURE__ */ React.createElement("circle", { key: i, cx: x, cy: y, r: i % 5 === 0 ? 3.5 : 2.2, fill: i % 7 === 0 ? "#2ec4a8" : "#c7a26b", opacity: i % 7 === 0 ? ".8" : ".65" })));
+}
+function LayerDecor() {
+  return /* @__PURE__ */ React.createElement("svg", { className: "heroDecor", viewBox: "0 0 600 500", "aria-hidden": "true" }, [0, 1, 2, 3].map((i) => /* @__PURE__ */ React.createElement("g", { key: i, transform: `translate(${160 + i * 26},${330 - i * 74})` }, /* @__PURE__ */ React.createElement("polygon", { points: "0,40 150,0 300,40 150,80", fill: i === 3 ? "rgba(46,196,168,.14)" : "rgba(22,31,48,.9)", stroke: i === 3 ? "rgba(46,196,168,.6)" : "rgba(199,162,107,.35)", strokeWidth: "1" }))));
+}
+function Hero({ kick, title, sub, chips, actions, decor = "net", kickTeal }) {
+  return /* @__PURE__ */ React.createElement("section", { className: "hero" }, /* @__PURE__ */ React.createElement("div", { className: "glow" }), decor === "net" && /* @__PURE__ */ React.createElement(NetDecor, null), decor === "layers" && /* @__PURE__ */ React.createElement(LayerDecor, null), /* @__PURE__ */ React.createElement("div", { className: "wrap", style: { position: "relative" } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 720 } }, /* @__PURE__ */ React.createElement("div", { className: `kick${kickTeal ? " teal" : ""} rv`, style: { marginBottom: 16 } }, kick), /* @__PURE__ */ React.createElement("h1", { className: "h1 rv" }, title), sub && /* @__PURE__ */ React.createElement("p", { className: "sub rv", style: { marginTop: 18 } }, sub), chips && /* @__PURE__ */ React.createElement("div", { className: "rv", style: { marginTop: 22 } }, /* @__PURE__ */ React.createElement("hr", { className: "goldRule", style: { width: 56, marginBottom: 14, marginLeft: 0 } }), /* @__PURE__ */ React.createElement("div", { className: "chips" }, chips.map((c) => /* @__PURE__ */ React.createElement("span", { key: c, className: "mono", style: { fontSize: 10.5, letterSpacing: ".1em", color: "#c7a26b" } }, c)).reduce((acc, el, i) => acc.length ? [...acc, /* @__PURE__ */ React.createElement("span", { key: `s${i}`, className: "dim mono", style: { fontSize: 10.5 } }, "·"), el] : [el], []))), actions && /* @__PURE__ */ React.createElement("div", { className: "rv", style: { marginTop: 30, display: "flex", flexWrap: "wrap", gap: 12 } }, actions))));
+}
+function Nav({ page, go }) {
+  const [open, setOpen] = useState(false);
+  const [drop, setDrop] = useState(null);
+  useEffect(() => {
+    setOpen(false);
+    setDrop(null);
+  }, [page]);
+  useEffect(() => {
+    if (!drop) return;
+    const close = (e) => {
+      if (!e.target.closest || !e.target.closest(".navGroup")) setDrop(null);
+    };
+    const esc = (e) => {
+      if (e.key === "Escape") setDrop(null);
+    };
+    document.addEventListener("click", close);
+    document.addEventListener("keydown", esc);
+    return () => {
+      document.removeEventListener("click", close);
+      document.removeEventListener("keydown", esc);
+    };
+  }, [drop]);
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("nav", { className: "nav" }, /* @__PURE__ */ React.createElement("div", { className: "wrap navIn" }, /* @__PURE__ */ React.createElement("button", { className: "brand", onClick: () => go("home"), "aria-label": "Ayvede home" }, "AY", /* @__PURE__ */ React.createElement("span", { className: "v" }, "V"), "EDE"), /* @__PURE__ */ React.createElement("div", { className: "navLinks" }, NAV.map(
+    (n) => n.children ? /* @__PURE__ */ React.createElement(
+      "div",
+      {
+        key: n.id,
+        className: "navGroup",
+        onMouseEnter: () => setDrop(n.id),
+        onMouseLeave: () => setDrop((d) => d === n.id ? null : d)
+      },
+      /* @__PURE__ */ React.createElement(
+        "button",
+        {
+          className: `navLink${n.children.some((c) => c.id === page) ? " on" : ""}`,
+          "aria-haspopup": "true",
+          "aria-expanded": drop === n.id,
+          onClick: () => setDrop(n.id)
+        },
+        n.label,
+        " ",
+        /* @__PURE__ */ React.createElement(ChevronDown, { size: 11, style: { verticalAlign: "-1px", transition: "transform .15s ease", transform: drop === n.id ? "rotate(180deg)" : "none" } })
+      ),
+      drop === n.id && /* @__PURE__ */ React.createElement("div", { className: "navDrop" }, n.children.map((c) => /* @__PURE__ */ React.createElement("button", { key: c.id, className: `navLink${page === c.id ? " on" : ""}`, onClick: () => go(c.id) }, c.label)))
+    ) : /* @__PURE__ */ React.createElement("button", { key: n.id, className: `navLink${page === n.id ? " on" : ""}`, onClick: () => go(n.id) }, n.label)
+  )), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 10 } }, /* @__PURE__ */ React.createElement("button", { className: "btn primary navCta", style: { padding: "9px 16px" }, onClick: () => go("connect") }, "Connect"), /* @__PURE__ */ React.createElement("button", { className: "burger", onClick: () => setOpen(!open), "aria-label": "Menu" }, open ? /* @__PURE__ */ React.createElement(X, { size: 17 }) : /* @__PURE__ */ React.createElement(Menu, { size: 17 }))))), open && /* @__PURE__ */ React.createElement("div", { className: "mmenu" }, NAV.map(
+    (n) => n.children ? /* @__PURE__ */ React.createElement("div", { key: n.id }, /* @__PURE__ */ React.createElement("div", { className: "mGroupLbl" }, n.label), n.children.map((c) => /* @__PURE__ */ React.createElement("button", { key: c.id, className: `navLink sub${page === c.id ? " on" : ""}`, onClick: () => go(c.id) }, c.label))) : /* @__PURE__ */ React.createElement("button", { key: n.id, className: `navLink${page === n.id ? " on" : ""}`, onClick: () => go(n.id) }, n.label)
+  ), /* @__PURE__ */ React.createElement("button", { className: `navLink${page === "connect" ? " on" : ""}`, onClick: () => go("connect") }, "Connect")));
+}
+function CtaBand({ kick, title, sub, label, target, go }) {
+  return /* @__PURE__ */ React.createElement("section", { className: "band sec tight" }, /* @__PURE__ */ React.createElement("div", { className: "wrap", style: { textAlign: "center" } }, /* @__PURE__ */ React.createElement("div", { className: "kick rv", style: { marginBottom: 12 } }, kick), /* @__PURE__ */ React.createElement("h2", { className: "h2 rv", style: { maxWidth: 640, margin: "0 auto" } }, title), sub && /* @__PURE__ */ React.createElement("p", { className: "sub rv", style: { margin: "12px auto 0" } }, sub), /* @__PURE__ */ React.createElement("div", { className: "rv", style: { marginTop: 26 } }, /* @__PURE__ */ React.createElement("button", { className: "btn primary", onClick: () => go(target) }, label, " ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 15 })))));
+}
+function SubscribeBand() {
+  const [email, setEmail] = useState("");
+  const sub = () => {
+    const s = encodeURIComponent("Subscribe — The Ayvede Briefing");
+    const b = encodeURIComponent(`Please add me to The Ayvede Briefing.
+
+Email: ${email}`);
+    window.location.href = `mailto:${EMAIL}?subject=${s}&body=${b}`;
+  };
+  return /* @__PURE__ */ React.createElement("section", { className: "band sec tight" }, /* @__PURE__ */ React.createElement("div", { className: "wrap", style: { display: "grid", gap: 22, gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,300px),1fr))", alignItems: "center" } }, /* @__PURE__ */ React.createElement("div", { className: "rv" }, /* @__PURE__ */ React.createElement("div", { className: "kick", style: { marginBottom: 10 } }, "The Ayvede Briefing"), /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { marginBottom: 8 } }, "Governance-grade AI intelligence for decision-makers."), /* @__PURE__ */ React.createElement("p", { className: "small" }, "Twice a month. Zero noise. Unsubscribe anytime.")), /* @__PURE__ */ React.createElement("div", { className: "rv", style: { display: "flex", gap: 10, flexWrap: "wrap" } }, /* @__PURE__ */ React.createElement("input", { className: "input", style: { flex: "1 1 220px" }, type: "email", placeholder: "Work email", value: email, onChange: (e) => setEmail(e.target.value), "aria-label": "Work email" }), /* @__PURE__ */ React.createElement("button", { className: "btn primary", onClick: sub }, "Subscribe"))));
+}
+function Footer({ go }) {
+  return /* @__PURE__ */ React.createElement("footer", { className: "foot" }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement("div", { className: "footGrid" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Wordmark, { size: 24 }), /* @__PURE__ */ React.createElement("p", { className: "gold", style: { fontSize: 13, fontWeight: 600, margin: "10px 0 6px" } }, "Advise. Vet. Deliver."), /* @__PURE__ */ React.createElement("p", { className: "small dim", style: { maxWidth: 260 } }, "AI transformation built for high-trust professional environments."), /* @__PURE__ */ React.createElement("p", { className: "mono dim", style: { fontSize: 10.5, letterSpacing: ".12em", marginTop: 14 } }, "AYVEDE.COM")), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("p", { className: "lbl", style: { marginBottom: 12 } }, "Navigate"), [...NAV_ALL, { id: "connect", label: "Connect" }].map((n) => /* @__PURE__ */ React.createElement("button", { key: n.id, className: "fLink", onClick: () => go(n.id) }, n.label))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("p", { className: "lbl", style: { marginBottom: 12 } }, "Contact"), /* @__PURE__ */ React.createElement("a", { className: "fLink", href: `mailto:${EMAIL}`, style: { display: "flex", alignItems: "center", gap: 8, textDecoration: "none" } }, /* @__PURE__ */ React.createElement(Mail, { size: 13, color: "#2ec4a8" }), " ", EMAIL), /* @__PURE__ */ React.createElement("a", { className: "fLink", href: `tel:${PHONE_TEL}`, style: { display: "flex", alignItems: "center", gap: 8, textDecoration: "none" } }, /* @__PURE__ */ React.createElement(Phone, { size: 13, color: "#2ec4a8" }), " ", PHONE), /* @__PURE__ */ React.createElement("span", { className: "fLink", style: { display: "flex", alignItems: "center", gap: 8, cursor: "default" } }, /* @__PURE__ */ React.createElement(MapPin, { size: 13, color: "#2ec4a8" }), " Philadelphia, PA"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 14, marginTop: 14, flexWrap: "wrap" } }, ["LinkedIn", "X", "YouTube", "Instagram"].map((s) => /* @__PURE__ */ React.createElement("span", { key: s, className: "mono", style: { fontSize: 10, letterSpacing: ".14em", textTransform: "uppercase", color: "#4a5568", cursor: "pointer" } }, s))))), /* @__PURE__ */ React.createElement("hr", { className: "rule", style: { margin: "clamp(26px,4vw,40px) 0 18px" } }), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 8 } }, /* @__PURE__ */ React.createElement("p", { className: "small dim" }, "© 2026 Ayvede. All rights reserved."), /* @__PURE__ */ React.createElement("p", { className: "mono tealTx", style: { fontSize: 10.5, letterSpacing: ".14em" } }, "SECURITY-FIRST ADVISORY"))));
+}
+function HomePage({ go }) {
+  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(
+    Hero,
+    {
+      kick: "Advise · Vet · Deliver",
+      title: /* @__PURE__ */ React.createElement(React.Fragment, null, "The AI Source of Truth for ", /* @__PURE__ */ React.createElement("span", { className: "gold" }, "High-Trust"), " Firms."),
+      sub: "Advisory, education, platform, and applied innovation. One accountable partner for adopting AI with governance, security, and measurable ROI.",
+      chips: ["Confidentiality-first", "Governed at every step", "Strategy + execution"],
+      actions: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("button", { className: "btn primary", onClick: () => go("connect") }, "Book a Confidential Briefing ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 15 })), /* @__PURE__ */ React.createElement("button", { className: "btn ghost", onClick: () => go("platform") }, "Explore the Platform"))
+    }
+  ), /* @__PURE__ */ React.createElement("div", { className: "kpi" }, /* @__PURE__ */ React.createElement("div", { className: "wrap kpiIn" }, KPIS.map((k) => /* @__PURE__ */ React.createElement("div", { key: k.l, className: "kpiItem" }, /* @__PURE__ */ React.createElement("span", { className: "kpiNum" }, k.n), /* @__PURE__ */ React.createElement("span", { className: "kpiLbl" }, k.l))))), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement(
+    Head,
+    {
+      kick: "The Problem",
+      title: /* @__PURE__ */ React.createElement(React.Fragment, null, "AI Is Powerful. Ungoverned AI Is a ", /* @__PURE__ */ React.createElement("span", { style: { color: "#ef4444" } }, "Liability.")),
+      sub: "Unstructured adoption creates compliance exposure, data leakage, reputational risk, and internal chaos. Most firms are already using AI, without policy, without vetting, without visibility."
+    }
+  ), /* @__PURE__ */ React.createElement("div", { className: "grid g3" }, RISKS.map((r) => /* @__PURE__ */ React.createElement("div", { key: r.t, className: "card rv", style: { borderTop: "2px solid rgba(239,68,68,.45)" } }, /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { marginBottom: 8 } }, r.t), /* @__PURE__ */ React.createElement("p", { className: "body" }, r.d)))), /* @__PURE__ */ React.createElement("div", { className: "card rv gh", style: { marginTop: "clamp(16px,2.4vw,24px)", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 16, borderLeft: "2px solid rgba(46,196,168,.5)" } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 560 } }, /* @__PURE__ */ React.createElement("div", { className: "kick teal", style: { marginBottom: 8 } }, "Free Diagnostic · New"), /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { marginBottom: 6 } }, "How big is your ungoverned surface area?"), /* @__PURE__ */ React.createElement("p", { className: "body" }, "Pick the AI and SaaS tools your firm pays for, set seats, and see the number. Two minutes, real list prices, nothing leaves your browser.")), /* @__PURE__ */ React.createElement("button", { className: "btn line", onClick: () => go("tools") }, "Run the Spend Diagnostic ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 14 }))))), /* @__PURE__ */ React.createElement("section", { className: "sec", style: { background: "#0d1424", borderTop: "1px solid #1e2d44", borderBottom: "1px solid #1e2d44" } }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement(
+    Head,
+    {
+      kick: "The Ayvede Model",
+      title: "One partner. Four disciplines.",
+      sub: "Most consultancies advise. Some train. A few build. Ayvede is architected to do all four under one standard of governance, so nothing gets lost between the strategy deck and the deployed system."
+    }
+  ), /* @__PURE__ */ React.createElement("div", { className: "grid g4" }, CAPABILITIES.map((c) => {
+    const Ic = c.icon;
+    return /* @__PURE__ */ React.createElement("div", { key: c.t, className: "card rv", style: { display: "flex", flexDirection: "column" } }, /* @__PURE__ */ React.createElement(Ic, { size: 19, color: "#2ec4a8", style: { marginBottom: 14 } }), /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { marginBottom: 8 } }, c.t), /* @__PURE__ */ React.createElement("p", { className: "body", style: { flex: 1 } }, c.d), /* @__PURE__ */ React.createElement("button", { className: "btn line", style: { marginTop: 16, padding: "8px 12px", alignSelf: "flex-start" }, onClick: () => go(c.page) }, c.cta, " ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 13 })));
+  })))), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement(Head, { kick: "Built for Confidential Work", title: "A proven 4-step system.", sub: "Ayvede designs AI adoption frameworks for environments where trust, compliance, and reputation are critical." }), /* @__PURE__ */ React.createElement("div", { className: "grid g4" }, STEPS.map((s) => /* @__PURE__ */ React.createElement("div", { key: s.n, className: "stepCell rv" }, /* @__PURE__ */ React.createElement("div", { className: "stepN" }, s.n), /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { margin: "8px 0" } }, s.t), /* @__PURE__ */ React.createElement("p", { className: "body" }, s.d)))))), /* @__PURE__ */ React.createElement("section", { className: "sec", style: { paddingTop: 0 } }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement(Head, { kick: "Secure AI, Delivered Properly", title: "What we implement.", sub: "Every service below is available as a standalone program or inside a retainer. Each one ships with named deliverables and a definition of done." }), /* @__PURE__ */ React.createElement("div", { className: "grid g3" }, HOME_SERVICES.map((s) => /* @__PURE__ */ React.createElement("div", { key: s.t, className: "card rv" }, /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { marginBottom: 8 } }, s.t), /* @__PURE__ */ React.createElement("p", { className: "body" }, s.d)))), /* @__PURE__ */ React.createElement("div", { className: "rv", style: { marginTop: 26 } }, /* @__PURE__ */ React.createElement("button", { className: "btn ghost", onClick: () => go("solutions") }, "See full solution details ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 14 }))))), /* @__PURE__ */ React.createElement("section", { className: "sec", style: { background: "#0d1424", borderTop: "1px solid #1e2d44", borderBottom: "1px solid #1e2d44" } }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement(Head, { kick: "Why Ayvede", title: "The standard behind the name.", sub: "Being the source of truth is earned. This is how Ayvede earns it on every engagement." }), /* @__PURE__ */ React.createElement("div", { className: "grid g4" }, DIFFS.map((d) => /* @__PURE__ */ React.createElement("div", { key: d.t, className: "rv", style: { borderLeft: "1px solid rgba(199,162,107,.4)", paddingLeft: 16 } }, /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { marginBottom: 8, fontSize: "clamp(15px,1.7vw,17px)" } }, d.t), /* @__PURE__ */ React.createElement("p", { className: "body" }, d.d)))), /* @__PURE__ */ React.createElement("hr", { className: "rule", style: { margin: "clamp(28px,4vw,40px) 0 18px" } }), /* @__PURE__ */ React.createElement("div", { className: "rv", style: { display: "flex", flexWrap: "wrap", gap: "8px 18px", alignItems: "center" } }, /* @__PURE__ */ React.createElement("span", { className: "lbl", style: { margin: 0 } }, "Built for"), AUDIENCES.map((a) => /* @__PURE__ */ React.createElement("span", { key: a, className: "small", style: { color: "#a8b4c6" } }, a))))), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement(Head, { kick: "Structured Programs", title: "Eight defined programs. One place to start.", sub: "From a two-hour confidential briefing to a standing retainer, every program has a fixed shape, a fixed scope, and a clear outcome." }), /* @__PURE__ */ React.createElement("div", { className: "chips rv" }, PROGRAMS.map((p) => /* @__PURE__ */ React.createElement("button", { key: p.t, className: "tag g", style: { cursor: "pointer", padding: "8px 12px", fontSize: 10.5 }, onClick: () => go("programs") }, p.t, p.isNew && /* @__PURE__ */ React.createElement("span", { className: "tealTx", style: { fontSize: 8.5 } }, "● NEW")))))), /* @__PURE__ */ React.createElement(SubscribeBand, null), /* @__PURE__ */ React.createElement(
+    CtaBand,
+    {
+      kick: "Start With Clarity. Not Chaos.",
+      title: "Ready to deploy AI the right way?",
+      sub: "One conversation. Confidential by default. A written recommendation within days.",
+      label: "Start the AI Conversation",
+      target: "connect",
+      go
+    }
+  ));
+}
+function VisionPage({ go }) {
+  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(
+    Hero,
+    {
+      kick: "Vision",
+      title: "AI Requires Discipline.",
+      sub: "Ayvede exists to bring structure, verification, and accountable governance to AI adoption in high-trust environments.",
+      chips: ["Structured thinking", "Verified systems", "Responsible deployment"],
+      actions: /* @__PURE__ */ React.createElement("button", { className: "btn primary", onClick: () => go("connect") }, "Align Your AI Vision ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 15 }))
+    }
+  ), /* @__PURE__ */ React.createElement("section", { className: "sec", style: { paddingTop: "clamp(30px,4vw,50px)" } }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement(Head, { kick: "Why Ayvede Exists", title: "AI without governance creates exposure.", sub: "We bring structure and accountability to AI transformation in environments where trust, compliance, and reputation are critical. The goal is not to slow firms down. It is to make sure what they build survives contact with regulators, clients, and reality." }))), /* @__PURE__ */ React.createElement("section", { className: "sec", style: { paddingTop: 0 } }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement(Head, { kick: "Philosophy", title: "Advise. Vet. Deliver." }), /* @__PURE__ */ React.createElement("div", { className: "grid g3" }, PHILOSOPHY.map((p, i) => /* @__PURE__ */ React.createElement("div", { key: p.t, className: "rv", style: { borderTop: "1px solid rgba(199,162,107,.4)", paddingTop: 18 } }, /* @__PURE__ */ React.createElement("div", { className: "stepN", style: { marginBottom: 8 } }, String(i + 1).padStart(2, "0")), /* @__PURE__ */ React.createElement("h3", { className: "h3 gold", style: { marginBottom: 8, textTransform: "uppercase", letterSpacing: ".08em", fontSize: "clamp(14px,1.6vw,16px)" } }, p.t), /* @__PURE__ */ React.createElement("p", { className: "body" }, p.d)))))), /* @__PURE__ */ React.createElement("section", { className: "sec", style: { background: "#0d1424", borderTop: "1px solid #1e2d44", borderBottom: "1px solid #1e2d44" } }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement(Head, { kick: "Operating Principles", title: "The rules we do not break." }), /* @__PURE__ */ React.createElement("div", { className: "grid g2" }, PRINCIPLES.map((p) => /* @__PURE__ */ React.createElement("div", { key: p.t, className: "card rv gh" }, /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { marginBottom: 8 } }, p.t), /* @__PURE__ */ React.createElement("p", { className: "body" }, p.d)))))), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "wrap", style: { display: "grid", gap: "clamp(24px,4vw,48px)", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,320px),1fr))" } }, /* @__PURE__ */ React.createElement("div", { className: "rv" }, /* @__PURE__ */ React.createElement("div", { className: "kick", style: { marginBottom: 12 } }, "Long-Term View"), /* @__PURE__ */ React.createElement("h2", { className: "h2", style: { marginBottom: 14 } }, "Sustainable systems, not trends."), /* @__PURE__ */ React.createElement("p", { className: "body", style: { maxWidth: 520 } }, "We build AI capability designed to compound. The methodology creates a permanent sightline for executives to monitor risk and ROI as the technology evolves, so the firm is never starting over when the next model generation arrives.")), /* @__PURE__ */ React.createElement("div", { className: "card rv gh", style: { borderLeft: "2px solid rgba(199,162,107,.5)" } }, /* @__PURE__ */ React.createElement("div", { className: "kick", style: { marginBottom: 12 } }, "Founder & Principal"), /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { marginBottom: 10 } }, "Anthony Dellapia"), /* @__PURE__ */ React.createElement("p", { className: "body", style: { marginBottom: 14 } }, "Solution architect and AI practitioner based in Philadelphia. Anthony leads enterprise data and AI initiatives across financial and professional services, and founded Ayvede to close the gap between AI ambition and governed execution. Every Ayvede engagement carries a single point of accountability: him."), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: 12 } }, /* @__PURE__ */ React.createElement("a", { className: "btn line", style: { padding: "8px 12px" }, href: `mailto:${EMAIL}` }, /* @__PURE__ */ React.createElement(Mail, { size: 13 }), " Email Anthony"), /* @__PURE__ */ React.createElement("button", { className: "btn ghost", style: { padding: "8px 12px" }, onClick: () => go("connect") }, "Book time"))))), /* @__PURE__ */ React.createElement(
+    CtaBand,
+    {
+      kick: "The Standard",
+      title: "Vendor-neutral. Lab-tested. Documented. Accountable.",
+      sub: "If that is the kind of AI partner your firm has been looking for, the conversation starts here.",
+      label: "Start the Conversation",
+      target: "connect",
+      go
+    }
+  ));
+}
+function SolutionsPage({ go }) {
+  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(
+    Hero,
+    {
+      kick: "Solutions",
+      title: "Structured AI Implementation.",
+      sub: "From readiness assessment to governed deployment and ongoing operations, we implement AI systems designed for compliance, control, and measurable performance.",
+      chips: ["Risk assessed", "Governance designed", "Execution delivered", "Operations maintained"],
+      actions: /* @__PURE__ */ React.createElement("button", { className: "btn primary", onClick: () => go("connect") }, "Design Your AI Governance Plan ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 15 }))
+    }
+  ), /* @__PURE__ */ React.createElement("section", { className: "sec", style: { paddingTop: "clamp(20px,3vw,36px)" } }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement("hr", { className: "goldRule" }), SERVICES.map((s, i) => /* @__PURE__ */ React.createElement("div", { key: s.t, className: "svcRow rv" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "stepN", style: { marginBottom: 10 } }, String(i + 1).padStart(2, "0")), /* @__PURE__ */ React.createElement("h2", { className: "h2 gold", style: { fontSize: "clamp(21px,3vw,30px)" } }, s.t)), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("p", { className: "body", style: { fontSize: "clamp(13.5px,1.5vw,15px)", marginBottom: 18 } }, s.d), /* @__PURE__ */ React.createElement("div", { className: "lbl", style: { marginBottom: 12 } }, "Phase Deliverables"), /* @__PURE__ */ React.createElement("ul", { className: "list" }, s.del.map((d) => /* @__PURE__ */ React.createElement("li", { key: d }, d)))))))), /* @__PURE__ */ React.createElement("section", { className: "sec", style: { background: "#0d1424", borderTop: "1px solid #1e2d44", borderBottom: "1px solid #1e2d44" } }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement(Head, { kick: "Engagement Model", title: "Three ways to work with Ayvede.", sub: "Every relationship starts with the Diagnostic. Where it goes from there is up to you." }), /* @__PURE__ */ React.createElement("div", { className: "grid g3" }, TIERS.map((t, i) => /* @__PURE__ */ React.createElement("div", { key: t.t, className: "card rv", style: { borderTop: `2px solid ${i === 2 ? "#c7a26b" : "#2ec4a8"}`, display: "flex", flexDirection: "column" } }, /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { marginBottom: 4 } }, t.t), /* @__PURE__ */ React.createElement("div", { className: "mono", style: { fontSize: 10.5, letterSpacing: ".12em", color: "#7a8ba3", marginBottom: 14 } }, t.meta), /* @__PURE__ */ React.createElement("p", { className: "body", style: { flex: 1 } }, t.d), /* @__PURE__ */ React.createElement("p", { className: "small", style: { marginTop: 14, color: i === 2 ? "#c7a26b" : "#2ec4a8" } }, t.note)))))), /* @__PURE__ */ React.createElement(
+    CtaBand,
+    {
+      kick: "Strategy to Execution",
+      title: "Governed at every step.",
+      sub: "Tell us where you are. We will tell you, in writing, exactly what to do next.",
+      label: "Let's Vet Your AI Strategy",
+      target: "connect",
+      go
+    }
+  ));
+}
+function ProgramsPage({ go }) {
+  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(
+    Hero,
+    {
+      kick: "Programs",
+      title: "Structured AI Programs.",
+      sub: "Defined frameworks and education built for high-trust organizations. Engineered for clarity, control, and measurable outcomes.",
+      chips: ["Framework-driven", "Outcome-focused", "Executive-aligned"],
+      actions: /* @__PURE__ */ React.createElement("button", { className: "btn primary", onClick: () => go("connect") }, "Launch Your AI Initiative ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 15 }))
+    }
+  ), /* @__PURE__ */ React.createElement("section", { className: "sec", style: { paddingTop: "clamp(20px,3vw,36px)" } }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement("div", { className: "grid g2" }, PROGRAMS.map((p) => /* @__PURE__ */ React.createElement("div", { key: p.t, className: "card rv", style: { display: "flex", flexDirection: "column" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10, marginBottom: 10, flexWrap: "wrap" } }, /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { fontSize: "clamp(19px,2.4vw,24px)" } }, p.t), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 6 } }, p.isNew && /* @__PURE__ */ React.createElement("span", { className: "tag t" }, "New"), /* @__PURE__ */ React.createElement("span", { className: "tag g" }, p.tag))), /* @__PURE__ */ React.createElement("p", { className: "gold", style: { fontSize: "clamp(13px,1.4vw,14.5px)", lineHeight: 1.55, marginBottom: 14, opacity: 0.92 } }, p.d), /* @__PURE__ */ React.createElement("div", { className: "mono dim", style: { fontSize: 10, letterSpacing: ".12em", textTransform: "uppercase", marginBottom: 16 } }, p.fmt), /* @__PURE__ */ React.createElement("div", { className: "lbl", style: { marginBottom: 10 } }, "Program Deliverables"), /* @__PURE__ */ React.createElement("ul", { className: "list", style: { flex: 1 } }, p.del.map((d) => /* @__PURE__ */ React.createElement("li", { key: d }, d)))))), /* @__PURE__ */ React.createElement("div", { className: "card rv gh", style: { marginTop: "clamp(20px,3vw,30px)", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 16, borderLeft: "2px solid rgba(199,162,107,.5)" } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { marginBottom: 6 } }, "Not sure where to start?"), /* @__PURE__ */ React.createElement("p", { className: "body" }, "Start with the Executive AI Briefing or the Diagnostic. Both end with a written plan, whether or not you ever hire us again.")), /* @__PURE__ */ React.createElement("button", { className: "btn primary", onClick: () => go("connect") }, "Book the Briefing ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 15 }))))), /* @__PURE__ */ React.createElement(
+    CtaBand,
+    {
+      kick: "Framework-Driven",
+      title: "Every program ends with capability you keep.",
+      sub: "Policies, playbooks, trained people, and working systems. Not a deck.",
+      label: "Launch Your AI Initiative",
+      target: "connect",
+      go
+    }
+  ));
+}
+function PlatformPage({ go }) {
+  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(
+    Hero,
+    {
+      kick: "The Ayvede Platform",
+      kickTeal: true,
+      title: "One governed AI operating layer.",
+      sub: "TrustStack, Sightline, and CounselGuard, unified. Governance, visibility, and confidential workflows deployed privately inside your firm's boundary.",
+      chips: ["Private deployment", "Full audit trail", "Board-level visibility"],
+      decor: "layers",
+      actions: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("button", { className: "btn primary", onClick: () => go("connect") }, "Request a Platform Walkthrough ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 15 })), /* @__PURE__ */ React.createElement("button", { className: "btn ghost", onClick: () => go("programs") }, "See the Programs Behind It"))
+    }
+  ), /* @__PURE__ */ React.createElement("section", { className: "sec", style: { paddingTop: "clamp(20px,3vw,36px)" } }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement(Head, { kick: "Modules", title: "Four modules. One standard.", sub: "Each module exists as a standalone program. Together, they run as a single platform with one governance model and one audit trail." }), /* @__PURE__ */ React.createElement("div", { className: "grid g2" }, MODULES.map((m) => /* @__PURE__ */ React.createElement("div", { key: m.t, className: "card rv" }, /* @__PURE__ */ React.createElement("div", { className: "kick teal", style: { marginBottom: 10 } }, m.k), /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { marginBottom: 8 } }, m.t), /* @__PURE__ */ React.createElement("p", { className: "body", style: { marginBottom: 14 } }, m.d), /* @__PURE__ */ React.createElement("ul", { className: "list" }, m.pts.map((p) => /* @__PURE__ */ React.createElement("li", { key: p }, p)))))))), /* @__PURE__ */ React.createElement("section", { className: "sec", style: { background: "#0d1424", borderTop: "1px solid #1e2d44", borderBottom: "1px solid #1e2d44" } }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement(Head, { kick: "How It Runs", title: "From your data to your board." }), /* @__PURE__ */ React.createElement("div", { className: "grid g4" }, FLOW.map((f, i) => /* @__PURE__ */ React.createElement("div", { key: f.n, className: "rv", style: { position: "relative" } }, /* @__PURE__ */ React.createElement("div", { className: "card", style: { height: "100%", borderTop: i === 3 ? "2px solid #c7a26b" : "2px solid #2ec4a8" } }, /* @__PURE__ */ React.createElement("div", { className: "stepN", style: { marginBottom: 8 } }, f.n), /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { marginBottom: 6, fontSize: "clamp(15px,1.7vw,17px)" } }, f.t), /* @__PURE__ */ React.createElement("p", { className: "body" }, f.d))))), /* @__PURE__ */ React.createElement("div", { className: "grid g4", style: { marginTop: "clamp(22px,3vw,32px)" } }, DEPLOY_FACTS.map((f) => /* @__PURE__ */ React.createElement("div", { key: f.t, className: "rv", style: { borderLeft: "1px solid rgba(46,196,168,.4)", paddingLeft: 14 } }, /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { fontSize: "clamp(14px,1.6vw,15.5px)", marginBottom: 6 } }, f.t), /* @__PURE__ */ React.createElement("p", { className: "small" }, f.d)))))), /* @__PURE__ */ React.createElement(
+    CtaBand,
+    {
+      kick: "Platform + Advisory",
+      title: "Software alone is not governance.",
+      sub: "The platform ships inside an Ayvede engagement, with policy, training, and a named human accountable for the outcome.",
+      label: "Request a Walkthrough",
+      target: "connect",
+      go
+    }
+  ));
+}
+function LabPage({ go }) {
+  const stageTag = (s) => s === "Research" ? "tag" : s === "Vetting" ? "tag g" : "tag t";
+  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(
+    Hero,
+    {
+      kick: "Innovation Lab",
+      title: "Disciplined Innovation.",
+      sub: "We test, vet, and validate emerging AI capabilities before they enter high-trust operational environments.",
+      chips: ["Experimented carefully", "Evaluated rigorously", "Deployed responsibly"],
+      actions: /* @__PURE__ */ React.createElement("button", { className: "btn primary", onClick: () => go("connect") }, "Explore an AI Pilot Together ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 15 }))
+    }
+  ), /* @__PURE__ */ React.createElement("section", { className: "sec tight", style: { paddingTop: 0 } }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement("div", { className: "grid g4" }, PIPELINE.map((p, i) => /* @__PURE__ */ React.createElement("div", { key: p.t, className: "stepCell rv", style: { borderLeftColor: i === 3 ? "#2ec4a8" : "#1e2d44" } }, /* @__PURE__ */ React.createElement("div", { className: "stepN" }, String(i + 1).padStart(2, "0")), /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { margin: "6px 0", fontSize: "clamp(15px,1.7vw,17px)" } }, p.t), /* @__PURE__ */ React.createElement("p", { className: "small" }, p.d)))), /* @__PURE__ */ React.createElement("p", { className: "small rv", style: { marginTop: 18, color: "#c7a26b" } }, "Nothing reaches a client environment before it survives this pipeline."))), /* @__PURE__ */ React.createElement("section", { className: "sec", style: { paddingTop: "clamp(16px,2vw,28px)" } }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement("div", { className: "grid g2" }, LAB.map((v) => /* @__PURE__ */ React.createElement("div", { key: v.t, className: "card rv" }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10, marginBottom: 10, flexWrap: "wrap" } }, /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { fontSize: "clamp(19px,2.4vw,24px)" } }, v.t), /* @__PURE__ */ React.createElement("span", { className: stageTag(v.stage) }, v.stage)), /* @__PURE__ */ React.createElement("p", { className: "gold", style: { fontSize: "clamp(13px,1.4vw,14.5px)", lineHeight: 1.55, marginBottom: 16, opacity: 0.92 } }, v.d), /* @__PURE__ */ React.createElement("div", { className: "lbl", style: { marginBottom: 10 } }, "Program Deliverables"), /* @__PURE__ */ React.createElement("ul", { className: "list" }, v.del.map((d) => /* @__PURE__ */ React.createElement("li", { key: d }, d)))))))), /* @__PURE__ */ React.createElement(
+    CtaBand,
+    {
+      kick: "Priority Access",
+      title: "Retainer clients see the Lab first.",
+      sub: "Vetted capabilities flow to retainer clients on a quarterly cadence, before the market catches up.",
+      label: "Explore a Pilot Together",
+      target: "connect",
+      go
+    }
+  ));
+}
+const usd = (n) => "$" + Math.round(n).toLocaleString("en-US");
+const rate = (t) => t.unit === "spend" ? "usage" : t.unit === "flat" ? `${usd(t.price)}/mo flat` : `$${t.price % 1 ? t.price.toFixed(2) : t.price}/seat/mo`;
+function Stepper({ value, min = 1, max = 9999, step = 1, onChange, label }) {
+  const clamp = (v) => Math.max(min, Math.min(max, v));
+  return /* @__PURE__ */ React.createElement("span", { className: "step" }, /* @__PURE__ */ React.createElement("button", { onClick: () => onChange(clamp(value - step)), "aria-label": `Fewer ${label}` }, /* @__PURE__ */ React.createElement(Minus, { size: 12 })), /* @__PURE__ */ React.createElement(
+    "input",
+    {
+      type: "number",
+      value,
+      min,
+      max,
+      "aria-label": label,
+      onChange: (e) => {
+        const v = parseInt(e.target.value, 10);
+        onChange(clamp(isNaN(v) ? min : v));
+      }
+    }
+  ), /* @__PURE__ */ React.createElement("button", { onClick: () => onChange(clamp(value + step)), "aria-label": `More ${label}` }, /* @__PURE__ */ React.createElement(Plus, { size: 12 })));
+}
+function ToolsPage({ go }) {
+  const [sel, setSel] = useState({});
+  const [custom, setCustom] = useState([]);
+  const [cf, setCf] = useState({ name: "", price: "", seats: "" });
+  const toggle = (t) => setSel((s) => {
+    const n = { ...s };
+    if (n[t.id] !== void 0) delete n[t.id];
+    else n[t.id] = t.unit === "spend" ? 250 : t.unit === "flat" ? 1 : 5;
+    return n;
+  });
+  const setVal = (id, v) => setSel((s) => ({ ...s, [id]: v }));
+  const picked = TOOL_CATALOG.filter((t) => sel[t.id] !== void 0);
+  const lineFor = (t) => t.unit === "spend" ? sel[t.id] : t.unit === "flat" ? t.price : t.price * sel[t.id];
+  const monthly = picked.reduce((a, t) => a + lineFor(t), 0) + custom.reduce((a, c) => a + c.price * c.seats, 0);
+  const seatMonthly = picked.filter((t) => t.unit === "seat").reduce((a, t) => a + t.price * sel[t.id], 0) + custom.reduce((a, c) => a + c.price * c.seats, 0);
+  const annual = monthly * 12;
+  const waste = seatMonthly * 12 * DIAG_BENCH.unusedShare;
+  const seats = picked.filter((t) => t.unit === "seat").reduce((a, t) => a + sel[t.id], 0) + custom.reduce((a, c) => a + c.seats, 0);
+  const nTools = picked.length + custom.length;
+  const capMap = {};
+  picked.forEach((t) => {
+    (t.caps || []).forEach((c) => (capMap[c] = capMap[c] || []).push(t.name));
+    Object.entries(t.incl || {}).forEach(([c, lbl]) => (capMap[c] = capMap[c] || []).push(`${t.name} (${lbl} included)`));
+  });
+  const flags = Object.entries(capMap).filter(([, names]) => names.length > 1).map(([cap, names]) => ({ cap, names }));
+  const addCustom = () => {
+    const price = parseFloat(cf.price), seatN = parseInt(cf.seats, 10);
+    if (!cf.name.trim() || isNaN(price) || price <= 0 || isNaN(seatN) || seatN < 1) return;
+    setCustom((c) => [...c, { id: `c${c.length}-${cf.name}`, name: cf.name.trim(), price, seats: seatN }]);
+    setCf({ name: "", price: "", seats: "" });
+  };
+  const sendResults = () => {
+    const lines = [
+      ...picked.map((t) => t.unit === "spend" ? `- ${t.name}: ${usd(sel[t.id])}/mo (usage-based)` : t.unit === "flat" ? `- ${t.name}: ${usd(t.price)}/mo flat` : `- ${t.name}: ${sel[t.id]} seats x $${t.price % 1 ? t.price.toFixed(2) : t.price} = ${usd(t.price * sel[t.id])}/mo`),
+      ...custom.map((c) => `- ${c.name}: ${c.seats} seats x $${c.price} = ${usd(c.price * c.seats)}/mo (self-reported)`)
+    ];
+    const flagLines = flags.map((f) => `- ${f.names.length} tools cover ${CAP_LABELS[f.cap]}: ${f.names.join(", ")}`);
+    const s = encodeURIComponent(`Spend Diagnostic - ${usd(annual)} per year`);
+    const b = encodeURIComponent(
+      `My AI & SaaS Spend Diagnostic (ayvede.com, Tools)
+
+Monthly: ${usd(monthly)}
+Annual: ${usd(annual)}
+Stranded-license estimate: ${usd(waste)}/yr at the 36% unused-license benchmark (Zylo 2026 SaaS Management Index)
+
+Stack:
+${lines.join("\n")}
+
+Overlap flags:
+${flagLines.length ? flagLines.join("\n") : "- none detected"}
+
+List prices as of ${PRICING_ASOF}, annual-billing basis.
+
+Name:
+Firm:
+What prompted this:
+`
+    );
+    window.location.href = `mailto:${EMAIL}?subject=${s}&body=${b}`;
+  };
+  const activeAnnual = Math.max(annual - waste, 0);
+  const stageTag = (s) => s === "Live" ? "tag t" : "tag g";
+  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(
+    Hero,
+    {
+      kick: "Tools",
+      kickTeal: true,
+      title: "Your AI Stack Has a Number.",
+      sub: "Working diagnostics from the Ayvede practice, free to use. Start with spend: select the tools your firm pays for, set seat counts, and watch the ungoverned total build live.",
+      chips: ["No signup", "Real list prices", "Nothing leaves your browser"]
+    }
+  ), /* @__PURE__ */ React.createElement("section", { className: "sec", style: { paddingTop: "clamp(16px,2vw,28px)" } }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement(
+    Head,
+    {
+      kick: "Diagnostic 01 · The Spend Audit",
+      kickTeal: true,
+      title: "What does ungoverned look like in dollars?",
+      sub: `Real list prices on the annual-billing basis, verified ${PRICING_ASOF}. Most firms cannot name this number. Naming it is step one of governing it.`
+    }
+  ), /* @__PURE__ */ React.createElement("div", { className: "tcGrid rv" }, /* @__PURE__ */ React.createElement("div", null, TOOL_CATS.map((cat) => /* @__PURE__ */ React.createElement("div", { key: cat }, /* @__PURE__ */ React.createElement("div", { className: "lbl tcCatLbl" }, cat), /* @__PURE__ */ React.createElement("div", { className: "tcList", style: { marginBottom: 6 } }, TOOL_CATALOG.filter((t) => t.cat === cat).map((t) => {
+    const on = sel[t.id] !== void 0;
+    return /* @__PURE__ */ React.createElement("div", { key: t.id }, /* @__PURE__ */ React.createElement("button", { className: `tcRow${on ? " on" : ""}`, onClick: () => toggle(t), "aria-pressed": on }, /* @__PURE__ */ React.createElement("span", { className: "tcMark", "aria-hidden": "true" }), /* @__PURE__ */ React.createElement("span", { className: "tcName" }, t.name, /* @__PURE__ */ React.createElement("span", { className: "tcNote" }, t.note, t.uncertain ? " · rate unverified" : "")), /* @__PURE__ */ React.createElement("span", { className: "tcPrice" }, rate(t))), on && /* @__PURE__ */ React.createElement("div", { className: "tcCtl" }, t.unit === "seat" && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("span", { style: { display: "inline-flex", alignItems: "center", gap: 8 } }, /* @__PURE__ */ React.createElement(Stepper, { value: sel[t.id], onChange: (v) => setVal(t.id, v), label: `${t.name} seats` }), /* @__PURE__ */ React.createElement("span", { className: "small dim" }, "seats")), /* @__PURE__ */ React.createElement("span", { className: "tcLineTotal" }, usd(t.price * sel[t.id]), "/mo")), t.unit === "spend" && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("span", { style: { display: "inline-flex", alignItems: "center", gap: 8 } }, /* @__PURE__ */ React.createElement(Stepper, { value: sel[t.id], min: 0, max: 99999, step: 50, onChange: (v) => setVal(t.id, v), label: `${t.name} monthly spend` }), /* @__PURE__ */ React.createElement("span", { className: "small dim" }, "$ per month")), /* @__PURE__ */ React.createElement("span", { className: "tcLineTotal" }, usd(sel[t.id]), "/mo")), t.unit === "flat" && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("span", { className: "small dim" }, t.note), /* @__PURE__ */ React.createElement("span", { className: "tcLineTotal" }, usd(t.price), "/mo"))));
+  })))), /* @__PURE__ */ React.createElement("div", { className: "lbl tcCatLbl" }, "Anything We Missed"), custom.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "tcList", style: { marginBottom: 8 } }, custom.map((c) => /* @__PURE__ */ React.createElement("div", { key: c.id, className: "tcRow on", style: { cursor: "default" } }, /* @__PURE__ */ React.createElement("span", { className: "tcMark", "aria-hidden": "true" }), /* @__PURE__ */ React.createElement("span", { className: "tcName" }, c.name, /* @__PURE__ */ React.createElement("span", { className: "tcNote" }, "self-reported rate")), /* @__PURE__ */ React.createElement("span", { className: "tcPrice" }, c.seats, " x $", c.price, "/mo"), /* @__PURE__ */ React.createElement(
+    "button",
+    {
+      onClick: () => setCustom(custom.filter((x) => x.id !== c.id)),
+      "aria-label": `Remove ${c.name}`,
+      style: { background: "none", border: 0, color: "#7a8ba3", cursor: "pointer", display: "inline-flex", padding: 2 }
+    },
+    /* @__PURE__ */ React.createElement(X, { size: 13 })
+  )))), /* @__PURE__ */ React.createElement("div", { className: "tcAdd" }, /* @__PURE__ */ React.createElement("input", { className: "input", placeholder: "Tool name", value: cf.name, onChange: (e) => setCf({ ...cf, name: e.target.value }), "aria-label": "Custom tool name" }), /* @__PURE__ */ React.createElement("input", { className: "input", placeholder: "$/seat/mo", type: "number", min: "0", value: cf.price, onChange: (e) => setCf({ ...cf, price: e.target.value }), "aria-label": "Custom tool price per seat per month" }), /* @__PURE__ */ React.createElement("input", { className: "input", placeholder: "Seats", type: "number", min: "1", value: cf.seats, onChange: (e) => setCf({ ...cf, seats: e.target.value }), "aria-label": "Custom tool seats" }), /* @__PURE__ */ React.createElement("button", { className: "btn line", style: { padding: "10px 14px" }, onClick: addCustom, "aria-label": "Add custom tool" }, /* @__PURE__ */ React.createElement(Plus, { size: 14 }), " Add"))), /* @__PURE__ */ React.createElement("div", { className: "tcSticky" }, /* @__PURE__ */ React.createElement("div", { className: "card", style: { borderTop: "2px solid #2ec4a8" } }, /* @__PURE__ */ React.createElement("div", { className: "kick teal", style: { marginBottom: 14 } }, "Your Surface Area"), nTools === 0 ? /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("p", { className: "body", style: { marginBottom: 14 } }, "Select the tools your firm pays for. The total builds live, at real list prices."), /* @__PURE__ */ React.createElement("p", { className: "small dim" }, "Most firms find their first honest count lands well above what they would have guessed. The average smaller company runs 152 SaaS applications (Zylo, 2025).")) : /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", { className: "tcBigNum" }, usd(monthly), /* @__PURE__ */ React.createElement("span", { style: { fontSize: "clamp(13px,1.5vw,16px)", color: "#7a8ba3", fontWeight: 500 } }, " / month")), /* @__PURE__ */ React.createElement("div", { className: "mono", style: { fontSize: 13, color: "#e8ecf1", margin: "6px 0 2px" } }, usd(annual), " per year"), /* @__PURE__ */ React.createElement("div", { className: "mono dim", style: { fontSize: 10.5, letterSpacing: ".12em" } }, nTools, " TOOLS · ", seats, " PAID SEATS"), seatMonthly > 0 && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("hr", { className: "rule", style: { margin: "16px 0 12px" } }), /* @__PURE__ */ React.createElement("div", { className: "tcBar", "aria-hidden": "true" }, /* @__PURE__ */ React.createElement("span", { className: "a", style: { width: `${activeAnnual / (annual || 1) * 100}%` } }), /* @__PURE__ */ React.createElement("span", { className: "w", style: { width: `${waste / (annual || 1) * 100}%` } })), /* @__PURE__ */ React.createElement("p", { className: "small", style: { marginTop: 10 } }, /* @__PURE__ */ React.createElement("span", { className: "tealTx" }, "Working spend"), " vs ", /* @__PURE__ */ React.createElement("span", { style: { color: "#ef4444" } }, "stranded licenses"), ": at the industry benchmark, ", usd(waste), " of this goes to seats nobody uses each year."), /* @__PURE__ */ React.createElement("p", { className: "small dim", style: { marginTop: 4 } }, DIAG_BENCH.unusedLabel, ". ", DIAG_BENCH.unusedSource, ".")), flags.length > 0 && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("hr", { className: "rule", style: { margin: "14px 0 4px" } }), /* @__PURE__ */ React.createElement("div", { className: "lbl", style: { margin: "10px 0 2px" } }, "Overlap Flags"), flags.map((f) => /* @__PURE__ */ React.createElement("div", { key: f.cap, className: "tcFlag", style: { borderTop: 0 } }, /* @__PURE__ */ React.createElement(TriangleAlert, { size: 14, color: "#c7a26b", style: { flex: "none", marginTop: 2 } }), /* @__PURE__ */ React.createElement("span", null, f.names.length, " tools cover ", /* @__PURE__ */ React.createElement("strong", { style: { color: "#e8ecf1", fontWeight: 600 } }, CAP_LABELS[f.cap]), ": ", f.names.join(", "), ".")))), /* @__PURE__ */ React.createElement("hr", { className: "rule", style: { margin: "16px 0" } }), /* @__PURE__ */ React.createElement("p", { className: "body", style: { marginBottom: 14 } }, "This is your ungoverned AI and SaaS surface area: every tool here touches your data, your clients, or both. The Diagnostic turns this number into an inventory, a policy, and a plan."), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 10 } }, /* @__PURE__ */ React.createElement("button", { className: "btn primary", style: { width: "100%" }, onClick: () => go("connect", { interest: "AI & SaaS Spend Diagnostic" }) }, "Book a Scoping Call ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 15 })), /* @__PURE__ */ React.createElement("button", { className: "btn line", style: { width: "100%" }, onClick: sendResults }, /* @__PURE__ */ React.createElement(Mail, { size: 14 }), " Send My Results to Ayvede"))), /* @__PURE__ */ React.createElement("hr", { className: "rule", style: { margin: "16px 0 12px" } }), /* @__PURE__ */ React.createElement("p", { className: "small dim" }, "List prices as of ", PRICING_ASOF, ", annual-billing basis. Contract rates vary. Rows marked unverified could not be confirmed on the vendor page. Estimates are benchmarks, not an audit.")))))), /* @__PURE__ */ React.createElement("section", { className: "sec", style: { background: "#0d1424", borderTop: "1px solid #1e2d44", borderBottom: "1px solid #1e2d44" } }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement(Head, { kick: "Why This Number Matters", title: "The benchmarks behind the flags.", sub: "Every figure the diagnostic quotes is published research, cited in place. That is the standard your own AI reporting should meet." }), /* @__PURE__ */ React.createElement("div", { className: "grid g4" }, DIAG_BENCH.facts.map((x) => /* @__PURE__ */ React.createElement("div", { key: x.s + x.f, className: "rv", style: { borderLeft: "1px solid rgba(199,162,107,.4)", paddingLeft: 16 } }, /* @__PURE__ */ React.createElement("p", { className: "body", style: { marginBottom: 8 } }, x.f), /* @__PURE__ */ React.createElement("p", { className: "small dim" }, x.s)))))), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement(Head, { kick: "More Diagnostics", title: "Tools ship the way everything Ayvede ships: vetted first.", sub: "Each diagnostic graduates from the Innovation Lab pipeline before it appears here." }), /* @__PURE__ */ React.createElement("div", { className: "grid g3" }, TOOL_REGISTRY.map((t) => /* @__PURE__ */ React.createElement("div", { key: t.n, className: "stepCell rv" }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8 } }, /* @__PURE__ */ React.createElement("div", { className: "stepN" }, t.n), /* @__PURE__ */ React.createElement("span", { className: stageTag(t.stage) }, t.stage)), /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { margin: "8px 0" } }, t.t), /* @__PURE__ */ React.createElement("p", { className: "body" }, t.d)))), /* @__PURE__ */ React.createElement("p", { className: "small rv", style: { marginTop: 18, color: "#c7a26b" } }, "Want one of these sooner? Say so in a scoping call. Client demand sets the Lab queue."))), /* @__PURE__ */ React.createElement(
+    CtaBand,
+    {
+      kick: "From Number to Plan",
+      title: "Turn the ungoverned number into a governed one.",
+      sub: "A confidential 30-minute scoping call. Bring the diagnostic; leave with next steps in writing.",
+      label: "Book a Scoping Call",
+      target: "connect",
+      go
+    }
+  ));
+}
+const MD_INLINE_RE = /(\*\*([^*]+)\*\*)|(\*([^*]+)\*)|(\[([^\]]+)\]\(([^)\s]+)\))/;
+function mdInline(text) {
+  const out = [];
+  let rest = String(text), k = 0;
+  while (rest) {
+    const m = rest.match(MD_INLINE_RE);
+    if (!m) {
+      out.push(rest);
+      break;
+    }
+    if (m.index > 0) out.push(rest.slice(0, m.index));
+    if (m[1]) out.push(/* @__PURE__ */ React.createElement("strong", { key: k++ }, m[2]));
+    else if (m[3]) out.push(/* @__PURE__ */ React.createElement("em", { key: k++ }, m[4]));
+    else out.push(/* @__PURE__ */ React.createElement("a", { key: k++, href: m[7], target: "_blank", rel: "noreferrer" }, m[6]));
+    rest = rest.slice(m.index + m[0].length);
+  }
+  return out;
+}
+function insBlocks(md) {
+  const blocks = [];
+  let para = [], table = null;
+  const flushP = () => {
+    if (para.length) {
+      blocks.push({ t: "p", text: para.join(" ") });
+      para = [];
+    }
+  };
+  const flushT = () => {
+    if (table) {
+      blocks.push({ t: "table", rows: table });
+      table = null;
+    }
+  };
+  for (const raw of String(md).split("\n")) {
+    const line = raw.trim();
+    if (line.startsWith("|")) {
+      flushP();
+      const cells = line.replace(/^\||\|$/g, "").split("|").map((c) => c.trim());
+      if (!cells.every((c) => /^:?-+:?$/.test(c) || c === "")) (table = table || []).push(cells);
+      continue;
+    }
+    if (!line) {
+      flushP();
+      continue;
+    }
+    flushT();
+    if (line.startsWith("### ")) {
+      flushP();
+      blocks.push({ t: "h4", text: line.slice(4) });
+      continue;
+    }
+    if (line.startsWith("## ")) {
+      flushP();
+      blocks.push({ t: "h3", text: line.slice(3) });
+      continue;
+    }
+    if (line.startsWith("# ")) {
+      flushP();
+      blocks.push({ t: "h3", text: line.slice(2) });
+      continue;
+    }
+    para.push(line);
+  }
+  flushP();
+  flushT();
+  return blocks;
+}
+function InsightsBody({ md }) {
+  return /* @__PURE__ */ React.createElement("div", { className: "insBody" }, insBlocks(md).map((b, i) => {
+    if (b.t === "h3") return /* @__PURE__ */ React.createElement("h3", { key: i, className: "h3", style: { margin: "30px 0 12px" } }, mdInline(b.text));
+    if (b.t === "h4") return /* @__PURE__ */ React.createElement("h3", { key: i, className: "h3", style: { margin: "24px 0 10px", fontSize: "clamp(15px,1.7vw,17px)" } }, mdInline(b.text));
+    if (b.t === "table") return /* @__PURE__ */ React.createElement("div", { key: i, className: "insTableWrap" }, /* @__PURE__ */ React.createElement("table", { className: "insTable" }, /* @__PURE__ */ React.createElement("tbody", null, b.rows.map((r, ri) => /* @__PURE__ */ React.createElement("tr", { key: ri }, r.map((c, ci) => /* @__PURE__ */ React.createElement("td", { key: ci }, mdInline(c))))))));
+    return /* @__PURE__ */ React.createElement("p", { key: i, className: "body", style: { marginBottom: 14, fontSize: "clamp(13.5px,1.5vw,15px)", lineHeight: 1.7 } }, mdInline(b.text));
+  }));
+}
+function insHash(str) {
+  let h = 2166136261 >>> 0;
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+function insRng(a) {
+  return () => {
+    a |= 0;
+    a = a + 1831565813 | 0;
+    let t = Math.imul(a ^ a >>> 15, 1 | a);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+function CardMotif({ seed, slim }) {
+  const W = 1200, H = slim ? 150 : 675;
+  const N = slim ? 11 : 16;
+  const rnd = insRng(insHash(seed || "ayvede"));
+  const pts = [];
+  for (let i = 0; i < N; i++) pts.push([Math.round(50 + rnd() * (W - 100)), Math.round(26 + rnd() * (H - 52))]);
+  const edges = [];
+  for (let i = 0; i < pts.length; i++) {
+    edges.push([i, (i + 1 + Math.floor(rnd() * 3)) % pts.length]);
+    if (rnd() > 0.55) edges.push([i, (i + 5) % pts.length]);
+  }
+  const gid = "m" + insHash(seed || "ayvede").toString(36);
+  return /* @__PURE__ */ React.createElement("svg", { viewBox: `0 0 ${W} ${H}`, preserveAspectRatio: "xMidYMid slice", "aria-hidden": "true" }, /* @__PURE__ */ React.createElement("defs", null, /* @__PURE__ */ React.createElement("radialGradient", { id: gid + "a", cx: "80%", cy: "15%", r: "70%" }, /* @__PURE__ */ React.createElement("stop", { offset: "0%", stopColor: "rgba(199,162,107,.12)" }), /* @__PURE__ */ React.createElement("stop", { offset: "65%", stopColor: "rgba(199,162,107,0)" })), /* @__PURE__ */ React.createElement("radialGradient", { id: gid + "b", cx: "10%", cy: "90%", r: "70%" }, /* @__PURE__ */ React.createElement("stop", { offset: "0%", stopColor: "rgba(46,196,168,.10)" }), /* @__PURE__ */ React.createElement("stop", { offset: "60%", stopColor: "rgba(46,196,168,0)" }))), /* @__PURE__ */ React.createElement("rect", { width: W, height: H, fill: "#101828" }), /* @__PURE__ */ React.createElement("rect", { width: W, height: H, fill: `url(#${gid}a)` }), /* @__PURE__ */ React.createElement("rect", { width: W, height: H, fill: `url(#${gid}b)` }), edges.map(([a, b], i) => /* @__PURE__ */ React.createElement("line", { key: i, x1: pts[a][0], y1: pts[a][1], x2: pts[b][0], y2: pts[b][1], stroke: "rgba(199,162,107,.22)", strokeWidth: "1" })), pts.map(([x, y], i) => /* @__PURE__ */ React.createElement("circle", { key: i, cx: x, cy: y, r: i % 5 === 0 ? 4 : 2.4, fill: i % 7 === 0 ? "#2ec4a8" : "#c7a26b", opacity: i % 7 === 0 ? 0.75 : 0.55 })), /* @__PURE__ */ React.createElement("rect", { x: "0", y: H - 3, width: W, height: "3", fill: "rgba(199,162,107,.5)" }));
+}
+function InsightsPage({ go }) {
+  const [cat, setCat] = useState("All");
+  const [q, setQ] = useState("");
+  const [openSlug, setOpenSlug] = useState(null);
+  const open = HUB_DATA.find((a) => a.slug === openSlug) || null;
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [openSlug]);
+  const needle = q.trim().toLowerCase();
+  const list = HUB_DATA.filter((a) => {
+    const catOk = cat === "All" || a.category === cat || a.secondaryCategory === cat;
+    const qOk = !needle || [a.title, a.teaser, a.body, a.category, a.secondaryCategory || ""].some((f) => f.toLowerCase().includes(needle));
+    return catOk && qOk;
+  });
+  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { style: { display: open ? "none" : void 0 } }, /* @__PURE__ */ React.createElement(
+    Hero,
+    {
+      kick: "Insights",
+      title: "The Ayvede Briefing.",
+      sub: "Governance-grade AI intelligence for decision-makers. Signal, not noise. Written by a practitioner, not a content calendar.",
+      chips: ["POVs", "Playbooks", "Field notes", "Board briefs"],
+      actions: /* @__PURE__ */ React.createElement("button", { className: "btn primary", onClick: () => {
+        const el = document.getElementById("subscribe-anchor");
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      } }, "Subscribe to the Briefing ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 15 }))
+    }
+  ), /* @__PURE__ */ React.createElement("section", { className: "sec", style: { paddingTop: "clamp(16px,2vw,28px)" } }, /* @__PURE__ */ React.createElement("div", { className: "wrap" }, /* @__PURE__ */ React.createElement("div", { className: "rv", style: { display: "flex", flexWrap: "wrap", gap: "10px 14px", alignItems: "center", justifyContent: "space-between", marginBottom: "clamp(18px,2.6vw,28px)" } }, /* @__PURE__ */ React.createElement("div", { className: "chips" }, ["All", ...INS_CATEGORIES].map((c) => /* @__PURE__ */ React.createElement("button", { key: c, className: `tag insPill${cat === c ? " on" : ""}`, onClick: () => setCat(c) }, c))), /* @__PURE__ */ React.createElement("input", { className: "input insSearch", placeholder: "Search briefings", value: q, onChange: (e) => setQ(e.target.value), "aria-label": "Search briefings" })), /* @__PURE__ */ React.createElement("div", { className: "grid g3 rv" }, list.map((a) => /* @__PURE__ */ React.createElement(
+    "article",
+    {
+      key: a.slug,
+      className: "card insCard",
+      role: "button",
+      tabIndex: 0,
+      onClick: () => setOpenSlug(a.slug),
+      onKeyDown: (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          setOpenSlug(a.slug);
+        }
+      }
+    },
+    /* @__PURE__ */ React.createElement("div", { className: "insMotif" }, /* @__PURE__ */ React.createElement(CardMotif, { seed: a.slug })),
+    /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 } }, /* @__PURE__ */ React.createElement("span", { className: "tag g" }, a.category), a.secondaryCategory && /* @__PURE__ */ React.createElement("span", { className: "tag" }, a.secondaryCategory)),
+    /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { marginBottom: 8 } }, a.title),
+    /* @__PURE__ */ React.createElement("p", { className: "body", style: { flex: 1 } }, a.teaser),
+    /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 14 } }, /* @__PURE__ */ React.createElement("span", { className: "mono dim", style: { fontSize: 10, letterSpacing: ".12em" } }, a.date), /* @__PURE__ */ React.createElement("span", { className: "mono tealTx", style: { fontSize: 10.5, letterSpacing: ".14em", display: "inline-flex", alignItems: "center", gap: 6 } }, "READ ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 12 })))
+  )), list.length === 0 && /* @__PURE__ */ React.createElement("div", { className: "card gh", style: { gridColumn: "1 / -1", textAlign: "center", padding: "clamp(34px,5vw,56px)" } }, /* @__PURE__ */ React.createElement("div", { className: "kick", style: { marginBottom: 10 } }, HUB_DATA.length === 0 ? "In Production" : "No Matches"), /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { marginBottom: 8 } }, HUB_DATA.length === 0 ? "The first briefing is on its way." : "Nothing matches that filter."), /* @__PURE__ */ React.createElement("p", { className: "small", style: { maxWidth: 420, margin: "0 auto" } }, HUB_DATA.length === 0 ? "New governance-grade briefings land here as they ship. Subscribe below to get them in your inbox first." : "Try another category, or clear the search."))), /* @__PURE__ */ React.createElement("p", { className: "small dim rv", style: { marginTop: 18 } }, "Full-length briefings, templates, and playbooks are delivered to subscribers and clients first."))), /* @__PURE__ */ React.createElement("div", { id: "subscribe-anchor" }, /* @__PURE__ */ React.createElement(SubscribeBand, null)), /* @__PURE__ */ React.createElement(
+    CtaBand,
+    {
+      kick: "Beyond the Briefing",
+      title: "Want this intelligence applied to your firm?",
+      sub: "The Executive AI Briefing turns these ideas into a confidential, firm-specific 90-day plan.",
+      label: "Book the Executive Briefing",
+      target: "connect",
+      go
+    }
+  )), open && /* @__PURE__ */ React.createElement("section", { className: "sec", style: { paddingTop: "clamp(90px,12vw,140px)" } }, /* @__PURE__ */ React.createElement("div", { className: "wrap", style: { maxWidth: 860 } }, /* @__PURE__ */ React.createElement("button", { className: "btn line", style: { padding: "8px 12px" }, onClick: () => setOpenSlug(null) }, /* @__PURE__ */ React.createElement(ArrowRight, { size: 13, style: { transform: "rotate(180deg)" } }), " All Briefings"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center", margin: "clamp(20px,3vw,30px) 0 14px" } }, /* @__PURE__ */ React.createElement("span", { className: "tag g" }, open.category), open.secondaryCategory && /* @__PURE__ */ React.createElement("span", { className: "tag" }, open.secondaryCategory), /* @__PURE__ */ React.createElement("span", { className: "mono dim", style: { fontSize: 10.5, letterSpacing: ".12em", marginLeft: 4 } }, open.date)), /* @__PURE__ */ React.createElement("h1", { className: "h2", style: { marginBottom: 12 } }, open.title), /* @__PURE__ */ React.createElement("p", { className: "sub", style: { marginBottom: 22 } }, open.teaser), /* @__PURE__ */ React.createElement("div", { className: "insReaderStrip", style: { marginBottom: "clamp(26px,4vw,38px)" } }, /* @__PURE__ */ React.createElement(CardMotif, { seed: open.slug, slim: true })), /* @__PURE__ */ React.createElement(InsightsBody, { md: open.body }), /* @__PURE__ */ React.createElement("hr", { className: "rule", style: { margin: "clamp(26px,4vw,40px) 0 18px" } }), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "space-between", alignItems: "center" } }, /* @__PURE__ */ React.createElement("button", { className: "btn line", style: { padding: "8px 12px" }, onClick: () => setOpenSlug(null) }, /* @__PURE__ */ React.createElement(ArrowRight, { size: 13, style: { transform: "rotate(180deg)" } }), " All Briefings"), /* @__PURE__ */ React.createElement("button", { className: "btn primary", onClick: () => go("connect") }, "Book a Confidential Briefing ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 15 }))))));
+}
+function ConnectPage({ preset }) {
+  const [f, setF] = useState({ first: "", last: "", email: "", firm: "", interest: preset || "Executive AI Briefing", message: "" });
+  const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
+  const send = () => {
+    const s = encodeURIComponent(`Ayvede Inquiry — ${f.interest}`);
+    const b = encodeURIComponent(
+      `Name: ${f.first} ${f.last}
+Email: ${f.email}
+Firm: ${f.firm}
+Exploring: ${f.interest}
+
+${f.message}`
+    );
+    window.location.href = `mailto:${EMAIL}?subject=${s}&body=${b}`;
+  };
+  const NEXT = [
+    { n: "01", t: "Response within one business day", d: "Directly from Anthony. No intake team, no ticket queue." },
+    { n: "02", t: "Confidential 30-minute scoping call", d: "NDA available before any detail is shared." },
+    { n: "03", t: "Written recommendation", d: "Scope, timeline, and fixed pricing, whether or not you proceed." }
+  ];
+  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(
+    Hero,
+    {
+      kick: "Connect",
+      title: "Connect With Us.",
+      sub: "Share a bit about your firm and what you're exploring with AI. Every conversation is confidential by default."
+    }
+  ), /* @__PURE__ */ React.createElement("section", { className: "sec", style: { paddingTop: 0 } }, /* @__PURE__ */ React.createElement("div", { className: "wrap", style: { display: "grid", gap: "clamp(22px,3.5vw,40px)", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,330px),1fr))", alignItems: "start" } }, /* @__PURE__ */ React.createElement("div", { className: "card rv", style: { borderTop: "2px solid #2ec4a8" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gap: 16 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gap: 16, gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,140px),1fr))" } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("label", { className: "lbl", htmlFor: "first" }, "First name *"), /* @__PURE__ */ React.createElement("input", { id: "first", className: "input", value: f.first, onChange: set("first") })), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("label", { className: "lbl", htmlFor: "last" }, "Last name *"), /* @__PURE__ */ React.createElement("input", { id: "last", className: "input", value: f.last, onChange: set("last") }))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("label", { className: "lbl", htmlFor: "email" }, "Email *"), /* @__PURE__ */ React.createElement("input", { id: "email", className: "input", type: "email", value: f.email, onChange: set("email") })), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("label", { className: "lbl", htmlFor: "firm" }, "Firm / Organization"), /* @__PURE__ */ React.createElement("input", { id: "firm", className: "input", value: f.firm, onChange: set("firm") })), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("label", { className: "lbl", htmlFor: "interest" }, "What are you exploring?"), /* @__PURE__ */ React.createElement("select", { id: "interest", className: "sel", value: f.interest, onChange: set("interest") }, ["Executive AI Briefing", "AI Readiness Diagnostic", "AI & SaaS Spend Diagnostic", "Governance & Compliance Bootcamp", "Hands-On Training (Ayvede Academy)", "The Ayvede Platform", "Risk & Security Workflows", "The Ayvede Retainer", "Innovation Lab Pilot", "Something else"].map((o) => /* @__PURE__ */ React.createElement("option", { key: o, value: o, style: { background: "#161f30" } }, o)))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("label", { className: "lbl", htmlFor: "msg" }, "Message"), /* @__PURE__ */ React.createElement("textarea", { id: "msg", className: "ta", value: f.message, onChange: set("message") })), /* @__PURE__ */ React.createElement("button", { className: "btn primary", style: { width: "100%" }, onClick: send }, "Send Inquiry ", /* @__PURE__ */ React.createElement(ArrowRight, { size: 15 })), /* @__PURE__ */ React.createElement("p", { className: "small dim", style: { textAlign: "center" } }, "Opens your email client, addressed to ", EMAIL, "."))), /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gap: 16 } }, /* @__PURE__ */ React.createElement("div", { className: "card rv gh" }, /* @__PURE__ */ React.createElement("div", { className: "kick", style: { marginBottom: 12 } }, "What Happens Next"), /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gap: 16 } }, NEXT.map((n) => /* @__PURE__ */ React.createElement("div", { key: n.n, style: { display: "flex", gap: 14 } }, /* @__PURE__ */ React.createElement("span", { className: "stepN", style: { marginTop: 2 } }, n.n), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h3", { className: "h3", style: { fontSize: "clamp(14px,1.6vw,15.5px)", marginBottom: 3 } }, n.t), /* @__PURE__ */ React.createElement("p", { className: "small" }, n.d)))))), /* @__PURE__ */ React.createElement("div", { className: "card rv" }, /* @__PURE__ */ React.createElement("div", { className: "kick teal", style: { marginBottom: 12 } }, "Direct"), /* @__PURE__ */ React.createElement("a", { className: "fLink", href: `mailto:${EMAIL}`, style: { display: "flex", alignItems: "center", gap: 8, textDecoration: "none", color: "#a8b4c6" } }, /* @__PURE__ */ React.createElement(Mail, { size: 14, color: "#2ec4a8" }), " ", EMAIL), /* @__PURE__ */ React.createElement("a", { className: "fLink", href: `tel:${PHONE_TEL}`, style: { display: "flex", alignItems: "center", gap: 8, textDecoration: "none", color: "#a8b4c6" } }, /* @__PURE__ */ React.createElement(Phone, { size: 14, color: "#2ec4a8" }), " ", PHONE), /* @__PURE__ */ React.createElement("hr", { className: "rule", style: { margin: "14px 0" } }), /* @__PURE__ */ React.createElement("p", { className: "small", style: { display: "flex", gap: 8, alignItems: "flex-start" } }, /* @__PURE__ */ React.createElement(ShieldCheck, { size: 14, color: "#c7a26b", style: { flex: "none", marginTop: 2 } }), "Confidential by default. An NDA is available before any detail about your firm is shared."))))));
+}
+function AyvedeSite() {
+  const [page, setPage] = useState("home");
+  const [connectPreset, setConnectPreset] = useState(null);
+  const go = (p, opts) => {
+    setConnectPreset(opts && opts.interest ? opts.interest : null);
+    setPage(p);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  useEffect(() => {
+    document.title = `Ayvede — ${TITLES[page] || "AI Advisory"}`;
+  }, [page]);
+  useEffect(() => {
+    const io = new IntersectionObserver(
+      (es) => es.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      }),
+      { threshold: 0.08 }
+    );
+    const t = setTimeout(() => document.querySelectorAll(".rv:not(.in)").forEach((el) => io.observe(el)), 60);
+    return () => {
+      clearTimeout(t);
+      io.disconnect();
+    };
+  }, [page]);
+  const PAGES = {
+    home: /* @__PURE__ */ React.createElement(HomePage, { go }),
+    vision: /* @__PURE__ */ React.createElement(VisionPage, { go }),
+    solutions: /* @__PURE__ */ React.createElement(SolutionsPage, { go }),
+    programs: /* @__PURE__ */ React.createElement(ProgramsPage, { go }),
+    platform: /* @__PURE__ */ React.createElement(PlatformPage, { go }),
+    lab: /* @__PURE__ */ React.createElement(LabPage, { go }),
+    tools: /* @__PURE__ */ React.createElement(ToolsPage, { go }),
+    insights: /* @__PURE__ */ React.createElement(InsightsPage, { go }),
+    connect: /* @__PURE__ */ React.createElement(ConnectPage, { preset: connectPreset })
+  };
+  return /* @__PURE__ */ React.createElement("div", { className: "av" }, /* @__PURE__ */ React.createElement(Nav, { page, go }), /* @__PURE__ */ React.createElement("main", null, PAGES[page] || PAGES.home), /* @__PURE__ */ React.createElement(Footer, { go }));
+}
+(function(){var st=document.createElement("style");st.textContent=CSS;document.head.appendChild(st);})();
+ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(AyvedeSite));

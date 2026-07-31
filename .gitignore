@@ -1,7 +1,36 @@
+# Dependencies
 node_modules/
+
+# OS noise
 .DS_Store
+
+# Secrets and credentials - nothing matching these may ever be committed
 .env
 .env.*
+*.key
+*.pem
+*.p12
+.unsplash_key
+**/.unsplash_key
+secrets*
+credentials*
+*_token
+*.token
+.netrc
+.npmrc
+
+# Local scratch and build intermediates
 build/.scratch/
+scratch/
+tmp/
+*.log
+
+# Regenerated build outputs. The published deploy artifacts
+# (dist/ayvede-app-vN.txt) ARE tracked; see the bundle policy in CHANGELOG.md.
 dist/app-embed.js
 dist/index.html
+
+# Local editor and agent state
+.claude/settings.local.json
+.vscode/
+.idea/

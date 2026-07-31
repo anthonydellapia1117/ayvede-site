@@ -1,9 +1,18 @@
 # DEPLOY.md - The Ayvede deploy runbook
 
 This is the only approved path to production. It is the method that has shipped every
-version of ayvede.com to date, most recently v4 on 2026-07-14. Follow it in order.
+version of ayvede.com to date, most recently v6 on 2026-07-30. Follow it in order.
 If any step forces you off this path, stop and present options to the owner instead
 of improvising.
+
+**Current live:** v6, `f169b144...`, 198,531 bytes. **Rollback target:** v5,
+`https://ffe7597e-b66e-40a7-aad2-50f680f4c11a.usrfiles.com/ugd/ffe759_0dfab2b190c44cc5aaff3eab005604e5.txt`.
+Full history with every hash is in [CHANGELOG.md](CHANGELOG.md).
+
+**Note on the source path:** the working copy lives at `~/Desktop/2 | Ayvede/ayvede-v2.jsx`.
+That path contains a space and a pipe character, so always quote it in shell commands.
+The repo copy at `src/ayvede-v2.jsx` must stay byte-identical to it; verify with
+`shasum -a 256` before any build you intend to publish.
 
 ## The architecture you are deploying into
 
@@ -18,6 +27,10 @@ of improvising.
     Only that third src ever changes.
 
 ## The deploy, step by step
+
+0. **Sync first.** Confirm `src/ayvede-v2.jsx` matches the working copy at
+   `~/Desktop/2 | Ayvede/ayvede-v2.jsx`. A stale repo copy is how a wrong-file build
+   happens.
 
 1. **Edit `src/ayvede-v2.jsx`.** Keep the import block exactly five lines (the build
    asserts it). New lucide icons go in both the import and `build/header.jsx`.
