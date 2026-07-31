@@ -1,0 +1,48 @@
+name: verify-build
+
+# Proves this repo still reproduces the bundle that is live on ayvede.com.
+# Runs scripts/verify-build.sh, which asserts:
+#   A. the committed deploy artifact matches the CHANGELOG hash marked LIVE
+#   B. a fresh build from the tracked inputs produces that same hash
+#
+# Needs no secrets. It only builds and compares hashes; it never contacts Wix,
+# never touches the live site, and never needs a token.
+#
+# Platform note: this runs on Linux while deploy bundles are built on macOS.
+# esbuild output is expected to be byte-identical across platforms for a pinned
+# version, but that has not been independently verified for this project. If
+# assertion A passes and B fails on an unchanged source tree, suspect that
+# assumption first and reproduce locally on macOS before changing code. The fix
+# if it ever proves false is one line: runs-on: macos-latest.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install pinned dependencies
+        run: npm ci
+
+      - name: Verify archive integrity and reproducibility
+        run: ./scripts/verify-build.sh
