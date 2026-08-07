@@ -1,0 +1,751 @@
+{
+  "categories": {
+    "habits": {
+      "name": "Habits & Daily Systems",
+      "short": "Habits",
+      "description": "The routines, rituals, and environmental systems that make behavior repeatable.",
+      "order": 1
+    },
+    "mindset": {
+      "name": "Mindset & Growth",
+      "short": "Mindset",
+      "description": "How people think, interpret, learn, and build resilience.",
+      "order": 2
+    },
+    "communication": {
+      "name": "Communication & Relationships",
+      "short": "Communication",
+      "description": "The mechanics of trust, influence, empathy, and relationships.",
+      "order": 3
+    },
+    "purpose": {
+      "name": "Purpose, Meaning & Wellbeing",
+      "short": "Purpose",
+      "description": "Meaning, emotional balance, attention, and a healthier inner operating system.",
+      "order": 4
+    },
+    "productivity": {
+      "name": "Productivity & Execution",
+      "short": "Productivity",
+      "description": "How to prioritize, execute, focus, and move work forward.",
+      "order": 5
+    },
+    "leadership": {
+      "name": "Leadership & Teams",
+      "short": "Leadership",
+      "description": "Systems, teams, negotiation, innovation, and organizational judgment.",
+      "order": 6
+    }
+  },
+  "items": [
+    {
+      "n": 1,
+      "title": "The 7 Habits of Highly Effective People",
+      "author": "Stephen R. Covey",
+      "category": "mindset",
+      "what": "Effectiveness starts with character, not hacks. The source centers on taking responsibility, deciding the outcome before acting, putting priorities first, listening with empathy, seeking mutual wins, and building stronger results through cooperation.",
+      "quick": "Own your response, decide what matters, and build the relationship before chasing the result.",
+      "chips": [
+        "Be Proactive",
+        "End in Mind",
+        "First Things",
+        "Win-Win",
+        "Synergize"
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Emotional Intelligence",
+      "author": "Daniel Goleman",
+      "category": "communication",
+      "what": "The infographic treats emotional intelligence as a practical skill: recognize feelings, regulate reactions, understand other people, and use emotion without letting it hijack judgment.",
+      "quick": "Name the emotion before it names the decision.",
+      "chips": [
+        "Recognize",
+        "Regulate",
+        "Empathize",
+        "Respond"
+      ]
+    },
+    {
+      "n": 3,
+      "title": "The 80/20 Principle",
+      "author": "Richard Koch",
+      "category": "productivity",
+      "what": "A small share of actions creates most outcomes. The work is to notice the imbalance, protect the high-value 20 percent, automate or remove the rest, and focus time where it produces disproportionate returns.",
+      "quick": "Find the few moves doing the real work and stop pretending everything matters equally.",
+      "chips": [
+        "Observe",
+        "Prioritize",
+        "Automate",
+        "Scale"
+      ]
+    },
+    {
+      "n": 4,
+      "title": "How to Talk to Anyone",
+      "author": "Leil Lowndes",
+      "category": "communication",
+      "what": "Connection begins before the first sentence. The source emphasizes appearance, eye contact, posture, a genuine smile, confident openings, concise language, and keeping the spotlight on the other person.",
+      "quick": "Look present, sound clear, and make the other person feel worth listening to.",
+      "chips": [
+        "Smile",
+        "Eye Contact",
+        "Posture",
+        "Listen",
+        "Be Concise"
+      ]
+    },
+    {
+      "n": 5,
+      "title": "Thinking, Fast and Slow",
+      "author": "Daniel Kahneman",
+      "category": "mindset",
+      "what": "The brain uses a fast, intuitive system and a slower, analytical one. Fast thinking is useful but prone to bias; better judgment comes from slowing down when the stakes, uncertainty, or emotion are high.",
+      "quick": "Use instinct for speed, not for every verdict.",
+      "chips": [
+        "System 1",
+        "Pause",
+        "System 2",
+        "Decide"
+      ]
+    },
+    {
+      "n": 6,
+      "title": "13 Things Mentally Strong People Don't Do",
+      "author": "Amy Morin",
+      "category": "mindset",
+      "what": "Mental strength means managing thoughts, emotions, and behavior instead of handing control to circumstances. The source pushes against self-pity, fear of change, living in the past, unrealistic expectations, and avoiding calculated risk.",
+      "quick": "Strength is not feeling less. It is choosing your response anyway.",
+      "chips": [
+        "Thoughts",
+        "Emotions",
+        "Behavior",
+        "Responsibility"
+      ]
+    },
+    {
+      "n": 7,
+      "title": "How to Stop Worrying and Start Living",
+      "author": "Dale Carnegie",
+      "category": "purpose",
+      "what": "Worry expands when the mind lives everywhere except the present. The framework narrows the day, analyzes the real worst case, chooses a response, reduces fatigue, and stops feeding fears that may never happen.",
+      "quick": "Solve today's problem instead of rehearsing tomorrow's disaster.",
+      "chips": [
+        "Name It",
+        "Worst Case",
+        "Choose Action",
+        "Live Today"
+      ]
+    },
+    {
+      "n": 8,
+      "title": "The 5 Love Languages",
+      "author": "Gary D. Chapman",
+      "category": "communication",
+      "what": "People give and receive care in different ways: words, gifts, touch, time, and service. The practical point is to stop assuming your preferred expression is automatically meaningful to your partner.",
+      "quick": "Love lands when it is delivered in the language the other person actually hears.",
+      "chips": [
+        "Words",
+        "Gifts",
+        "Touch",
+        "Time",
+        "Service"
+      ]
+    },
+    {
+      "n": 9,
+      "title": "Ikigai",
+      "author": "Héctor García, Francesc Miralles",
+      "category": "purpose",
+      "what": "Ikigai sits at the intersection of what you love, what you do well, what people need, and what can support you. The source connects purpose with daily activity, community, movement, and staying engaged.",
+      "quick": "Purpose is not a slogan. It is the overlap you can live every day.",
+      "chips": [
+        "Love",
+        "+ Skill",
+        "+ Need",
+        "+ Value",
+        "Ikigai"
+      ]
+    },
+    {
+      "n": 10,
+      "title": "12 Rules for Life",
+      "author": "Jordan B. Peterson",
+      "category": "mindset",
+      "what": "The source frames a better life around responsibility, careful speech, meaningful goals, honest relationships, order, and incremental improvement. It is less about control and more about carrying your share with intention.",
+      "quick": "Put your own house in order before demanding that the world cooperate.",
+      "chips": [
+        "Responsibility",
+        "Order",
+        "Truth",
+        "Meaning"
+      ]
+    },
+    {
+      "n": 11,
+      "title": "The Happiness Hypothesis",
+      "author": "Jonathan Haidt",
+      "category": "purpose",
+      "what": "Happiness is shaped by the relationship between the rational rider and the emotional elephant. Lasting wellbeing comes from alignment, meaningful relationships, purpose, and training the mind rather than demanding constant pleasure.",
+      "quick": "You cannot lecture the elephant into moving. You have to train it.",
+      "chips": [
+        "Rider",
+        "Elephant",
+        "Alignment",
+        "Meaning"
+      ]
+    },
+    {
+      "n": 12,
+      "title": "Talking to Strangers",
+      "author": "Malcolm Gladwell",
+      "category": "communication",
+      "what": "People default to believing others and overrate their ability to read behavior. The source shows why context, transparency, and uncertainty matter when judging people we do not know.",
+      "quick": "Confidence is not the same thing as accuracy when reading another person.",
+      "chips": [
+        "Default to Truth",
+        "Context",
+        "Uncertainty",
+        "Humility"
+      ]
+    },
+    {
+      "n": 13,
+      "title": "Steal Like an Artist",
+      "author": "Austin Kleon",
+      "category": "purpose",
+      "what": "Original work rarely starts from nothing. The source encourages collecting influences, remixing them honestly, practicing in public, staying curious, and turning borrowed sparks into something recognizably your own.",
+      "quick": "Do not copy one source. Learn from many, then make the combination yours.",
+      "chips": [
+        "Collect",
+        "Remix",
+        "Practice",
+        "Share"
+      ]
+    },
+    {
+      "n": 14,
+      "title": "Thinking in Systems",
+      "author": "Donella H. Meadows, Diana Wright",
+      "category": "leadership",
+      "what": "A system is defined by its elements, relationships, and purpose. Fixes fail when they target one visible part without understanding feedback loops, delays, stocks, and the behavior of the whole.",
+      "quick": "Before fixing the symptom, map the system that keeps producing it.",
+      "chips": [
+        "Elements",
+        "Connections",
+        "Purpose",
+        "Feedback"
+      ]
+    },
+    {
+      "n": 15,
+      "title": "Scrum",
+      "author": "Chris Sims, Hillary Louise Johnson",
+      "category": "productivity",
+      "what": "Scrum organizes complex work into short cycles with clear roles, a prioritized backlog, frequent review, and continuous adjustment. It turns uncertainty into a rhythm the team can inspect and improve.",
+      "quick": "Plan less at once, deliver sooner, and learn from what actually happened.",
+      "chips": [
+        "Backlog",
+        "Sprint",
+        "Review",
+        "Adapt"
+      ]
+    },
+    {
+      "n": 16,
+      "title": "Start with No",
+      "author": "Jim Camp",
+      "category": "leadership",
+      "what": "Healthy negotiation does not begin with forced agreement. The source treats 'no' as permission to be honest, clarify the real problem, protect decisions from pressure, and build an agreement both sides can own.",
+      "quick": "A clean no creates more truth than a nervous yes.",
+      "chips": [
+        "No",
+        "Clarify",
+        "Decide",
+        "Agreement"
+      ]
+    },
+    {
+      "n": 17,
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "category": "habits",
+      "what": "Behavior compounds through small, repeatable systems. The source focuses on identity and the four laws: make the right behavior obvious, attractive, easy, and satisfying.",
+      "quick": "Make the next good action easier than the excuse.",
+      "chips": [
+        "Obvious",
+        "Attractive",
+        "Easy",
+        "Satisfying"
+      ]
+    },
+    {
+      "n": 18,
+      "title": "Boundaries",
+      "author": "Dr. Henry Cloud, Dr. John Townsend",
+      "category": "communication",
+      "what": "Boundaries define what you are responsible for and what you are not. The source emphasizes saying no, resisting guilt and control, allowing disagreement, and protecting healthy closeness through clear limits.",
+      "quick": "A boundary is not punishment. It is clarity about ownership.",
+      "chips": [
+        "Own",
+        "Say No",
+        "Protect",
+        "Respect"
+      ]
+    },
+    {
+      "n": 19,
+      "title": "The 5-Second Rule",
+      "author": "Mel Robbins",
+      "category": "habits",
+      "what": "Hesitation gives the brain time to protect the status quo. Counting backward and moving interrupts that loop, creating a small window to act before doubt takes over.",
+      "quick": "When the useful impulse shows up, move before your brain negotiates it away.",
+      "chips": [
+        "5",
+        "4",
+        "3",
+        "2",
+        "1 - Move"
+      ]
+    },
+    {
+      "n": 20,
+      "title": "The Healthy Mind Toolkit",
+      "author": "Alice Boyes, PhD",
+      "category": "mindset",
+      "what": "Mental friction often comes from habits, assumptions, and avoidance patterns that quietly block progress. The source focuses on noticing those patterns, simplifying actions, and replacing unhelpful responses with better ones.",
+      "quick": "You cannot clean up your thinking while protecting the habits that create the clutter.",
+      "chips": [
+        "Notice",
+        "Question",
+        "Simplify",
+        "Replace"
+      ]
+    },
+    {
+      "n": 21,
+      "title": "The Miracle Morning",
+      "author": "Hal Elrod",
+      "category": "habits",
+      "what": "The morning becomes a deliberate training block for the person you want to become. Silence, affirmations, visualization, exercise, reading, and writing create momentum before the day starts making decisions for you.",
+      "quick": "Win the first hour before the rest of the day starts spending it.",
+      "chips": [
+        "Silence",
+        "Affirm",
+        "Visualize",
+        "Exercise",
+        "Read + Write"
+      ]
+    },
+    {
+      "n": 22,
+      "title": "Influence",
+      "author": "Robert B. Cialdini, PhD",
+      "category": "communication",
+      "what": "Persuasion often relies on predictable shortcuts: reciprocity, consistency, social proof, liking, authority, and scarcity. Recognizing the mechanism gives you a better chance of choosing instead of reacting.",
+      "quick": "When the pressure feels automatic, look for the principle being used on you.",
+      "chips": [
+        "Reciprocity",
+        "Consistency",
+        "Social Proof",
+        "Authority",
+        "Scarcity"
+      ]
+    },
+    {
+      "n": 23,
+      "title": "The Subtle Art of Not Giving a F*ck",
+      "author": "Mark Manson",
+      "category": "purpose",
+      "what": "A meaningful life is not built by caring about everything. The source argues for choosing better problems, accepting responsibility for your reactions, and spending attention on values worth the cost.",
+      "quick": "You have limited attention. Spend it on problems worth having.",
+      "chips": [
+        "Choose Values",
+        "Accept Limits",
+        "Own Response",
+        "Act"
+      ]
+    },
+    {
+      "n": 24,
+      "title": "Creative Confidence",
+      "author": "Tom Kelley, David Kelley",
+      "category": "leadership",
+      "what": "Creativity is a behavior, not a rare personality trait. The source links innovation to empathy, experimentation, diverse teams, rapid prototypes, and leadership that makes it safe to test imperfect ideas.",
+      "quick": "Confidence grows after you make something, not before.",
+      "chips": [
+        "Empathize",
+        "Prototype",
+        "Test",
+        "Learn"
+      ]
+    },
+    {
+      "n": 25,
+      "title": "Why We Sleep",
+      "author": "Matthew Walker",
+      "category": "habits",
+      "what": "Sleep supports learning, memory, emotional regulation, physical repair, and sound judgment. The source makes the cost clear: cutting sleep does not create more usable time; it degrades the person using it.",
+      "quick": "Sleep is not time away from performance. It is part of the performance.",
+      "chips": [
+        "NREM",
+        "REM",
+        "Memory",
+        "Recovery"
+      ]
+    },
+    {
+      "n": 26,
+      "title": "Mini Habits",
+      "author": "Stephen Guise",
+      "category": "habits",
+      "what": "A behavior small enough to feel almost trivial is easier to repeat and harder to avoid. The strategy uses tiny minimums to build consistency, reduce resistance, and let momentum create more than the requirement.",
+      "quick": "Shrink the habit until starting feels ridiculous to refuse.",
+      "chips": [
+        "Tiny Step",
+        "Repeat",
+        "Momentum",
+        "Expand"
+      ]
+    },
+    {
+      "n": 27,
+      "title": "The Life-Changing Magic of Tidying Up",
+      "author": "Marie Kondō",
+      "category": "habits",
+      "what": "Decluttering works when you choose what belongs in your life rather than merely rearranging excess. The source recommends sorting by category, keeping what sparks joy, and giving every retained item a clear home.",
+      "quick": "Do not organize what you already know you do not want.",
+      "chips": [
+        "Discard",
+        "Choose",
+        "Category",
+        "Place"
+      ]
+    },
+    {
+      "n": 28,
+      "title": "The 10X Rule",
+      "author": "Grant Cardone",
+      "category": "mindset",
+      "what": "The 10X framework pairs larger targets with much greater action. Its central warning is that average estimates, effort, and persistence usually understate what a serious goal will demand.",
+      "quick": "Do not multiply the goal and leave the effort unchanged.",
+      "chips": [
+        "10X Target",
+        "10X Action",
+        "Persist",
+        "Adjust"
+      ]
+    },
+    {
+      "n": 29,
+      "title": "Creativity, Inc.",
+      "author": "Ed Catmull, Amy Wallace",
+      "category": "leadership",
+      "what": "Great ideas depend on the environment around them. The source prioritizes strong people, candid feedback, psychological safety, and leaders who remove hidden barriers before those barriers kill the work.",
+      "quick": "Protect the team that can find the idea, not the first version of the idea.",
+      "chips": [
+        "People",
+        "Candor",
+        "Safety",
+        "Iteration"
+      ]
+    },
+    {
+      "n": 30,
+      "title": "The One Thing",
+      "author": "Gary Keller, Jay Papasan",
+      "category": "productivity",
+      "what": "Extraordinary progress comes from identifying the single action that makes other work easier or unnecessary. The framework uses a focusing question, protects time, and accepts that priority means saying no.",
+      "quick": "Find the domino that makes the rest easier to move.",
+      "chips": [
+        "Ask",
+        "Choose One",
+        "Time Block",
+        "Protect"
+      ]
+    },
+    {
+      "n": 31,
+      "title": "How to Stop Procrastinating",
+      "author": "S.J. Scott",
+      "category": "productivity",
+      "what": "Procrastination is usually a system problem before it is a character flaw. The source points to unclear goals, perfectionism, low energy, distraction, and weak routines, then replaces them with smaller actions and visible progress.",
+      "quick": "Make the next step specific enough that delay has nowhere to hide.",
+      "chips": [
+        "Clarify",
+        "Shrink",
+        "Schedule",
+        "Start"
+      ]
+    },
+    {
+      "n": 32,
+      "title": "What the Most Successful People Do Before Breakfast",
+      "author": "Laura Vanderkam",
+      "category": "habits",
+      "what": "Early hours are valuable because they are less exposed to other people's priorities. The source recommends using them for high-value work, exercise, relationships, and planning before the day becomes reactive.",
+      "quick": "Put your priority on the calendar before the world fills the space.",
+      "chips": [
+        "Plan",
+        "Create",
+        "Move",
+        "Connect"
+      ]
+    },
+    {
+      "n": 33,
+      "title": "Make Your Bed",
+      "author": "Admiral William H. McRaven",
+      "category": "habits",
+      "what": "Small disciplined actions establish a standard for the day. The source connects routine, teamwork, resilience, courage, and persistence, beginning with one task you can finish immediately.",
+      "quick": "Start with one completed promise to yourself.",
+      "chips": [
+        "Routine",
+        "Discipline",
+        "Teamwork",
+        "Persist"
+      ]
+    },
+    {
+      "n": 34,
+      "title": "The Willpower Instinct",
+      "author": "Kelly McGonigal, Ph.D.",
+      "category": "habits",
+      "what": "Willpower improves through self-awareness, stress management, and understanding the conflict between immediate impulse and long-term goals. The source treats it as trainable, limited, and strongly affected by environment.",
+      "quick": "Do not rely on willpower while designing a day that constantly drains it.",
+      "chips": [
+        "I Will",
+        "I Won't",
+        "I Want",
+        "Recover"
+      ]
+    },
+    {
+      "n": 35,
+      "title": "15 Secrets Successful People Know About Time Management",
+      "author": "Kevin Kruse",
+      "category": "productivity",
+      "what": "Time cannot be replaced, so the source shifts attention from managing hours to protecting minutes. Prioritize the most valuable task, use the calendar, say no, delegate, and stop confusing activity with progress.",
+      "quick": "Your calendar tells the truth about your priorities.",
+      "chips": [
+        "Prioritize",
+        "Calendar",
+        "Delegate",
+        "Say No"
+      ]
+    },
+    {
+      "n": 36,
+      "title": "The 5 AM Club",
+      "author": "Robin Sharma",
+      "category": "habits",
+      "what": "The framework uses a protected early hour to strengthen body, reflection, and learning. Consistency matters more than the clock itself: the point is to create an uninterrupted ritual before distraction begins.",
+      "quick": "Own a quiet hour before the day starts making demands.",
+      "chips": [
+        "Move",
+        "Reflect",
+        "Grow",
+        "Repeat"
+      ]
+    },
+    {
+      "n": 37,
+      "title": "Eat That Frog!",
+      "author": "Brian Tracy",
+      "category": "productivity",
+      "what": "The highest-impact task should be identified, broken down, and completed before lower-value work consumes the day. The source favors clear priorities, preparation, single-tasking, and steady execution.",
+      "quick": "Do the task with the biggest consequence before the easy work multiplies.",
+      "chips": [
+        "Choose Frog",
+        "Prepare",
+        "Focus",
+        "Finish"
+      ]
+    },
+    {
+      "n": 38,
+      "title": "Declutter Your Mind",
+      "author": "S.J. Scott, Barrie Davenport",
+      "category": "purpose",
+      "what": "Mental clutter grows from stress, excess information, too many choices, unresolved commitments, and misaligned goals. The source uses values, simplification, mindfulness, and deliberate routines to reduce noise.",
+      "quick": "A quieter mind usually starts with fewer open loops.",
+      "chips": [
+        "Values",
+        "Simplify",
+        "Close Loops",
+        "Breathe"
+      ]
+    },
+    {
+      "n": 39,
+      "title": "Limitless",
+      "author": "Jim Kwik",
+      "category": "mindset",
+      "what": "Learning improves when mindset, motivation, and method work together. The source challenges limiting beliefs and adds practical tools for focus, memory, reading, and sustained curiosity.",
+      "quick": "Better learning is not one trick. It is belief, reason, and method working together.",
+      "chips": [
+        "Mindset",
+        "Motivation",
+        "Method",
+        "Practice"
+      ]
+    },
+    {
+      "n": 40,
+      "title": "Getting Things Done",
+      "author": "David Allen",
+      "category": "productivity",
+      "what": "Stress drops when commitments leave your head and enter a trusted system. Capture everything, clarify the next action, organize it, review regularly, and engage with confidence.",
+      "quick": "Your brain is for having ideas, not holding every reminder.",
+      "chips": [
+        "Capture",
+        "Clarify",
+        "Organize",
+        "Reflect",
+        "Engage"
+      ]
+    },
+    {
+      "n": 41,
+      "title": "Deep Work",
+      "author": "Cal Newport",
+      "category": "productivity",
+      "what": "Undistracted concentration is increasingly rare and increasingly valuable. The source recommends scheduling depth, reducing shallow work, embracing boredom, and measuring output instead of online presence.",
+      "quick": "Protect concentration like a scarce business asset.",
+      "chips": [
+        "Schedule",
+        "Disconnect",
+        "Concentrate",
+        "Ship"
+      ]
+    },
+    {
+      "n": 42,
+      "title": "Don't Overthink It",
+      "author": "Anne Bogel",
+      "category": "purpose",
+      "what": "Overthinking turns ordinary choices into recurring mental costs. The source recommends accepting imperfect information, setting decision limits, interrupting repetitive thought, and choosing a practical next move.",
+      "quick": "A good decision made on time beats a perfect one that never arrives.",
+      "chips": [
+        "Reality Check",
+        "Limit Options",
+        "Decide",
+        "Move"
+      ]
+    },
+    {
+      "n": 43,
+      "title": "Do the Work",
+      "author": "Steven Pressfield",
+      "category": "productivity",
+      "what": "Resistance appears wherever meaningful work begins. The source says to start before feeling ready, separate planning from execution, expect the messy middle, and finish despite fear or self-doubt.",
+      "quick": "The work gets easier after it exists, not while you are avoiding it.",
+      "chips": [
+        "Start",
+        "Face Resistance",
+        "Persist",
+        "Finish"
+      ]
+    },
+    {
+      "n": 44,
+      "title": "Everything is Figureoutable",
+      "author": "Marie Forleo",
+      "category": "mindset",
+      "what": "The core belief is that action creates options. The source connects beliefs to thoughts, feelings, and behavior, then uses experimentation, resourcefulness, and persistence to move through uncertainty.",
+      "quick": "You do not need the whole answer. You need the next workable move.",
+      "chips": [
+        "Believe",
+        "Act",
+        "Learn",
+        "Adjust"
+      ]
+    },
+    {
+      "n": 45,
+      "title": "Feeling Good",
+      "author": "David D. Burns, M.D.",
+      "category": "purpose",
+      "what": "Mood is influenced by the interpretation attached to events. The source identifies cognitive distortions, records dysfunctional thoughts, tests them against evidence, and replaces them with more balanced thinking.",
+      "quick": "A thought can feel true and still fail the evidence test.",
+      "chips": [
+        "Notice",
+        "Name Distortion",
+        "Test",
+        "Reframe"
+      ]
+    },
+    {
+      "n": 46,
+      "title": "You Are a Badass at Making Money",
+      "author": "Jen Sincero",
+      "category": "mindset",
+      "what": "Money behavior is tied to identity, beliefs, habits, and the willingness to ask for more. The source challenges shame and scarcity thinking while emphasizing value creation, decisions, and consistent action.",
+      "quick": "Your financial ceiling often starts as a story you keep repeating.",
+      "chips": [
+        "Belief",
+        "Value",
+        "Ask",
+        "Act"
+      ]
+    },
+    {
+      "n": 47,
+      "title": "Unlimited Memory",
+      "author": "Grandmaster Kevin Horsley",
+      "category": "mindset",
+      "what": "Memory improves through attention, association, imagination, and organized recall. The source treats strong memory as a skill built with vivid links and deliberate practice, not a fixed gift.",
+      "quick": "Make information vivid enough that your brain has somewhere to put it.",
+      "chips": [
+        "Focus",
+        "Associate",
+        "Visualize",
+        "Recall"
+      ]
+    },
+    {
+      "n": 48,
+      "title": "Principles",
+      "author": "Raymond Dalio",
+      "category": "leadership",
+      "what": "Better decisions come from making values explicit, diagnosing problems honestly, finding root causes, designing solutions, and learning from results. The source treats principles as reusable operating rules.",
+      "quick": "Turn painful lessons into rules you can use before the next decision.",
+      "chips": [
+        "Values",
+        "Diagnose",
+        "Design",
+        "Iterate"
+      ]
+    },
+    {
+      "n": 49,
+      "title": "5 Dysfunctions of a Team",
+      "author": "Patrick Lencioni",
+      "category": "leadership",
+      "what": "Team failure compounds from the bottom up: no trust creates fear of conflict, weak commitment, avoidance of accountability, and inattention to collective results. Fixing the top symptom without rebuilding trust will not hold.",
+      "quick": "Results fail last. Trust usually failed first.",
+      "chips": [
+        "Trust",
+        "Conflict",
+        "Commitment",
+        "Accountability",
+        "Results"
+      ]
+    },
+    {
+      "n": 50,
+      "title": "Mindful Relationship Habits",
+      "author": "S.J.Scott & Barrie Davenport",
+      "category": "communication",
+      "what": "Healthy relationships require attention, intentional communication, vulnerability, active listening, shared time, and routines that keep the partnership from becoming an afterthought.",
+      "quick": "A relationship stays important only when the calendar and behavior agree.",
+      "chips": [
+        "Prioritize",
+        "Listen",
+        "Be Vulnerable",
+        "Connect"
+      ]
+    }
+  ]
+}

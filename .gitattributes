@@ -1,0 +1,4 @@
+# Gallery reference data is stored byte-for-byte. The CSV is CRLF; -text stops
+# any platform's autocrlf from rewriting it on checkout.
+docs/gallery-reference/gallery_data.json -text
+docs/gallery-reference/gallery_manifest.csv -text
