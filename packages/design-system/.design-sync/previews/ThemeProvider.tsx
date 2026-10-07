@@ -1,31 +1,48 @@
-import { ThemeProvider, Card, Text, Button, Inline } from "executive-ui";
+import { ThemeProvider, Card, Text, Button, Grid, Stack } from "executive-ui";
 
 export const LightAndDark = () => (
-  <Inline gap={4} align="stretch">
-    <ThemeProvider mode="light">
-      <Card title="Light theme" description="Default mode" style={{ width: "16rem" }}>
-        <Text variant="compact">Canvas, surface, and text roles for daylight reading.</Text>
-      </Card>
-    </ThemeProvider>
-    <ThemeProvider mode="dark">
-      <div style={{ padding: "1rem" }}>
-        <Card title="Dark theme" description="mode=&quot;dark&quot;" style={{ width: "16rem" }}>
-          <Text variant="compact">Same roles, re-mapped for low light. Nest a provider to flip one region.</Text>
-        </Card>
+  <Grid columns={2} gap={4} style={{ maxWidth: "40rem" }}>
+    <Stack gap={2}>
+      <Text variant="eyebrow">Light</Text>
+      <div style={{ display: "grid", border: "1px solid var(--eui-color-border-default)", borderRadius: "var(--eui-radius-lg)", overflow: "hidden" }}>
+        <ThemeProvider mode="light">
+          <div style={{ padding: "1rem" }}>
+            <Card title="Quarterly operating review" description="Updated 3 days ago">
+              <Text variant="compact">Operating margin 18.4 percent, up 1.2 points (illustrative).</Text>
+            </Card>
+          </div>
+        </ThemeProvider>
       </div>
-    </ThemeProvider>
-  </Inline>
+    </Stack>
+    <Stack gap={2}>
+      <Text variant="eyebrow">Dark</Text>
+      <div style={{ display: "grid", border: "1px solid var(--eui-color-border-default)", borderRadius: "var(--eui-radius-lg)", overflow: "hidden" }}>
+        <ThemeProvider mode="dark">
+          <div style={{ padding: "1rem" }}>
+            <Card title="Quarterly operating review" description="Updated 3 days ago">
+              <Text variant="compact">Operating margin 18.4 percent, up 1.2 points (illustrative).</Text>
+            </Card>
+          </div>
+        </ThemeProvider>
+      </div>
+    </Stack>
+  </Grid>
 );
 
 export const NestedRegion = () => (
   <ThemeProvider mode="light">
-    <Card title="Report" description="Light page with a dark summary band">
-      <ThemeProvider mode="dark">
-        <div style={{ padding: "1rem", borderRadius: "0.5rem" }}>
-          <Text weight="medium">Bottom line: approve option B.</Text>
-          <Button variant="primary" size="sm" style={{ marginTop: "0.75rem" }}>Approve</Button>
-        </div>
-      </ThemeProvider>
+    <Card title="Platform consolidation review" description="Decision brief for the steering committee, 30 September">
+      <div style={{ borderRadius: "var(--eui-radius-md)", overflow: "hidden" }}>
+        <ThemeProvider mode="dark">
+          <div style={{ padding: "1rem" }}>
+            <Stack gap={3} align="start">
+              <Text weight="medium">Bottom line: renew the incumbent suite and retire the two overlapping tools by Q3.</Text>
+              <Text variant="compact" tone="secondary">Saves an estimated $1.1M a year (illustrative).</Text>
+              <Button variant="primary" size="sm">Approve recommendation</Button>
+            </Stack>
+          </div>
+        </ThemeProvider>
+      </div>
     </Card>
   </ThemeProvider>
 );

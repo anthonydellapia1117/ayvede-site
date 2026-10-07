@@ -2,19 +2,19 @@ import { Button, Icon, Inline } from "executive-ui";
 
 export const Variants = () => (
   <Inline>
-    <Button variant="primary">Primary</Button>
-    <Button variant="secondary">Secondary</Button>
-    <Button variant="contrast">Contrast</Button>
-    <Button variant="ghost">Ghost</Button>
-    <Button variant="danger">Delete</Button>
+    <Button variant="primary">Approve</Button>
+    <Button variant="secondary">Request changes</Button>
+    <Button variant="contrast">Export brief</Button>
+    <Button variant="ghost">Cancel</Button>
+    <Button variant="danger">Withdraw request</Button>
   </Inline>
 );
 
 export const Sizes = () => (
   <Inline align="center">
-    <Button variant="primary" size="sm">Small</Button>
-    <Button variant="primary" size="md">Medium</Button>
-    <Button variant="primary" size="lg">Large</Button>
+    <Button variant="primary" size="sm">Approve</Button>
+    <Button variant="primary" size="md">Approve</Button>
+    <Button variant="primary" size="lg">Approve</Button>
   </Inline>
 );
 
@@ -29,14 +29,15 @@ export const WithIcons = () => (
 export const States = () => (
   <Inline>
     <Button variant="primary" loading>Saving</Button>
-    <Button variant="primary" disabled>Disabled</Button>
-    <Button variant="secondary" disabled>Disabled</Button>
-    <Button variant="primary" href="#">As a link</Button>
+    <Button variant="secondary" loading>Saving</Button>
+    <Button variant="primary" disabled>Approve</Button>
+    <Button variant="ghost" disabled>Skip</Button>
+    <Button variant="primary" href="#">Open the brief</Button>
   </Inline>
 );
 
 export const FullWidth = () => (
   <div style={{ width: "20rem" }}>
-    <Button variant="primary" fullWidth>Approve option B</Button>
+    <Button variant="primary" fullWidth>Approve the pilot rollout</Button>
   </div>
 );

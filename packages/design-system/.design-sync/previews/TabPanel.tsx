@@ -1,12 +1,12 @@
 import { Tabs, TabList, Tab, TabPanel, Text } from "executive-ui";
 
 export const InsideTabs = () => (
-  <Tabs defaultValue="one" style={{ maxWidth: "30rem" }}>
-    <TabList label="Panels">
-      <Tab value="one">One</Tab>
-      <Tab value="two">Two</Tab>
+  <Tabs defaultValue="notes" style={{ maxWidth: "30rem" }}>
+    <TabList label="Request details">
+      <Tab value="notes">Notes</Tab>
+      <Tab value="attachments">Attachments</Tab>
     </TabList>
-    <TabPanel value="one"><Text variant="compact">Only the selected panel is rendered unless keepMounted is set.</Text></TabPanel>
-    <TabPanel value="two" keepMounted><Text variant="compact">This panel stays mounted but hidden.</Text></TabPanel>
+    <TabPanel value="notes"><Text variant="compact">The vendor asked for a 30-day extension on the renewal decision.</Text></TabPanel>
+    <TabPanel value="attachments" keepMounted><Text variant="compact">Two files attached: the renewal quote and the security questionnaire.</Text></TabPanel>
   </Tabs>
 );

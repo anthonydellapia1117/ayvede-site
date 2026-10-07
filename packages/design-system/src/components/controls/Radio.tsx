@@ -5,6 +5,7 @@ import { Icon } from "../foundations/Icon";
 interface RadioGroupContextValue {
   name: string;
   value?: string;
+  defaultValue?: string;
   onChange?: (value: string) => void;
   disabled?: boolean;
   invalid?: boolean;
@@ -35,7 +36,7 @@ export function RadioGroup({ label, description, error, name, value, defaultValu
   const descId = description ? `${groupName}-description` : undefined;
   const errId = error ? `${groupName}-error` : undefined;
   const describedBy = [descId, errId].filter(Boolean).join(" ") || undefined;
-  const ctx: RadioGroupContextValue = { name: groupName, value, onChange, disabled, invalid: Boolean(error) };
+  const ctx: RadioGroupContextValue = { name: groupName, value, defaultValue, onChange, disabled, invalid: Boolean(error) };
   return (
     <RadioGroupContext.Provider value={ctx}>
       <fieldset className={cx("eui-radio-group", className)} data-orientation={orientation} disabled={disabled} aria-describedby={describedBy} aria-invalid={error ? "true" : undefined} {...rest}>
@@ -92,6 +93,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(function Radio({ v
         disabled={isDisabled}
         aria-invalid={group?.invalid ? "true" : undefined}
         aria-describedby={descId}
+        defaultChecked={!controlled && group?.defaultValue !== undefined ? group.defaultValue === value : undefined}
         {...rest}
       />
       <label className="eui-choice-label" htmlFor={inputId}>

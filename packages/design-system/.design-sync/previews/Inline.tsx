@@ -1,4 +1,4 @@
-import { Inline, Button, Badge } from "executive-ui";
+import { Inline, Button, Badge, Text } from "executive-ui";
 
 export const Actions = () => (
   <Inline gap={2}>
@@ -10,7 +10,7 @@ export const Actions = () => (
 
 export const SpaceBetween = () => (
   <Inline justify="between" style={{ width: "100%" }}>
-    <Badge tone="info">Draft</Badge>
+    <Inline gap={2}><Text weight="medium">Vendor consolidation brief</Text><Badge tone="neutral">Draft</Badge></Inline>
     <Button size="sm">Edit</Button>
   </Inline>
 );

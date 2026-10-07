@@ -42,7 +42,7 @@ export function Metric({ label, value, unit, change, context, source, illustrati
       <div className="eui-metric-label">
         <span>{label}</span>
         {illustrative && (
-          <Badge size="sm" tone="warning" variant="outline">
+          <Badge size="sm" tone="neutral" variant="outline">
             {illustrativeLabel}
           </Badge>
         )}

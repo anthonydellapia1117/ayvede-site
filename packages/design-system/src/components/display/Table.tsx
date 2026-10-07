@@ -56,7 +56,7 @@ export function Table({ columns, rows, caption, captionHidden = false, density =
         <tbody>
           {rows.length === 0 ? (
             <tr>
-              <td colSpan={columns.length}>{emptyMessage}</td>
+              <td colSpan={columns.length} data-empty="true">{emptyMessage}</td>
             </tr>
           ) : (
             rows.map((row, i) => (

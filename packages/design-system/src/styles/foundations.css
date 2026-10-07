@@ -49,6 +49,9 @@
 .eui-divider[data-spacing="lg"][data-orientation="horizontal"] { margin-block: var(--eui-space-10); }
 .eui-divider-labeled { display: flex; align-items: center; gap: var(--eui-space-3); color: var(--eui-color-text-tertiary); font-size: var(--eui-font-size-meta); }
 .eui-divider-labeled::before, .eui-divider-labeled::after { content: ""; flex: 1; border-top: var(--eui-border-width) solid var(--eui-color-border-default); }
+.eui-divider-labeled[data-spacing="sm"] { margin-block: var(--eui-space-3); }
+.eui-divider-labeled[data-spacing="md"] { margin-block: var(--eui-space-6); }
+.eui-divider-labeled[data-spacing="lg"] { margin-block: var(--eui-space-10); }
 
 .eui-section { padding-block: var(--eui-section-space, var(--eui-space-16)); }
 .eui-section[data-spacing="sm"] { --eui-section-space: var(--eui-space-10); }
@@ -64,7 +67,7 @@
 }
 
 /* Inverse scope: components inside an inverse section flip to inverse roles. */
-.eui-section[data-tone="inverse"] { --eui-color-text-primary: var(--eui-color-text-inverse); --eui-color-text-secondary: var(--eui-color-text-inverse-secondary); --eui-color-text-tertiary: var(--eui-color-text-inverse-tertiary); --eui-color-border-default: var(--eui-color-border-inverse); }
+.eui-section[data-tone="inverse"] { --eui-color-text-primary: var(--eui-color-text-inverse); --eui-color-text-secondary: var(--eui-color-text-inverse-secondary); --eui-color-text-tertiary: var(--eui-color-text-inverse-tertiary); --eui-color-border-default: var(--eui-color-border-inverse); --eui-color-text-link: var(--eui-color-text-inverse); --eui-color-focus-ring: var(--eui-color-text-inverse); }
 
 .eui-icon { display: inline-block; flex-shrink: 0; width: var(--eui-icon-size, var(--eui-control-icon-md)); height: var(--eui-icon-size, var(--eui-control-icon-md)); vertical-align: -0.2em; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
 .eui-icon[data-size="sm"] { --eui-icon-size: var(--eui-control-icon-sm); }

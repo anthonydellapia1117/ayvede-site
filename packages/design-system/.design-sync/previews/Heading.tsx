@@ -18,8 +18,8 @@ export const LevelIndependentOfSize = () => (
 );
 
 export const Tones = () => (
-  <Stack gap={3}>
-    <Heading level={2} size="2">Primary tone</Heading>
-    <Heading level={2} size="2" tone="secondary">Secondary tone</Heading>
+  <Stack gap={2}>
+    <Heading level={2} size="2">Consolidate on the incumbent suite</Heading>
+    <Heading level={3} size="3" tone="secondary">Saves about $410,000 a year (illustrative)</Heading>
   </Stack>
 );

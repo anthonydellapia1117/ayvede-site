@@ -38,7 +38,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(function T
   );
   if (!startAdornment && !endAdornment) return input;
   return (
-    <div className="eui-input-wrap" data-has-start={startAdornment ? "true" : undefined} data-has-end={endAdornment ? "true" : undefined}>
+    <div className="eui-input-wrap" data-has-start={startAdornment ? "true" : undefined} data-has-end={endAdornment ? "true" : undefined} data-start-kind={typeof startAdornment === "string" && startAdornment.length === 1 ? "glyph" : undefined}>
       {startAdornment && (
         <span className="eui-input-adornment" data-side="start" aria-hidden="true">
           {startAdornment}

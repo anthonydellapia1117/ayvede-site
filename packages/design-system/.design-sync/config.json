@@ -1,6 +1,7 @@
 {
   "pkg": "executive-ui",
   "globalName": "ExecutiveUI",
+  "projectId": "019dda8f-31a4-7a0e-ac9d-d36f7695f77e",
   "shape": "package",
   "buildCmd": "npm run build",
   "cssEntry": "dist/styles.css",
@@ -31,7 +32,8 @@
       "cardMode": "column"
     },
     "NavBar": {
-      "cardMode": "column"
+      "cardMode": "column",
+      "viewport": "1100x700"
     },
     "Table": {
       "cardMode": "column"
@@ -44,6 +46,21 @@
     },
     "Section": {
       "cardMode": "column"
+    },
+    "Grid": {
+      "viewport": "1100x700"
+    },
+    "Card": {
+      "viewport": "1100x700"
+    },
+    "Container": {
+      "viewport": "1700x700"
+    },
+    "DefinitionList": {
+      "cardMode": "column"
     }
+  },
+  "libOverrides": {
+    "dts.mjs": "declare referenced in-package types (TimelineStage, TableColumn, ...) in each .d.ts prelude; qualify bare React types; honest React.Ref<El> for ref"
   }
 }

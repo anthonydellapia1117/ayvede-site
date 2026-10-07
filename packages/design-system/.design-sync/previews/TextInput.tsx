@@ -24,10 +24,10 @@ export const Adornments = () => (
 
 export const SizesAndStates = () => (
   <Stack gap={3} style={{ maxWidth: "24rem" }}>
-    <TextInput size="sm" aria-label="Small" placeholder="Small" />
-    <TextInput size="md" aria-label="Medium" placeholder="Medium" />
-    <TextInput size="lg" aria-label="Large" placeholder="Large" />
-    <TextInput aria-label="Disabled" disabled defaultValue="Disabled" />
+    <TextInput size="sm" aria-label="Filter by owner" placeholder="Filter by owner" />
+    <TextInput size="md" aria-label="Request title" placeholder="Request title" />
+    <TextInput size="lg" aria-label="Search the portfolio" placeholder="Search the portfolio" />
+    <TextInput aria-label="Owning function" disabled defaultValue="Finance (set by program office)" />
     <TextInput aria-label="Reference" mono readOnly defaultValue="REQ-2024-00187" />
   </Stack>
 );

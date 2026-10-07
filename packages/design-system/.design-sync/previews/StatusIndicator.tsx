@@ -1,14 +1,14 @@
-import { StatusIndicator, Inline } from "executive-ui";
+import { StatusIndicator, Inline, Stack } from "executive-ui";
 
 export const AllStatuses = () => (
-  <Inline gap={5}>
+  <Stack gap={2}>
     <StatusIndicator status="success" label="On track" />
     <StatusIndicator status="warning" label="At risk" />
     <StatusIndicator status="danger" label="Blocked" />
     <StatusIndicator status="info" label="In review" />
     <StatusIndicator status="pending" label="Not started" />
     <StatusIndicator status="neutral" label="Archived" />
-  </Inline>
+  </Stack>
 );
 
 export const Small = () => (

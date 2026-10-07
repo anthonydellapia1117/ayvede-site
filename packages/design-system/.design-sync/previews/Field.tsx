@@ -9,7 +9,7 @@ export const LabelDescriptionError = () => (
       <TextInput type="email" defaultValue="j.doe@example" />
     </Field>
     <Field label="Cost center" showOptional>
-      <Select placeholder="Choose" options={[{ value: "ops", label: "Operations" }, { value: "fin", label: "Finance" }]} />
+      <Select placeholder="Choose a cost center" options={[{ value: "ops", label: "Operations" }, { value: "fin", label: "Finance" }]} />
     </Field>
     <Field label="Notes" description="Visible to reviewers only.">
       <Textarea rows={2} />

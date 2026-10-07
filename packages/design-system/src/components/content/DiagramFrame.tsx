@@ -33,12 +33,12 @@ export function DiagramFrame({ title, caption, description, descriptionLabel = "
           {figureLabel && <span style={{ color: "var(--eui-color-text-tertiary)", fontWeight: 500 }}>{figureLabel} · </span>}
           {title}
         </div>
-        {source && <div className="eui-figure-source">Source: {source}</div>}
       </div>
       <div className="eui-figure-canvas">{children}</div>
       <figcaption>
         {caption && <div className="eui-figure-caption">{caption}</div>}
-        <details className="eui-figure-details" style={caption ? { marginTop: "var(--eui-space-2)" } : undefined}>
+        {source && <div className="eui-figure-source">Source: {source}</div>}
+        <details className="eui-figure-details" style={caption || source ? { marginTop: "var(--eui-space-2)" } : undefined}>
           <summary>{descriptionLabel}</summary>
           <div id={descId}>{description}</div>
         </details>

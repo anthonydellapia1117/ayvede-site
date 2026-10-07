@@ -38,7 +38,7 @@ export function Timeline({ stages, orientation = "vertical", showStatus = true, 
               <div className="eui-timeline-title">
                 <span>{s.title}</span>
                 {s.meta && (
-                  <Text as="span" variant="meta" numeric>
+                  <Text as="span" variant="meta" numeric weight="regular">
                     {s.meta}
                   </Text>
                 )}

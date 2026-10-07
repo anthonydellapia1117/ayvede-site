@@ -48,6 +48,7 @@ export function ComparisonTable({ caption, captionHidden, criteriaHeader = "Crit
         o.label
       ),
       highlight: o.recommended,
+      width: `${(72 / options.length).toFixed(2)}%`,
     })),
   ];
   const rows: TableRow[] = criteria.map((c, i) => {
