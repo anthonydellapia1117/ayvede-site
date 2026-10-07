@@ -46,6 +46,7 @@ A correct build of the current source produces a bundle whose sha256 matches the
 | `docs/` | Also: the July 2026 audit, design tokens, insights pipeline, and the original Wix runbook. |
 | `scripts/pull-insights.mjs` | Parser that regenerates `insights-data.js` from Drive-exported newsletter markdown. |
 | `.claude/skills/` | Guardrail and refresh skills. Any Claude Code session opened in this repo auto-loads them. |
+| `packages/design-system/` | `executive-ui`: a standalone, brand-agnostic React design system (tokens, components, preview, Claude Design sync config). Separate lockfile and CI; it does not touch the site build or its tokens. See its [README](packages/design-system/README.md). |
 
 ## Do Not
 

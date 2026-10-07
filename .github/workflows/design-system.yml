@@ -1,0 +1,45 @@
+name: design-system
+
+# Builds, typechecks, and tests packages/design-system. Independent of the
+# site's verify-build workflow: it never touches src/ayvede-v2.jsx or dist/.
+
+on:
+  push:
+    branches: [main]
+    paths: ["packages/design-system/**", ".github/workflows/design-system.yml"]
+  pull_request:
+    branches: [main]
+    paths: ["packages/design-system/**", ".github/workflows/design-system.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: design-system-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: packages/design-system
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: packages/design-system/package-lock.json
+      - name: Install pinned dependencies
+        run: npm ci --legacy-peer-deps
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Build package
+        run: npm run build
+      - name: Tests (tokens contrast, component behavior)
+        run: npm test
+      - name: Build preview
+        run: npm run build:preview

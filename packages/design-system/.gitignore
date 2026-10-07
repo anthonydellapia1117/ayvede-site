@@ -1,0 +1,10 @@
+node_modules/
+dist/
+preview/dist/
+screenshots/
+# design-sync machine state (regenerated on every sync; never committed)
+.ds-sync/
+ds-bundle/
+.design-sync/.cache/
+.design-sync/learnings/
+.design-sync/node_modules

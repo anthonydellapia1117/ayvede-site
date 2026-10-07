@@ -1,0 +1,79 @@
+/* Layout primitives ---------------------------------------------------------- */
+.eui-container { width: 100%; margin-inline: auto; }
+.eui-container[data-gutter="true"] { padding-inline: var(--eui-container-gutter); }
+.eui-container[data-size="reading"] { max-width: calc(var(--eui-container-reading) + 2 * var(--eui-container-gutter)); }
+.eui-container[data-size="content"] { max-width: calc(var(--eui-container-content) + 2 * var(--eui-container-gutter)); }
+.eui-container[data-size="wide"] { max-width: calc(var(--eui-container-wide) + 2 * var(--eui-container-gutter)); }
+.eui-container[data-size="full"] { max-width: none; }
+
+.eui-stack { display: flex; flex-direction: column; gap: var(--eui-stack-gap, var(--eui-space-4)); min-width: 0; }
+.eui-stack[data-align="start"] { align-items: flex-start; }
+.eui-stack[data-align="center"] { align-items: center; }
+.eui-stack[data-align="end"] { align-items: flex-end; }
+.eui-stack[data-align="stretch"] { align-items: stretch; }
+.eui-stack[data-divider="true"] > * + * { border-top: var(--eui-border-width) solid var(--eui-color-border-default); padding-top: var(--eui-stack-gap, var(--eui-space-4)); }
+
+.eui-inline { display: flex; flex-direction: row; flex-wrap: wrap; gap: var(--eui-inline-gap, var(--eui-space-3)); align-items: center; min-width: 0; }
+.eui-inline[data-wrap="false"] { flex-wrap: nowrap; }
+.eui-inline[data-align="start"] { align-items: flex-start; }
+.eui-inline[data-align="end"] { align-items: flex-end; }
+.eui-inline[data-align="baseline"] { align-items: baseline; }
+.eui-inline[data-align="stretch"] { align-items: stretch; }
+.eui-inline[data-justify="start"] { justify-content: flex-start; }
+.eui-inline[data-justify="center"] { justify-content: center; }
+.eui-inline[data-justify="end"] { justify-content: flex-end; }
+.eui-inline[data-justify="between"] { justify-content: space-between; }
+
+.eui-grid { display: grid; gap: var(--eui-grid-gap, var(--eui-space-6)); min-width: 0; }
+.eui-grid[data-columns="auto"] { grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--eui-grid-min, 16rem)), 1fr)); }
+.eui-grid[data-columns="1"] { grid-template-columns: 1fr; }
+.eui-grid[data-columns="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.eui-grid[data-columns="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.eui-grid[data-columns="4"] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.eui-grid[data-columns="6"] { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.eui-grid[data-columns="12"] { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+@media (max-width: 1023px) {
+  .eui-grid[data-columns="4"], .eui-grid[data-columns="6"], .eui-grid[data-columns="12"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .eui-grid[data-columns="3"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 639px) {
+  .eui-grid[data-columns]:not([data-columns="auto"]) { grid-template-columns: 1fr; }
+}
+.eui-grid > * { min-width: 0; }
+
+.eui-divider { border: 0; margin: 0; }
+.eui-divider[data-orientation="horizontal"] { border-top: var(--eui-border-width) solid var(--eui-color-border-default); width: 100%; }
+.eui-divider[data-orientation="vertical"] { border-left: var(--eui-border-width) solid var(--eui-color-border-default); align-self: stretch; min-height: 1em; }
+.eui-divider[data-spacing="sm"][data-orientation="horizontal"] { margin-block: var(--eui-space-3); }
+.eui-divider[data-spacing="md"][data-orientation="horizontal"] { margin-block: var(--eui-space-6); }
+.eui-divider[data-spacing="lg"][data-orientation="horizontal"] { margin-block: var(--eui-space-10); }
+.eui-divider-labeled { display: flex; align-items: center; gap: var(--eui-space-3); color: var(--eui-color-text-tertiary); font-size: var(--eui-font-size-meta); }
+.eui-divider-labeled::before, .eui-divider-labeled::after { content: ""; flex: 1; border-top: var(--eui-border-width) solid var(--eui-color-border-default); }
+
+.eui-section { padding-block: var(--eui-section-space, var(--eui-space-16)); }
+.eui-section[data-spacing="sm"] { --eui-section-space: var(--eui-space-10); }
+.eui-section[data-spacing="md"] { --eui-section-space: var(--eui-space-16); }
+.eui-section[data-spacing="lg"] { --eui-section-space: var(--eui-space-24); }
+.eui-section[data-tone="surface"] { background: var(--eui-color-background-surface); }
+.eui-section[data-tone="subtle"] { background: var(--eui-color-background-subtle); }
+.eui-section[data-tone="inverse"] { background: var(--eui-color-background-inverse); color: var(--eui-color-text-inverse); }
+.eui-section[data-bordered="true"] { border-top: var(--eui-border-width) solid var(--eui-color-border-default); }
+@media (max-width: 639px) {
+  .eui-section[data-spacing="lg"] { --eui-section-space: var(--eui-space-16); }
+  .eui-section[data-spacing="md"] { --eui-section-space: var(--eui-space-12); }
+}
+
+/* Inverse scope: components inside an inverse section flip to inverse roles. */
+.eui-section[data-tone="inverse"] { --eui-color-text-primary: var(--eui-color-text-inverse); --eui-color-text-secondary: var(--eui-color-text-inverse-secondary); --eui-color-text-tertiary: var(--eui-color-text-inverse-tertiary); --eui-color-border-default: var(--eui-color-border-inverse); }
+
+.eui-icon { display: inline-block; flex-shrink: 0; width: var(--eui-icon-size, var(--eui-control-icon-md)); height: var(--eui-icon-size, var(--eui-control-icon-md)); vertical-align: -0.2em; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.eui-icon[data-size="sm"] { --eui-icon-size: var(--eui-control-icon-sm); }
+.eui-icon[data-size="md"] { --eui-icon-size: var(--eui-control-icon-md); }
+.eui-icon[data-size="lg"] { --eui-icon-size: var(--eui-control-icon-lg); }
+.eui-icon[data-tone="secondary"] { color: var(--eui-color-text-secondary); }
+.eui-icon[data-tone="tertiary"] { color: var(--eui-color-text-tertiary); }
+.eui-icon[data-tone="success"] { color: var(--eui-color-status-success); }
+.eui-icon[data-tone="warning"] { color: var(--eui-color-status-warning); }
+.eui-icon[data-tone="danger"] { color: var(--eui-color-status-danger); }
+.eui-icon[data-tone="info"] { color: var(--eui-color-status-info); }
+.eui-icon[data-tone="accent"] { color: var(--eui-color-action-primary); }

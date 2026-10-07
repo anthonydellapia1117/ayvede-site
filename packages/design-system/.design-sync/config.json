@@ -1,0 +1,49 @@
+{
+  "pkg": "executive-ui",
+  "globalName": "ExecutiveUI",
+  "shape": "package",
+  "buildCmd": "npm run build",
+  "cssEntry": "dist/styles.css",
+  "readmeHeader": ".design-sync/conventions.md",
+  "guidelinesGlob": [
+    "docs/*.md"
+  ],
+  "provider": {
+    "component": "ThemeProvider",
+    "props": {
+      "mode": "light"
+    }
+  },
+  "componentSrcMap": {
+    "RadioGroup": "src/components/controls/Radio.tsx",
+    "Tab": "src/components/display/Tabs.tsx",
+    "TabList": "src/components/display/Tabs.tsx",
+    "TabPanel": "src/components/display/Tabs.tsx"
+  },
+  "overrides": {
+    "Metric": {
+      "cardMode": "column"
+    },
+    "ProcessDiagram": {
+      "cardMode": "column"
+    },
+    "Timeline": {
+      "cardMode": "column"
+    },
+    "NavBar": {
+      "cardMode": "column"
+    },
+    "Table": {
+      "cardMode": "column"
+    },
+    "ComparisonTable": {
+      "cardMode": "column"
+    },
+    "PageHeader": {
+      "cardMode": "column"
+    },
+    "Section": {
+      "cardMode": "column"
+    }
+  }
+}
